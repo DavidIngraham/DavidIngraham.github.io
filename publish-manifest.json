@@ -22,6 +22,14 @@
       "link_label": "Read the analysis",
       "collection": "husum-gauge",
       "article": "analysis"
+    },
+    {
+      "title": "SV Blue Dog",
+      "tag": "Sailing · Robotics",
+      "description": "Returning to a one-metre sailing robot: printable hull design, low-power electronics, and recovery from expected failures.",
+      "collection": "sv-blue-dog",
+      "article": "restarting",
+      "link_label": "Read the project notes"
     }
   ],
   "collections": [
@@ -86,6 +94,25 @@
         }
       ],
       "note": "This is a historical analysis, not a display of current river levels."
+    },
+    {
+      "id": "sv-blue-dog",
+      "title": "SV Blue Dog",
+      "heading": "Picking up a small sailing robot again.",
+      "intro": [
+        "Design notes for a one-metre sailing robot, balancing efficiency, reliability, and ease of manufacture."
+      ],
+      "repository": "DavidIngraham/sv-blue-dog",
+      "ref": "main",
+      "pages": [
+        {
+          "id": "restarting",
+          "path": "docs/restarting-sv-blue-dog.md",
+          "title": "SV Blue Dog: picking up a small sailing robot again",
+          "description": "Revisiting the original design brief, existing CAD work, and questions for the next iteration."
+        }
+      ],
+      "note": "The recovered brief records design goals and candidate hardware. Build status and performance have not yet been verified."
     }
   ]
 }
