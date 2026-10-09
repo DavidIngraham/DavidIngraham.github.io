@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Can relative pitch unlock better longitudinal control? — David Ingraham</title><meta name="description" content="Truth-state feedback, observability and the free-body equations."><link rel="stylesheet" href="/assets/site.css"></head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header class="top"><a class="brand" href="/">David Ingraham</a><nav aria-label="Main"><a href="/#projects">Projects</a><a href="/ardupilot-tinkering/">Research</a><a href="https://github.com/DavidIngraham">GitHub</a></nav></header><main id="main"><div class="article-heading"><div class="breadcrumbs"><a href="/">Home</a> / <a href="./">ArduPilot tinkering</a></div><h1>Can relative pitch unlock better longitudinal control?</h1><p class="download">Research snapshot · October 2026 · <a href="longitudinal-observer.md">Download Markdown</a></p></div><div class="article-layout"><article class="article"><p>The longitudinal problem I want to solve is how to use as much control bandwidth as possible without stalling the canopy or driving the canopy and payload into large oscillations. After seeing self-excitation from my throttle pitch damper, I was not convinced that motion-profile limiting alone would get me the performance I wanted. I suspected the controller needed some awareness of the relative angles and rates.</p>
+<p>Before taking on an observer, I asked us to try controllers that could read the simulated joint state directly. That gave us a way to ask whether the information was useful at all, and what remained difficult even with perfect access to it. These local truth-state prototypes are research; they are not included in the durable ArduPilot branch.</p>
+<h2 id="first-test-whether-joint-state-feedback-helps">First, test whether joint-state feedback helps</h2>
+<p>We first kept TECS and added canopy/payload rate feedback ahead of motor lag, working through 44 trials. A useful correction was approximately <code>Δthrottle = -0.56 q_canopy + 0.16 q_payload</code>, with rates in rad/s. In a matched faster-TECS case, payload pitch-rate RMS fell from 4.69 to 2.95 deg/s. Relative-rate information supplied most of the benefit; matched payload-only feedback achieved 5.02 deg/s. This reduced oscillation but did not demonstrate a large usable bandwidth increase.</p>
+<p>I then asked us to try a controller update that treated the longitudinal system more directly. We tested integrated longitudinal control in a subsequent 21-trial study. Strong direct-throttle LQI gains became unstable with actuator timing/slew. The final conservative prototype commands throttle rate at 50 Hz, including motor lag, command state, saturation and conditional integral antiwindup. Its states include payload pitch, relative angle/rate, payload rate, air-relative velocity, motor throttle, previous command and climb-error integral.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Matched step case</th>
+<th style="text-align: right;">Climb tracking RMS</th>
+<th style="text-align: right;">Payload rate RMS</th>
+<th style="text-align: right;">Settling time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Faster TECS baseline</td>
+<td style="text-align: right;">0.12851 m/s</td>
+<td style="text-align: right;">4.6922 deg/s</td>
+<td style="text-align: right;">12.04 s</td>
+</tr>
+<tr>
+<td>Prior joint feedback</td>
+<td style="text-align: right;">0.09708 m/s</td>
+<td style="text-align: right;">2.9541 deg/s</td>
+<td style="text-align: right;">5.46 s</td>
+</tr>
+<tr>
+<td>Conservative integrated</td>
+<td style="text-align: right;">0.07978 m/s</td>
+<td style="text-align: right;">2.3915 deg/s</td>
+<td style="text-align: right;">2.70 s</td>
+</tr>
+<tr>
+<td>Faster integrated</td>
+<td style="text-align: right;">0.07123 m/s</td>
+<td style="text-align: right;">3.5172 deg/s</td>
+<td style="text-align: right;">2.20 s</td>
+</tr>
+</tbody>
+</table></div>
+<p><img alt="Step comparisons" src="scratch/paraglider-tests/pitch-joint/integrated-control/step-comparison.png" /></p>
+<p>The conservative setting was encouraging: it also improved rate RMS in zero-joint-damping, slower-motor and shifted-thrust-line checks. The severe gust cases showed how much work remained: about 38 deg/s rate RMS and angles of attack outside the calibrated model. At 0.32 Hz the whole-loop gain peak fell from 3.35 to 2.11, with more phase lag; the height outer loop still amplified the inner response. This is not proof of a safe high-bandwidth controller.</p>
+<p><img alt="Frequency comparison" src="scratch/paraglider-tests/pitch-joint/integrated-control/frequency-comparison.png" /></p>
+<p>A local native AUTO course completed in 1103.6 s with maximum corner overshoot 1.079 m. It used an <strong>airborne preparation fixture</strong>, not a normal launch, and reached 20.16 degrees modeled angle of attack. Course assertions passing therefore do not establish stall protection.</p>
+<p><img alt="AUTO longitudinal behavior" src="scratch/paraglider-tests/pitch-joint/integrated-control/auto-mission-longitudinal.png" /></p>
+<p><a href="scratch/paraglider-tests/pitch-joint/integrated-control/summary.json">Integrated summary</a>, <a href="scratch/paraglider-tests/pitch-joint/integrated-control/validation.json">validation</a>, <a href="scratch/paraglider-tests/pitch-joint/oracle-control/summary.json">oracle study</a> and archived scripts provide provenance. Production sources/binaries were restored after these local trials. A payload-pitch transfer had a right-half-plane zero, while the CG climb transfer did not; inverse pitch response alone does not prove a fundamental climb-bandwidth limit.</p>
+<h2 id="can-i-estimate-what-i-cannot-measure">Can I estimate what I cannot measure?</h2>
+<p>The next question was how to get relative pitch information without a hinge-angle sensor. I asked us to assess observability with and without airspeed, rather than assuming an observer would work.</p>
+<p>The nominal nine-state linearization we assessed uses payload pitch, relative pitch, payload/relative rates, two air-relative velocity components, motor state and horizontal/vertical wind. With a known model and constant wind, the local PBH assessment gives rank nine with attitude/gyro/GNSS measurements, with or without a pitot sensor. This nominal result is weaker than it sounds: modeling unknown constant force/moment biases adds ambiguous modes.</p>
+<p>With four independent constant acceleration/angular disturbances, the thirteen-state assessment gives zero-frequency PBH rank ten without airspeed and eleven with scalar airspeed: respectively three and two unobservable constant directions. This deliberately permissive bias model exposes ambiguity rather than asserting those biases are a physical plant. Relative rate appears more useful than absolute relative angle; a scalar pitot does not measure airflow direction or vertical wind.</p>
+<p>I also questioned whether we needed raw IMU data when ArduPilot already has an AHRS interface. Checking those interfaces clarified what is available and where the lever-arm correction still belongs. AHRS gyro is corrected payload angular rate. AHRS earth-frame acceleration is bias-corrected specific force at the IMU, not automatically translated to the payload CG. The corrected delta-velocity interface includes gravity but likewise does not supply that moving-origin correction. EKF navigation position/velocity handle configured rigid-body IMU lever arms; canopy articulation still requires its own geometry. A practical observer should predict specific force at the actual sensor position and use AHRS correction rather than duplicating calibration or differentiating noisy gyro. AHRS/IMU-derived measurements also have correlated errors.</p>
+<p><a href="scratch/paraglider-tests/pitch-joint/observer-design/assess.py">Assessment script</a> and <a href="scratch/paraglider-tests/pitch-joint/observer-design/assessment.json">ranks/results</a> are archived. No flight-ready observer or reliable absolute-angle limiter has been implemented.</p>
+<h2 id="how-much-model-identification-can-we-avoid">How much model identification can we avoid?</h2>
+<p>Finally, I wanted to revisit the free-body diagram. If this eventually needs to work on a variety of platforms, every inertia, mass and aerodynamic coefficient we ask a user to identify is a practical obstacle. We looked for terms that cancel and ratios that can replace absolute values.</p>
+<p><img alt="Normalized force balance and observer equations" src="scratch/paraglider-tests/pitch-joint/diagrams/normalized-observer-fbd.png" /></p>
+<p>Let <code>R</code> be suspension force on the payload, <code>T</code> forward thrust, <code>Dp</code> payload aerodynamic force, and <code>fp = ap - g</code> payload-CG specific force. Define <code>τ = T/mp</code>, <code>dp = Dp/mp</code>, <code>κp = Ip/mp</code>, <code>κc = Ic/mp</code>, and <code>ma = Ma/mp</code>. Vectors <code>a</code> and <code>b(δ)</code> run from the hinge to payload and canopy CG in one frame; <code>zT</code> is the signed thrust moment arm using the diagram convention.</p>
+<p>The payload force balance yields:</p>
+<pre><code class="language-text">R/mp = fp - τ ex - dp
+</code></pre>
+<p>Adding payload and canopy pitch equations cancels their equal-and-opposite internal hinge torque:</p>
+<pre><code class="language-text">κc q̇c + κp q̇p = [(b-a) × (fp-τ ex-dp)]y + zT τ + ma
+s = κc qc + κp qp
+ṡ = [(b-a) × (fp-τ ex-dp)]y + zT τ + ma
+qrel = (s-κp qp)/κc - qp
+</code></pre>
+<p>This removes the explicit joint stiffness/damping law from the summed momentum propagation and replaces canopy lift/drag force modeling with measured suspension loading. Uniform gravity cancels when translation is eliminated. Absolute mass can be reduced to inertia/mass ratios; <code>κc = (mc/mp) kc²</code> if <code>kc</code> is canopy radius of gyration. Scaling lengths by a reference suspension length and time by <code>sqrt(L/g)</code> improves numerical conditioning.</p>
+<p><strong>The external canopy pitching moment <code>Ma</code> does not cancel.</strong> Geometry, inertia ratios, thrust-per-mass/moment arm, payload drag and residual canopy moment still require modeling. Integrating the summed momentum without measurement correction drifts; this cancellation is not a complete observer and does not solve initial-state identifiability. My next step would be to benchmark an uncertainty-aware relative-rate observer against simulation truth, then test control with confidence-dependent limits and recorded flight data. The experiments give me a reason to pursue relative-rate feedback, but they have not yet answered how reliably I can estimate absolute canopy angle or protect the wing at the bandwidth I want.</p></article><aside class="sidebar" aria-label="On this page"><div class="sidebar-inner"><div class="eyebrow">On this page</div><a href="#first-test-whether-joint-state-feedback-helps">First, test whether joint-state feedback helps</a><a href="#can-i-estimate-what-i-cannot-measure">Can I estimate what I cannot measure?</a><a href="#how-much-model-identification-can-we-avoid">How much model identification can we avoid?</a><a href="./">← All experiments</a></div></aside></div></main><footer>David Ingraham · AI-assisted research · <a href="/ardupilot-tinkering/">Research index</a></footer></div></body></html>

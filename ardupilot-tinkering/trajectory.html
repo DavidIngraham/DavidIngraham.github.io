@@ -1,0 +1,88 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Can planning turns improve on L1? — David Ingraham</title><meta name="description" content="Line-to-line transitions, raster surveys and gust comparisons."><link rel="stylesheet" href="/assets/site.css"></head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header class="top"><a class="brand" href="/">David Ingraham</a><nav aria-label="Main"><a href="/#projects">Projects</a><a href="/ardupilot-tinkering/">Research</a><a href="https://github.com/DavidIngraham">GitHub</a></nav></header><main id="main"><div class="article-heading"><div class="breadcrumbs"><a href="/">Home</a> / <a href="./">ArduPilot tinkering</a></div><h1>Can planning turns improve on L1?</h1><p class="download">Research snapshot · October 2026 · <a href="trajectory.md">Download Markdown</a></p></div><div class="article-layout"><article class="article"><p>My starting question was whether a wind-aware trajectory planner could improve on L1 waypoint tracking. I had been looking at trochoidal paths and a solver that connects start and goal poses, but ArduPilot missions are normally lists of waypoints. I wanted to know how those two representations could fit together, especially when neighboring turns overlap.</p>
+<p>I asked us to develop this on a separate Plane branch and build a torture course that would expose difficult transitions. As we compared plots, I realized the first implementation still depended too much on waypoint acceptance radii. What I wanted was a turn planned from one line segment to the next, with room to choose where the turn starts and ends.</p>
+<p>The latest planner follows that idea: it connects incoming and outgoing ground-track lines, allows entry and exit positions to move along them, and merges overlapping transitions across short legs.</p>
+<h2 id="from-exact-poses-to-flexible-line-transitions">From exact poses to flexible line transitions</h2>
+<p>We began with wind-aware arcs and straight segments that produce trochoidal ground paths. The planner evaluates finite winding candidates, penalizing extra turning instead of rejecting everything beyond an arbitrary 225-degree limit. The tracker uses existing Plane lateral controls. This is trajectory planning and feedback tracking, not a full receding-horizon MPC optimizer.</p>
+<p>I also wanted to make sure the planner was using information available on a real aircraft. It uses the <strong>active EKF wind estimate</strong>, airspeed and available bank authority. Planning bank is 70% of the bank limit to reserve feedback authority. Rate follows g tan(bank)/airspeed. Response and capture tolerances derive from L1 period/damping and existing roll-controller response, rate and acceleration limits. I asked us to derive settings from existing aircraft parameters wherever possible. The remaining experimental parameters are <code>ENABLE</code> and <code>EXTENT</code>: zero extent derives turn space; an explicit extent can protect survey turnaround boundaries. The planner is disabled by default.</p>
+<p>Ordinary acceptance radii do not constrain the latest planned turns or mission handover. Explicit pass-by/overfly semantics remain protected. Ordered corner progress governs handover; unsupported or infeasible cases fall back to L1. The fallback is necessary because wind, available space and aircraft limits can make a requested transition infeasible.</p>
+<p>The turning point came from the raster comparisons. I asked for a matrix of grid densities, wind speeds and directions, and the 40 m raster in a 10 m/s easterly wind failed badly. Looking at why it failed led me to question both the 225-degree cutoff and the requirement to meet precise start/end poses. L1 seemed able to recover more flexibly.</p>
+<p>We removed the arbitrary cutoff and replaced it with a cost for extra turning. That helped the search, but did not solve the geometry by itself. Letting turns enter and leave the adjacent lines at flexible positions, and grouping short legs, addressed the more fundamental constraint. I kept the earlier radius-gated and diagnostic results in the archive, but the comparisons below use the latest planner.</p>
+<h2 id="testing-the-idea-against-l1">Testing the idea against L1</h2>
+<p>Once those changes were in place, we reran the torture course and the raster cases that had exposed the earlier failures. These are representative native course times:</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Raster spacing / wind</th>
+<th style="text-align: right;">L1 time</th>
+<th style="text-align: right;">Latest trajectory time</th>
+<th style="text-align: right;">L1 / trajectory coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>40 m / 10 m/s from E</td>
+<td style="text-align: right;">557.2 s</td>
+<td style="text-align: right;">490.6 s</td>
+<td style="text-align: right;">100% / 100%</td>
+</tr>
+<tr>
+<td>40 m / 5 m/s from N</td>
+<td style="text-align: right;">576.7 s</td>
+<td style="text-align: right;">565.4 s</td>
+<td style="text-align: right;">99.26% / 100%</td>
+</tr>
+<tr>
+<td>160 m / 10 m/s from N</td>
+<td style="text-align: right;">273.0 s</td>
+<td style="text-align: right;">248.3 s</td>
+<td style="text-align: right;">98.33% / 100%</td>
+</tr>
+</tbody>
+</table></div>
+<p><img alt="Latest torture comparison" src="scratch/plane-trajectory/derived-settings/regression/torture-comparison.png" /></p>
+<p><img alt="Latest raster comparison" src="scratch/plane-trajectory/derived-settings/regression/raster-comparison.png" /></p>
+<p>I then wanted to know whether the improvements would survive gusts rather than just steady wind. We designed a Monte Carlo experiment with 24 paired scenarios: three courses, eight pairs per course, four weather strata and two replicates per stratum. All 48 flights completed; trajectory runs recorded three fallback events. Mean paired flight-time change was <strong>−3.78%</strong>, with bootstrap 95% interval <strong>[−6.10%, −1.41%]</strong>.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Course</th>
+<th style="text-align: right;">Median L1 time</th>
+<th style="text-align: right;">Median trajectory time</th>
+<th style="text-align: right;">Median L1 / trajectory coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Torture</td>
+<td style="text-align: right;">404.50 s</td>
+<td style="text-align: right;">389.48 s</td>
+<td style="text-align: right;">Not a raster metric</td>
+</tr>
+<tr>
+<td>40 m raster</td>
+<td style="text-align: right;">589.38 s</td>
+<td style="text-align: right;">569.85 s</td>
+<td style="text-align: right;">95.09% / 100%</td>
+</tr>
+<tr>
+<td>160 m raster</td>
+<td style="text-align: right;">215.12 s</td>
+<td style="text-align: right;">212.46 s</td>
+<td style="text-align: right;">100% / 100%</td>
+</tr>
+</tbody>
+</table></div>
+<p>These are medians of individual groups, not the paired percentage statistic. Weather targets were seeded, spatially uniform time-indexed gust schedules replayed on simulation time, with native SITL turbulence. Target schedules matched, but independent sensor/turbulence realizations are not guaranteed bit-identical. The local weather replay harness knows the prescribed weather; the production planner still receives EKF estimates.</p>
+<p><img alt="Gust experiment performance" src="scratch/plane-trajectory/derived-settings/monte-carlo/performance.png" /></p>
+<p><img alt="Example gust tracks" src="scratch/plane-trajectory/derived-settings/monte-carlo/gust-examples.png" /></p>
+<h2 id="validation-and-reproducibility">Validation and reproducibility</h2>
+<p>The recorded production validation passed native waypoint tests, raster regression, 18 unit tests, ten disabled-feature translation-unit builds, parameter metadata and Python style checks. Native tests are <code>WaypointTrajectory</code>, <code>WaypointTrajectoryOverfly</code> and <code>WaypointTrajectoryStrongWind</code> in the linked ArduPilot branch. Rebuild that exact commit and use its normal autotest runner; local raster and gust scripts are in the directories below.</p>
+<ul>
+<li><a href="scratch/plane-trajectory/derived-settings/validation.json">Production validation</a></li>
+<li><a href="scratch/plane-trajectory/derived-settings/regression/comparison.json">Regression measurements</a></li>
+<li><a href="scratch/plane-trajectory/derived-settings/monte-carlo/summary.json">Monte Carlo summary</a></li>
+<li><a href="scratch/plane-trajectory/derived-settings/monte-carlo/scenarios.json">Scenario definitions</a></li>
+<li><a href="scratch/plane-trajectory/derived-settings/monte-carlo/run.py">Monte Carlo runner</a></li>
+</ul>
+<p>I take these results as evidence that flexible line transitions are worth pursuing: this test set improved course time and dense-raster coverage. I do not yet have evidence of a general advantage across aircraft and weather fields. This is a small stratified engineering experiment, not a reliability estimate; coverage depends on the archived metric and geometry. I still need flight validation of the planner assumptions and feedback reserve.</p>
+<p>The references that prompted this investigation were: <a href="https://bradymoon.com/trochoids">trochoid planning</a> and <a href="https://arxiv.org/abs/2306.11845">the supplied arXiv paper</a>.</p></article><aside class="sidebar" aria-label="On this page"><div class="sidebar-inner"><div class="eyebrow">On this page</div><a href="#from-exact-poses-to-flexible-line-transitions">From exact poses to flexible line transitions</a><a href="#testing-the-idea-against-l1">Testing the idea against L1</a><a href="#validation-and-reproducibility">Validation and reproducibility</a><a href="./">← All experiments</a></div></aside></div></main><footer>David Ingraham · AI-assisted research · <a href="/ardupilot-tinkering/">Research index</a></footer></div></body></html>
