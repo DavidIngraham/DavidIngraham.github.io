@@ -46,6 +46,12 @@
       "ref": "main",
       "pages": [
         {
+          "id": "micro-agu-design",
+          "path": "docs/micro-agu-design.md",
+          "title": "Micro-AGU: returning to small guided parafoils",
+          "description": "The Stara inspiration, HobbyKing canopy, custom payload design, and lessons from the original notebook."
+        },
+        {
           "id": "flight-testing",
           "path": "docs/flight-testing.md",
           "title": "Learning to launch, then learning to fly",
