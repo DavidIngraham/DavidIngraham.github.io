@@ -49,13 +49,13 @@
           "id": "micro-agu-design",
           "path": "docs/micro-agu-design.md",
           "title": "Micro-AGU: returning to small guided parafoils",
-          "description": "The Stara inspiration, HobbyKing canopy, custom payload design, and lessons from the original notebook."
+          "description": "Desert test support, an affordable HobbyKing V2 canopy, and a custom platform for guided-parafoil experiments."
         },
         {
           "id": "flight-testing",
           "path": "docs/flight-testing.md",
           "title": "Learning to launch, then learning to fly",
-          "description": "Real flights, launch technique, ballast, autonomous missions and a pitch damper with the wrong sign."
+          "description": "Learning to launch, adding payload ballast, flying autonomous missions, and investigating pitch-damper feedback."
         },
         {
           "id": "trajectory",
