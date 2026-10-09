@@ -16,18 +16,11 @@
       "link_label": "Read the experiments"
     },
     {
-      "title": "Terrain Trails",
-      "tag": "Terrain · Source project",
-      "description": "Tools for creating 3D-printable terrain with integrated path and road parts for single-material printers.",
-      "url": "https://github.com/DavidIngraham/Terrain_Trails",
-      "link_label": "Browse the source"
-    },
-    {
-      "title": "ArduPilot development",
-      "tag": "Flight · Implementation",
-      "description": "My ArduPilot fork, including the Plane trajectory and paraglider implementation branches behind the research notebook.",
-      "url": "https://github.com/DavidIngraham/ardupilot",
-      "link_label": "Explore the fork"
+      "title": "Husum Gauge",
+      "tag": "River · Data analysis",
+      "description": "Exploring the relationship between river levels at Husum and the Underwood gauge using recorded readings and regression models.",
+      "url": "https://github.com/DavidIngraham/husum-gauge",
+      "link_label": "Explore the analysis"
     }
   ],
   "collections": [
@@ -63,8 +56,14 @@
         }
       ],
       "implementation_links": [
-        {"label": "Plane trajectory branch", "url": "https://github.com/DavidIngraham/ardupilot/tree/plane-trajectory-wip"},
-        {"label": "Paraglider branch", "url": "https://github.com/DavidIngraham/ardupilot/tree/paraglider-rebase"}
+        {
+          "label": "Plane trajectory branch",
+          "url": "https://github.com/DavidIngraham/ardupilot/tree/plane-trajectory-wip"
+        },
+        {
+          "label": "Paraglider branch",
+          "url": "https://github.com/DavidIngraham/ardupilot/tree/paraglider-rebase"
+        }
       ],
       "note": "These simulations do not establish flight readiness. Raw logs and built binaries are omitted from the archive. Experimental longitudinal controllers and the proposed observer are research, not deployed features."
     }
