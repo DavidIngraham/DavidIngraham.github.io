@@ -14,7 +14,7 @@ For each collection, set:
 - `pages`: each article's `id`, repository-relative Markdown `path`, `title` and `description`.
 - Optional `title`, `heading`, `intro`, `implementation_links` and `note` for the collection index.
 
-Add a project referencing its `collection` ID to show it on the homepage. External projects use `url` instead. A collection without an explicit `url` uses `/research/?collection=ID`; articles use `/research/?collection=ID&article=ARTICLE`. Adding another collection or article only requires a manifest edit. The original `/ardupilot-tinkering/*.html` links remain lightweight reader shells for backward compatibility.
+Add a project referencing its `collection` ID to show it on the homepage. Set its optional `article` ID to link directly to a particular write-up. External projects use `url` instead. A collection without an explicit `url` uses `/research/?collection=ID`; articles use `/research/?collection=ID&article=ARTICLE`. Adding another collection or article only requires a manifest edit. The original `/ardupilot-tinkering/*.html` links remain lightweight reader shells for backward compatibility.
 
 ## What updates automatically?
 

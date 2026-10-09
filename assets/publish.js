@@ -27,6 +27,7 @@
     }
     for (const project of manifest.projects) {
       if (project.collection ? !ids.has(project.collection) : !/^https:\/\//.test(project.url || '')) throw new Error('Invalid project destination.');
+      if (project.article && !manifest.collections.find(item => item.id === project.collection)?.pages.some(page => page.id === project.article)) throw new Error('Invalid project article.');
     }
   }
 
@@ -35,7 +36,9 @@
     if (!grid) return;
     grid.innerHTML = manifest.projects.map(project => {
       const collection = manifest.collections.find(item => item.id === project.collection);
-      return card(project.title, project.tag, project.description, collection ? collectionUrl(collection) : project.url, project.link_label || 'Explore');
+      const article = collection?.pages.find(page => page.id === project.article);
+      const destination = article ? pageUrl(collection, article) : collection ? collectionUrl(collection) : project.url;
+      return card(project.title, project.tag, project.description, destination, project.link_label || 'Explore');
     }).join('');
   }
 

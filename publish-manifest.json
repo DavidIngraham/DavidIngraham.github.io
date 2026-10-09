@@ -19,8 +19,9 @@
       "title": "Husum Gauge",
       "tag": "River · Data analysis",
       "description": "Exploring the relationship between river levels at Husum and the Underwood gauge using recorded readings and regression models.",
-      "url": "https://github.com/DavidIngraham/husum-gauge",
-      "link_label": "Explore the analysis"
+      "link_label": "Read the analysis",
+      "collection": "husum-gauge",
+      "article": "analysis"
     }
   ],
   "collections": [
@@ -66,6 +67,25 @@
         }
       ],
       "note": "These simulations do not establish flight readiness. Raw logs and built binaries are omitted from the archive. Experimental longitudinal controllers and the proposed observer are research, not deployed features."
+    },
+    {
+      "id": "husum-gauge",
+      "title": "Husum Gauge",
+      "heading": "How does the Husum gauge relate to Underwood?",
+      "intro": [
+        "Exploring historical Husum readings alongside USGS measurements at Underwood."
+      ],
+      "repository": "DavidIngraham/husum-gauge",
+      "ref": "main",
+      "pages": [
+        {
+          "id": "analysis",
+          "path": "README.md",
+          "title": "How does the Husum gauge relate to Underwood?",
+          "description": "Historical paired readings, linear and cubic regressions, and what the scatter tells us."
+        }
+      ],
+      "note": "This is a historical analysis, not a display of current river levels."
     }
   ]
 }
