@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "projects": [
+    {
+      "title": "Contour Workbench",
+      "tag": "Terrain · Browser tool",
+      "description": "A browser-based workbench for designing terrain models and preparing them for 3D printing. Built with Rust, WebAssembly and Three.js.",
+      "url": "https://davidingraham.github.io/contour_workbench/",
+      "link_label": "Open the workbench"
+    },
+    {
+      "title": "ArduPilot tinkering",
+      "tag": "Flight · Research notebook",
+      "description": "Can planned turns improve on L1? What does a paraglider need from its controller? My questions, the simulations we ran, and what the results taught me.",
+      "collection": "ardupilot-tinkering",
+      "link_label": "Read the experiments"
+    },
+    {
+      "title": "Terrain Trails",
+      "tag": "Terrain · Source project",
+      "description": "Tools for creating 3D-printable terrain with integrated path and road parts for single-material printers.",
+      "url": "https://github.com/DavidIngraham/Terrain_Trails",
+      "link_label": "Browse the source"
+    },
+    {
+      "title": "ArduPilot development",
+      "tag": "Flight · Implementation",
+      "description": "My ArduPilot fork, including the Plane trajectory and paraglider implementation branches behind the research notebook.",
+      "url": "https://github.com/DavidIngraham/ardupilot",
+      "link_label": "Explore the fork"
+    }
+  ],
+  "collections": [
+    {
+      "id": "ardupilot-tinkering",
+      "url": "/ardupilot-tinkering/",
+      "title": "ArduPilot tinkering",
+      "heading": "Questions, simulations, and what I learned.",
+      "intro": [
+        "I started with questions about flying my paraglider better. The turn-tracking work led me into Plane trajectory planning; the pitch oscillations led me back to the physics between the canopy and payload.",
+        "I worked with Codex to implement ideas, run comparisons and investigate failures. These pages tell the story of that work, including the results that changed my mind and the questions still open."
+      ],
+      "repository": "DavidIngraham/ArduPilot-tinkering",
+      "ref": "main",
+      "pages": [
+        {
+          "id": "trajectory",
+          "path": "docs/trajectory.md",
+          "title": "Can planning turns improve on L1?",
+          "description": "Line-to-line transitions, raster surveys and gust comparisons."
+        },
+        {
+          "id": "paraglider",
+          "path": "docs/paraglider.md",
+          "title": "What does my paraglider need from its controller?",
+          "description": "Turn tracking, canopy/payload articulation and launch experiments."
+        },
+        {
+          "id": "longitudinal-observer",
+          "path": "docs/longitudinal-observer.md",
+          "title": "Can relative pitch unlock better longitudinal control?",
+          "description": "Truth-state feedback, observability and the free-body equations."
+        }
+      ],
+      "implementation_links": [
+        {"label": "Plane trajectory branch", "url": "https://github.com/DavidIngraham/ardupilot/tree/plane-trajectory-wip"},
+        {"label": "Paraglider branch", "url": "https://github.com/DavidIngraham/ardupilot/tree/paraglider-rebase"}
+      ],
+      "note": "These simulations do not establish flight readiness. Raw logs and built binaries are omitted from the archive. Experimental longitudinal controllers and the proposed observer are research, not deployed features."
+    }
+  ]
+}

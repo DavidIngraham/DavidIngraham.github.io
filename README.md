@@ -1,15 +1,33 @@
 # David Ingraham's project pages
 
-Static GitHub Pages site at https://davidingraham.github.io/. The landing page indexes Contour Workbench, ArduPilot research and related source projects. GitHub Pages serves the `master` branch root; `.nojekyll` keeps the committed HTML unchanged.
+Static GitHub Pages site at https://davidingraham.github.io/. GitHub Pages deploys the `master` branch root automatically; `.nojekyll` keeps the HTML unchanged.
 
-The research archive remains private. Only the selected write-ups and their directly referenced figures, results and scripts are copied into this public site.
+## One manifest, source content in its own repo
 
-To update the research pages from a local archive checkout:
+Edit [`publish-manifest.json`](publish-manifest.json) to choose projects and write-ups to publish. The landing page reads `projects`; the reader uses `collections`. Markdown, figures and supporting artifacts remain in their source repositories. No generated article content or copied research data is committed here.
+
+For each collection, set:
+
+- `id`: unique URL slug.
+- `repository`: public GitHub `owner/repo`.
+- `ref`: branch, tag or commit. A branch follows edits; a commit pins a snapshot.
+- `pages`: each article's `id`, repository-relative Markdown `path`, `title` and `description`.
+- Optional `title`, `heading`, `intro`, `implementation_links` and `note` for the collection index.
+
+Add a project referencing its `collection` ID to show it on the homepage. External projects use `url` instead. A collection without an explicit `url` uses `/research/?collection=ID`; articles use `/research/?collection=ID&article=ARTICLE`. Adding another collection or article only requires a manifest edit. The original `/ardupilot-tinkering/*.html` links remain lightweight reader shells for backward compatibility.
+
+## What updates automatically?
+
+- **Homepage or manifest changes:** push to this repo's `master`; GitHub Pages redeploys.
+- **Source Markdown or figures:** push to the source ref; the reader fetches that content directly on page load. No site commit or cross-repository workflow is needed. GitHub's raw-content cache can delay visibility briefly; already-open pages need reloading.
+- **Pinned commit refs:** change the manifest to publish a different snapshot.
+
+The reader resolves linked published Markdown to local article pages, image paths to raw GitHub files, and other relative links to their source GitHub pages. Sections, tables and fenced code render in the shared layout. Rendering requires JavaScript and access to GitHub raw content; source links and loading errors provide a fallback. Source refs must be publicly readable. Content is sanitized before rendering, using pinned, vendored Marked and DOMPurify with their licenses in `assets/vendor/`.
+
+## Local preview
 
 ```sh
-python3 -m pip install -r tools/requirements.txt
-python3 tools/publish_research.py /path/to/ArduPilot-tinkering
 python3 -m http.server 8000
 ```
 
-Review generated pages, commit and push. The renderer does not copy the full scratch directory or raw logs. AI-assisted site and research documentation.
+Open http://localhost:8000/. The preview fetches the same public Markdown as the deployed site. It does not need a research checkout or Python package dependencies. AI-assisted site implementation and research documentation.
