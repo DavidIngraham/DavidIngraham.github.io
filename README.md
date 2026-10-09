@@ -24,6 +24,10 @@ Add a project referencing its `collection` ID to show it on the homepage. Set it
 
 The reader resolves linked published Markdown to local article pages, image paths to raw GitHub files, and other relative links to their source GitHub pages. Sections, tables and fenced code render in the shared layout. Rendering requires JavaScript and access to GitHub raw content; source links and loading errors provide a fallback. Source refs must be publicly readable. Content is sanitized before rendering, using pinned, vendored Marked and DOMPurify with their licenses in `assets/vendor/`.
 
+## Personal pages
+
+The homepage introduction lives in `index.html`; the biography lives in `about/index.html`. Both use `assets/site.css`. The About page works without JavaScript. Keep project listings in the manifest and research content in its source repositories. Navigation is repeated in the HTML page shells; update each header when adding a site link.
+
 ## Local preview
 
 ```sh
