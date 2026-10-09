@@ -46,6 +46,12 @@
       "ref": "main",
       "pages": [
         {
+          "id": "flight-testing",
+          "path": "docs/flight-testing.md",
+          "title": "Learning to launch, then learning to fly",
+          "description": "Real flights, launch technique, ballast, autonomous missions and a pitch damper with the wrong sign."
+        },
+        {
           "id": "trajectory",
           "path": "docs/trajectory.md",
           "title": "Can planning turns improve on L1?",
