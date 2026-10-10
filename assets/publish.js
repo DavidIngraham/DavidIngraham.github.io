@@ -60,6 +60,50 @@
     return url + resolved.search + resolved.hash;
   }
 
+  async function renderDiagrams(article) {
+    const blocks = [...article.querySelectorAll('pre > code.language-mermaid')];
+    if (!blocks.length) return;
+    try {
+      const {default: mermaid} = await import('https://cdn.jsdelivr.net/npm/mermaid@11.16.1/dist/mermaid.esm.min.mjs');
+      mermaid.initialize({startOnLoad: false, securityLevel: 'strict', maxTextSize: 1000000, maxEdges: 1000});
+      for (const [index, block] of blocks.entries()) {
+        try {
+          const {svg} = await mermaid.render(`model-diagram-${index}`, block.textContent);
+          const figure = document.createElement('figure'); figure.className = 'model-diagram';
+          const controls = document.createElement('div'); controls.className = 'diagram-controls';
+          const viewport = document.createElement('div'); viewport.className = 'diagram-viewport';
+          viewport.tabIndex = 0; viewport.setAttribute('aria-label', 'Model diagram; scroll to explore');
+          viewport.innerHTML = svg;
+          figure.append(controls, viewport); block.parentElement.replaceWith(figure);
+          const drawing = viewport.querySelector('svg');
+          const width = drawing.viewBox.baseVal.width;
+          let scale;
+          const resize = next => {
+            scale = Math.max(0.005, Math.min(3, next));
+            drawing.style.maxWidth = 'none'; drawing.style.width = `${width * scale}px`;
+            drawing.style.height = 'auto';
+          };
+          for (const [label, action] of [
+            ['Zoom in', () => resize(scale * 1.5)], ['Zoom out', () => resize(scale / 1.5)],
+            ['Fit', () => resize(viewport.clientWidth / width)], ['Actual size', () => resize(1)],
+          ]) {
+            const button = document.createElement('button'); button.type = 'button';
+            button.textContent = label; button.addEventListener('click', action); controls.append(button);
+          }
+          resize(viewport.clientWidth / width);
+        } catch (error) {
+          const warning = document.createElement('p'); warning.className = 'note';
+          warning.textContent = 'Diagram could not render; its source is shown below.';
+          block.parentElement.before(warning); console.error('Diagram:', error);
+        }
+      }
+    } catch (error) {
+      const warning = document.createElement('p'); warning.className = 'note';
+      warning.textContent = 'Diagram renderer could not load; Mermaid source is shown instead.';
+      blocks[0].parentElement.before(warning); console.error('Mermaid:', error);
+    }
+  }
+
   async function renderArticle(collection, page) {
     document.title = `${page.title} — David Ingraham`;
     const meta = document.querySelector('meta[name="description"]');
@@ -101,6 +145,7 @@
         document.querySelector('#toc').append(link);
       }
     }
+    await renderDiagrams(article);
     article.removeAttribute('aria-busy');
     if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
   }

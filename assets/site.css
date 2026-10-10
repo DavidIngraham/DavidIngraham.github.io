@@ -15,3 +15,10 @@
 .about-page .closing p{margin:0;font:25px/1.4 Georgia,serif}.about-page .text-link{font-size:14px}
 @media(max-width:760px){.top{flex-wrap:wrap}.top nav{flex-wrap:wrap}.about-hero{padding:45px 0 35px;grid-template-columns:1fr;gap:30px}.about-page figure{max-width:450px}.about-page .landscape{max-height:225px}.about-page .intro{font-size:19px}.about-page .chapter{grid-template-columns:1fr;gap:20px;padding:32px 0}.about-page h2{font-size:29px}.about-page blockquote{font-size:25px}.about-page .closing{align-items:flex-start;flex-direction:column;gap:16px}}
 @media print{.about-page .chapter{break-inside:avoid}.about-page .top nav{display:none}}
+
+/* Native model diagrams rendered from repository Mermaid blocks. */
+.model-diagram { margin: 1.5rem 0; min-width: 0; }
+.diagram-controls { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: .5rem; }
+.diagram-controls button { cursor: pointer; padding: .35rem .65rem; }
+.diagram-viewport { overflow: auto; max-height: 75vh; background: white; border: 1px solid #ccd3dc; }
+.diagram-viewport svg { display: block; }
