@@ -536,6 +536,18 @@
           "title": "Native sail and appendage sizing results",
           "path": "docs/appendage-sizing-results.md",
           "hidden": true
+        },
+        {
+          "id": "design-search",
+          "title": "Searching for a boat that can make progress",
+          "path": "docs/design-search.md",
+          "description": "Coupling geometry, sailing equilibrium and energy sizing in a native SysML and SciPy design search."
+        },
+        {
+          "id": "design-search-results",
+          "title": "Native replay of the coupled design search",
+          "path": "docs/design-search-results.md",
+          "hidden": true
         }
       ],
       "note": "The design guide links the current SysML model and generated reports. Example analyses are not physical qualification."
