@@ -464,6 +464,13 @@
           "description": "Immediate requirement derivations, statements and next-level views.",
           "path": "docs/figures/requirements-c-102.md",
           "hidden": true
+        },
+        {
+          "id": "requirements-context",
+          "title": "Requirement context and verification",
+          "description": "Qualification conditions, rationale, open issues and planned verification.",
+          "path": "docs/requirements-context.md",
+          "hidden": true
         }
       ],
       "note": "The recovered brief records design goals and candidate hardware. Build status and performance have not yet been verified."
