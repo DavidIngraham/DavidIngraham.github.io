@@ -11,9 +11,10 @@
     {
       "title": "ArduPilot tinkering",
       "tag": "Flight · Research notebook",
-      "description": "Can planned turns improve on L1? What does a paraglider need from its controller? My questions, the simulations we ran, and what the results taught me.",
+      "description": "Building and flying Micro-AGU: an affordable parafoil, real flight tests, simulation tuning, and the controllers they inspired.",
       "collection": "ardupilot-tinkering",
-      "link_label": "Read the experiments"
+      "link_label": "Read the flight story",
+      "article": "flight-testing"
     },
     {
       "title": "Husum Gauge",
@@ -37,43 +38,49 @@
       "id": "ardupilot-tinkering",
       "url": "/ardupilot-tinkering/",
       "title": "ArduPilot tinkering",
-      "heading": "Questions, simulations, and what I learned.",
+      "heading": "Micro-AGU: from a small parafoil to autonomous flight.",
       "intro": [
-        "I started with questions about flying my paraglider better. The turn-tracking work led me into Plane trajectory planning; the pitch oscillations led me back to the physics between the canopy and payload.",
-        "I worked with Codex to implement ideas, run comparisons and investigate failures. These pages tell the story of that work, including the results that changed my mind and the questions still open."
+        "Start with the flight story: early tests at Barrett Park in Hood River, tuning in a simple simulator, and autonomous missions at Collin’s house in Trout Lake.",
+        "Four chapters cover the build, the flights, steering, and longitudinal control. A shared appendix records the evidence; the related Plane trajectory study follows the navigation questions further."
       ],
       "repository": "DavidIngraham/ArduPilot-tinkering",
       "ref": "main",
       "pages": [
         {
-          "id": "micro-agu-design",
-          "path": "docs/micro-agu-design.md",
-          "title": "Micro-AGU: returning to small guided parafoils",
-          "description": "Desert test support, an affordable HobbyKing V2 canopy, and a custom platform for guided-parafoil experiments."
-        },
-        {
           "id": "flight-testing",
           "path": "docs/flight-testing.md",
-          "title": "Learning to launch, then learning to fly",
-          "description": "Learning to launch, adding payload ballast, flying autonomous missions, and investigating pitch-damper feedback."
+          "title": "From First Tosses to Autonomous Missions",
+          "description": "Barrett Park → initial simulation → Collin’s house: measurements, fixes, tighter turns, and a 54.5-minute flight."
+        },
+        {
+          "id": "micro-agu-design",
+          "path": "docs/micro-agu-design.md",
+          "title": "Building Micro-AGU",
+          "description": "The affordable canopy, printed payload, avionics, and propulsion that made the experiment practical."
+        },
+        {
+          "id": "paraglider",
+          "path": "docs/paraglider.md",
+          "title": "Steering a Parafoil with an Airplane Autopilot",
+          "description": "The angle-controller workaround, recorded simulation tuning, and the case for dedicated turn-rate control."
+        },
+        {
+          "id": "longitudinal-observer",
+          "path": "docs/longitudinal-observer.md",
+          "title": "Throttle, Pitch, and the Controller That Pushed the Wrong Way",
+          "description": "Flight identification, the wrong-sign damper, and the search for better canopy–payload control."
+        },
+        {
+          "id": "data-and-methods",
+          "path": "docs/data-and-methods.md",
+          "title": "Micro-AGU: Data and Methods",
+          "description": "Log provenance, parameter histories, measurement windows, model assumptions, and reproducible analysis."
         },
         {
           "id": "trajectory",
           "path": "docs/trajectory.md",
           "title": "Can planning turns improve on L1?",
           "description": "Line-to-line transitions, raster surveys and gust comparisons."
-        },
-        {
-          "id": "paraglider",
-          "path": "docs/paraglider.md",
-          "title": "What does my paraglider need from its controller?",
-          "description": "Turn tracking, canopy/payload articulation and launch experiments."
-        },
-        {
-          "id": "longitudinal-observer",
-          "path": "docs/longitudinal-observer.md",
-          "title": "Can relative pitch unlock better longitudinal control?",
-          "description": "Truth-state feedback, observability and the free-body equations."
         }
       ],
       "implementation_links": [
@@ -86,7 +93,7 @@
           "url": "https://github.com/DavidIngraham/ardupilot/tree/paraglider-rebase"
         }
       ],
-      "note": "These simulations do not establish flight readiness. Raw logs and built binaries are omitted from the archive. Experimental longitudinal controllers and the proposed observer are research, not deployed features."
+      "note": "The original controller flew the missions described here. Dedicated replacement controllers and observer designs remain simulation research. Flight measurements and simulation results are identified separately."
     },
     {
       "id": "husum-gauge",
