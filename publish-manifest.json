@@ -41,7 +41,7 @@
       "heading": "Micro-AGU: from a small parafoil to autonomous flight.",
       "intro": [
         "Start with the flight story: early tests at Barrett Park in Hood River, tuning in a simple simulator, and autonomous missions at Collin’s house in Trout Lake.",
-        "Four chapters cover the build, the flights, steering, and longitudinal control. A shared appendix records the evidence; the related Plane trajectory study follows the navigation questions further."
+        "Four chapters cover the build, the flights, steering, and longitudinal control. A follow-up develops a calmer mission controller in the higher-DOF simulator. A shared appendix records the evidence; the related Plane trajectory study follows the navigation questions further."
       ],
       "repository": "DavidIngraham/ArduPilot-tinkering",
       "ref": "main",
@@ -69,6 +69,12 @@
           "path": "docs/longitudinal-observer.md",
           "title": "Throttle, Pitch, and the Controller That Pushed the Wrong Way",
           "description": "Flight identification, the wrong-sign damper, and the search for better canopy–payload control."
+        },
+        {
+          "id": "longitudinal-mission-control",
+          "path": "docs/longitudinal-mission-control.md",
+          "title": "A Calmer Parafoil: Getting the Controllers to Work Together",
+          "description": "Two native SITL revisions: quieter steering, calibrated feedforward, smoother altitude capture, and a successful AUTO mission."
         },
         {
           "id": "data-and-methods",
