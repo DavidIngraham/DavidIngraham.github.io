@@ -27,7 +27,7 @@
     {
       "title": "SV Blue Dog",
       "tag": "Sailing · Robotics",
-      "description": "Returning to a one-metre sailing robot: printable hull design, low-power electronics, and recovery from expected failures.",
+      "description": "Developing an autonomous sailboat through explicit requirements, architecture and executable analysis, from the Gorge toward Hawaii.",
       "collection": "sv-blue-dog",
       "article": "restarting",
       "link_label": "Read the project notes"
@@ -117,9 +117,9 @@
     {
       "id": "sv-blue-dog",
       "title": "SV Blue Dog",
-      "heading": "Picking up a small sailing robot again.",
+      "heading": "Learning through an autonomous sailboat.",
       "intro": [
-        "Design notes for a one-metre sailing robot, balancing efficiency, reliability, and ease of manufacture."
+        "An autonomous sailing project exploring desktop manufacturing, system design and evidence-based verification."
       ],
       "repository": "DavidIngraham/sv-blue-dog",
       "ref": "main",
@@ -127,8 +127,13 @@
         {
           "id": "restarting",
           "path": "docs/restarting-sv-blue-dog.md",
-          "title": "SV Blue Dog: picking up a small sailing robot again",
-          "description": "Revisiting the original design brief, existing CAD work, and questions for the next iteration."
+          "title": "SV Blue Dog: learning through an autonomous sailboat",
+          "description": "The project motivation and design approach, with links to the current model."
+        },
+        {
+          "id": "design-guide",
+          "title": "Design process and current model",
+          "path": "docs/design-guide.md"
         },
         {
           "id": "requirements-views",
@@ -503,7 +508,7 @@
           "hidden": true
         }
       ],
-      "note": "The recovered brief records design goals and candidate hardware. Build status and performance have not yet been verified."
+      "note": "The design guide links the current SysML model and generated reports. Example analyses are not physical qualification."
     }
   ]
 }
