@@ -471,6 +471,36 @@
           "description": "Qualification conditions, rationale, open issues and planned verification.",
           "path": "docs/requirements-context.md",
           "hidden": true
+        },
+        {
+          "id": "cruise-reliability",
+          "title": "Cruise speed and reliability",
+          "path": "docs/cruise-reliability.md",
+          "hidden": false
+        },
+        {
+          "id": "cruise-reliability-results",
+          "title": "Cruise and reliability example",
+          "path": "docs/cruise-reliability-results.md",
+          "hidden": true
+        },
+        {
+          "id": "dfmea",
+          "title": "Architecture DFMEA",
+          "path": "docs/dfmea.md",
+          "hidden": false
+        },
+        {
+          "id": "requirements-q-001",
+          "title": "Cruise-performance requirements",
+          "path": "docs/figures/requirements-q-001.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-l-001",
+          "title": "Mission-reliability requirements",
+          "path": "docs/figures/requirements-l-001.md",
+          "hidden": true
         }
       ],
       "note": "The recovered brief records design goals and candidate hardware. Build status and performance have not yet been verified."
