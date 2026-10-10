@@ -512,6 +512,18 @@
           "title": "Refinements and design-basis dependencies",
           "path": "docs/relationship-register.md",
           "hidden": true
+        },
+        {
+          "id": "sailing-performance",
+          "title": "Required polars and hull-speed trade",
+          "path": "docs/sailing-performance.md",
+          "description": "Working backward from mission progress to sailing performance, and assessing displacement versus higher-speed concepts."
+        },
+        {
+          "id": "sailing-performance-results",
+          "title": "Native polar demand and hull screening",
+          "path": "docs/sailing-performance-results.md",
+          "hidden": true
         }
       ],
       "note": "The design guide links the current SysML model and generated reports. Example analyses are not physical qualification."
