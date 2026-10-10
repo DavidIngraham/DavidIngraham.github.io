@@ -560,6 +560,18 @@
           "title": "Joint sizing results",
           "path": "docs/open-sizing-results.md",
           "hidden": true
+        },
+        {
+          "id": "structure-sizing",
+          "title": "Giving the structure a real mass budget",
+          "path": "docs/structure-sizing.md",
+          "description": "Sizing printed PETG and wet-layup glass structure with traced strength, stiffness, buoyancy and handling constraints."
+        },
+        {
+          "id": "structure-requirements",
+          "title": "FDM and wet-layup structural requirements",
+          "path": "docs/structure-requirements.md",
+          "hidden": true
         }
       ],
       "note": "The design guide links the current SysML model and generated reports. Example analyses are not physical qualification."
