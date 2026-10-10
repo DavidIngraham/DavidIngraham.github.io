@@ -572,6 +572,18 @@
           "title": "FDM and wet-layup structural requirements",
           "path": "docs/structure-requirements.md",
           "hidden": true
+        },
+        {
+          "id": "mission-sizing",
+          "path": "docs/mission-sizing.md",
+          "title": "Establishing a Two-Metre Baseline",
+          "description": "Removable assemblies, printed ribs, route-based optimization and explicit recovery evidence."
+        },
+        {
+          "id": "mission-sizing-results",
+          "path": "docs/mission-sizing-results.md",
+          "title": "Two-Metre Mission Sizing Results",
+          "description": "Generated architecture comparison, whole-ply sizing, route margins and polar coverage."
         }
       ],
       "note": "The design guide links the current SysML model and generated reports. Example analyses are not physical qualification."
