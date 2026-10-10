@@ -584,6 +584,18 @@
           "path": "docs/mission-sizing-results.md",
           "title": "Two-Metre Mission Sizing Results",
           "description": "Generated architecture comparison, whole-ply sizing, route margins and polar coverage."
+        },
+        {
+          "id": "sail-trade",
+          "path": "docs/sail-trade.md",
+          "title": "Choosing the Sail Architecture",
+          "description": "Tail-controlled wing, original cambered wing and triangular soft sail: development choices and recovery implications."
+        },
+        {
+          "id": "sail-trade-results",
+          "path": "docs/sail-trade-results.md",
+          "title": "Sail Architecture Trade Results",
+          "description": "Native candidate assessment, requirement links and explicit qualification gates."
         }
       ],
       "note": "The design guide links the current SysML model and generated reports. Example analyses are not physical qualification."
