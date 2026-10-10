@@ -524,6 +524,18 @@
           "title": "Native polar demand and hull screening",
           "path": "docs/sailing-performance-results.md",
           "hidden": true
+        },
+        {
+          "id": "appendage-sizing",
+          "title": "Sizing the sail, keel and rudder",
+          "path": "docs/appendage-sizing.md",
+          "description": "Coupled drive, stability and steering analysis tied to the mission polar demand."
+        },
+        {
+          "id": "appendage-sizing-results",
+          "title": "Native sail and appendage sizing results",
+          "path": "docs/appendage-sizing-results.md",
+          "hidden": true
         }
       ],
       "note": "The design guide links the current SysML model and generated reports. Example analyses are not physical qualification."
