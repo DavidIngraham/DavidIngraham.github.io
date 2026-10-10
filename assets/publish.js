@@ -44,7 +44,7 @@
 
   function renderCollection(collection) {
     document.title = `${collection.title} — David Ingraham`;
-    main.innerHTML = `<section class="hero research-intro"><div class="breadcrumbs"><a href="/">Home</a> / Research</div><div class="eyebrow">${esc(collection.title)}</div><h1>${esc(collection.heading || collection.title)}</h1>${(collection.intro || []).map((text, i) => `<p${i ? '' : ' class="lead"'}>${esc(text)}</p>`).join('')}</section><div class="grid research-cards">${collection.pages.map((page, i) => card(page.title, `Experiment ${i + 1}`, page.description, pageUrl(collection, page), 'Read the investigation →')).join('')}</div><section class="article research-intro"><h2>Source and implementation</h2><p>These pages render directly from Markdown in <a href="https://github.com/${esc(collection.repository)}">${esc(collection.repository)}</a>. The figures and supporting results stay in that repository too.</p><ul>${(collection.implementation_links || []).map(link => `<li><a href="${esc(link.url)}">${esc(link.label)}</a></li>`).join('')}</ul><p class="note">${esc(collection.note || '')}</p></section>`;
+    main.innerHTML = `<section class="hero research-intro"><div class="breadcrumbs"><a href="/">Home</a> / Research</div><div class="eyebrow">${esc(collection.title)}</div><h1>${esc(collection.heading || collection.title)}</h1>${(collection.intro || []).map((text, i) => `<p${i ? '' : ' class="lead"'}>${esc(text)}</p>`).join('')}</section><div class="grid research-cards">${collection.pages.filter(page => !page.hidden).map((page, i) => card(page.title, `Experiment ${i + 1}`, page.description, pageUrl(collection, page), 'Read the investigation →')).join('')}</div><section class="article research-intro"><h2>Source and implementation</h2><p>These pages render directly from Markdown in <a href="https://github.com/${esc(collection.repository)}">${esc(collection.repository)}</a>. The figures and supporting results stay in that repository too.</p><ul>${(collection.implementation_links || []).map(link => `<li><a href="${esc(link.url)}">${esc(link.label)}</a></li>`).join('')}</ul><p class="note">${esc(collection.note || '')}</p></section>`;
   }
 
   // Resolve repository-relative URLs before assigning them to DOM href/src properties.
@@ -90,7 +90,8 @@
             const button = document.createElement('button'); button.type = 'button';
             button.textContent = label; button.addEventListener('click', action); controls.append(button);
           }
-          resize(viewport.clientWidth / width);
+          // Preserve readable type by default; Fit remains an explicit overview action.
+          resize(Math.max(1, viewport.clientWidth / width));
         } catch (error) {
           const warning = document.createElement('p'); warning.className = 'note';
           warning.textContent = 'Diagram could not render; its source is shown below.';

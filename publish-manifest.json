@@ -129,6 +129,341 @@
           "path": "docs/restarting-sv-blue-dog.md",
           "title": "SV Blue Dog: picking up a small sailing robot again",
           "description": "Revisiting the original design brief, existing CAD work, and questions for the next iteration."
+        },
+        {
+          "id": "requirements-views",
+          "title": "Requirements views",
+          "description": "Follow the mission goals into small, focused requirement derivation diagrams.",
+          "path": "docs/requirements-views.md"
+        },
+        {
+          "id": "requirements-c-000",
+          "title": "C-000 trans gorge challenge",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-c-000.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-c-001",
+          "title": "C-001 course completion",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-c-001.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-c-002",
+          "title": "C-002 repeated operation",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-c-002.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-c-003",
+          "title": "C-003 unassisted attempt",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-c-003.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-c-004",
+          "title": "C-004 sailing propulsion",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-c-004.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-c-005",
+          "title": "C-005 live observation",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-c-005.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-c-006",
+          "title": "C-006 emergency intervention",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-c-006.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-h-001",
+          "title": "H-001 hawaii voyage",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-h-001.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-m-001",
+          "title": "M-001 round trip",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-m-001.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-m-002",
+          "title": "M-002 multi day endurance",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-m-002.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-e-001",
+          "title": "E-001 energy awareness",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-e-001.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-e-002",
+          "title": "E-002 navigation and control",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-e-002.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-e-005",
+          "title": "E-005 communications",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-e-005.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-e-003",
+          "title": "E-003 reset recovery",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-e-003.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-e-004",
+          "title": "E-004 low energy recovery",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-e-004.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-e-006",
+          "title": "E-006 ingress response",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-e-006.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-e-007",
+          "title": "E-007 mission evidence",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-e-007.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-e-008",
+          "title": "E-008 navigation availability",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-e-008.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-e-200",
+          "title": "E-200 sustained energy feasibility",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-e-200.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-n-001",
+          "title": "N-001 environmental envelope",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-n-001.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-n-010",
+          "title": "N-010 gorge environment",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-n-010.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-n-020",
+          "title": "N-020 ocean environment",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-n-020.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-n-002",
+          "title": "N-002 marine durability",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-n-002.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-n-003",
+          "title": "N-003 stability and fouling",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-n-003.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-n-033",
+          "title": "N-033 visibility",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-n-033.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-n-035",
+          "title": "N-035 envelope transition",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-n-035.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-n-044",
+          "title": "N-044 wet mechanical integrity",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-n-044.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-n-045",
+          "title": "N-045 wet electrical integrity",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-n-045.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-n-046",
+          "title": "N-046 solar heating",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-n-046.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-n-051",
+          "title": "N-051 self righting",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-n-051.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-n-052",
+          "title": "N-052 capsize control recovery",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-n-052.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-n-053",
+          "title": "N-053 submerged weed passage",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-n-053.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-n-054",
+          "title": "N-054 weed snag shedding",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-n-054.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-n-055",
+          "title": "N-055 weed blockage response",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-n-055.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-n-056",
+          "title": "N-056 recovery propulsor weeds",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-n-056.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-p-001",
+          "title": "P-001 transportability",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-p-001.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-p-003",
+          "title": "P-003 serviceability",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-p-003.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-s-001",
+          "title": "S-001 traffic safety",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-s-001.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-s-003",
+          "title": "S-003 safe recovery",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-s-003.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-r-001",
+          "title": "R-001 recovery propulsion",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-r-001.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-r-002",
+          "title": "R-002 recovery energy",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-r-002.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-s-002",
+          "title": "S-002 operating boundary",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-s-002.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-s-004",
+          "title": "S-004 navigation conspicuity",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-s-004.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-s-005",
+          "title": "S-005 regulatory classification",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-s-005.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-r-004",
+          "title": "R-004 challenge motor inhibition",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-r-004.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-c-101",
+          "title": "C-101 telemetry equipment",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-c-101.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-c-102",
+          "title": "C-102 command integrity",
+          "description": "Immediate requirement derivations, statements and next-level views.",
+          "path": "docs/figures/requirements-c-102.md",
+          "hidden": true
         }
       ],
       "note": "The recovered brief records design goals and candidate hardware. Build status and performance have not yet been verified."
