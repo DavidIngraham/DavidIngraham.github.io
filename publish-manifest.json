@@ -548,6 +548,12 @@
           "title": "Native replay of the coupled design search",
           "path": "docs/design-search-results.md",
           "hidden": true
+        },
+        {
+          "id": "hull-length-results",
+          "title": "Native hull-length sensitivity results",
+          "path": "docs/hull-length-results.md",
+          "hidden": true
         }
       ],
       "note": "The design guide links the current SysML model and generated reports. Example analyses are not physical qualification."
