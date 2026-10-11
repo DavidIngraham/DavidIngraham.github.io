@@ -164,6 +164,12 @@
       const collection = manifest.collections.find(item => item.id === id);
       if (!collection) throw new Error('This collection is not in the publishing manifest.');
       if (!articleId) {renderCollection(collection); return;}
+      // Preserve the link to the study now folded into the existing chapters.
+      if (id === 'ardupilot-tinkering' && articleId === 'longitudinal-mission-control') {
+        const destination = collection.pages.find(item => item.id === 'longitudinal-observer');
+        location.replace(pageUrl(collection, destination) + '#returning-to-native-mission-control');
+        return;
+      }
       const page = collection.pages.find(item => item.id === articleId);
       if (!page) throw new Error('This article is not in the publishing manifest.');
       await renderArticle(collection, page);
