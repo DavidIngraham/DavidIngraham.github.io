@@ -119,8 +119,8 @@
       "title": "SV Blue Dog",
       "heading": "Developing Blue Dog, from mission to evidence.",
       "intro": [
-        "Blue Dog is named after my blue heeler, Ozzy. I hope to build a small, dog-sized vessel that putters independently around the surface of a river or the ocean.",
-        "The series follows our development plan: mission definition, early virtual verification and validation, detailed implementation, physical verification and validation, and feedback into the models. Each article identifies its inputs and the decisions it supports."
+        "A small autonomous sailboat, named after my blue heeler Ozzy. I started with a sailing challenge and a manufacturing testbed, then got stalled by the coupled design decisions.",
+        "Follow the story from that testbed to a SysML v2 model, an iterative development plan and the experiments needed to turn a numerical candidate into a boat. The technical reference views remain linked from the articles."
       ],
       "repository": "DavidIngraham/sv-blue-dog",
       "ref": "main",
@@ -129,27 +129,107 @@
           "id": "restarting",
           "path": "docs/restarting-sv-blue-dog.md",
           "title": "SV Blue Dog: learning through an autonomous sailboat",
-          "description": "Mission intent: Ozzy, the Blue Dog name, and the sailing and manufacturing ambitions that shape the project."
-        },
-        {
-          "id": "development-plan",
-          "path": "docs/development-plan.md",
-          "title": "Developing Blue Dog: a V with room to learn",
-          "description": "The organizing plan: early virtual V&V, physical V&V, model credibility and scoped review gates.",
-          "hidden": false
-        },
-        {
-          "id": "design-guide",
-          "title": "SV Blue Dog: the development series",
-          "path": "docs/index.md",
-          "description": "Read the series through the development plan, with each article mapped to its inputs and design decisions."
+          "description": "The Gorge challenge, the SolidWorks testbed, getting lost in sizing decisions, and using SysML v2 to structure work with agents.",
+          "stage": "Project story"
         },
         {
           "id": "architecture",
           "path": "docs/architecture.md",
           "title": "Mission, context and architecture",
           "description": "Mission definition to PDR: translate goals, operating scenarios and constraints into subsystem responsibilities.",
-          "hidden": false
+          "hidden": false,
+          "stage": "Mission and context"
+        },
+        {
+          "id": "development-plan",
+          "path": "docs/development-plan.md",
+          "title": "Developing Blue Dog: a V with room to learn",
+          "description": "The organizing plan: early virtual V&V, physical V&V, model credibility and scoped review gates.",
+          "hidden": false,
+          "stage": "Development plan"
+        },
+        {
+          "id": "design-search-results",
+          "title": "Conservative sizing: reading the results",
+          "path": "docs/results.md",
+          "hidden": false,
+          "description": "PDR evidence: use archived numerical findings to identify design limits and the next experiments.",
+          "stage": "Current findings"
+        },
+        {
+          "id": "sailing-performance",
+          "title": "Coupled sizing with conservative aerodynamic assumptions",
+          "path": "docs/sizing.md",
+          "description": "Virtual design and PDR: use mission criteria and declared physics to assess coupled boat sizing.",
+          "stage": "Design investigation"
+        },
+        {
+          "id": "sail-trade",
+          "path": "docs/sail-trade.md",
+          "title": "Comparing sail architectures",
+          "description": "PDR and model credibility: compare rigs and identify the measurements needed to support selection.",
+          "stage": "Design investigation"
+        },
+        {
+          "id": "energy",
+          "path": "docs/energy.md",
+          "title": "Sustained operation: follow energy through the mission",
+          "description": "Virtual design to physical V&V: connect mission loads and harvesting to storage and control decisions.",
+          "hidden": false,
+          "stage": "Design investigation"
+        },
+        {
+          "id": "recovery-propulsion",
+          "path": "docs/recovery-propulsion.md",
+          "title": "Comparing recovery propulsion",
+          "description": "PDR to implementation: compare installed recovery concepts and define their physical evidence needs.",
+          "hidden": false,
+          "stage": "Design investigation"
+        },
+        {
+          "id": "structure-sizing",
+          "title": "Manufacturing, structure and recovery",
+          "path": "docs/structures-and-recovery.md",
+          "description": "PDR to CDR and model validation: use geometry, construction and loads to plan structure and recovery evidence.",
+          "stage": "Design investigation"
+        },
+        {
+          "id": "cruise-reliability",
+          "title": "Passage time, reliability and failure analysis",
+          "path": "docs/reliability.md",
+          "hidden": false,
+          "description": "Virtual design to physical V&V: connect passage exposure and failure modes to fault and endurance evidence.",
+          "stage": "Design investigation"
+        },
+        {
+          "id": "operating-constraints",
+          "path": "docs/operating-constraints.md",
+          "title": "Establishing operating constraints",
+          "description": "SRR and test readiness: establish the operating context and constraints on design and deployment.",
+          "hidden": false,
+          "stage": "Operating context"
+        },
+        {
+          "id": "design-guide",
+          "title": "SV Blue Dog: the development series",
+          "path": "docs/index.md",
+          "description": "Read the series through the development plan, with each article mapped to its inputs and design decisions.",
+          "stage": "Reading guide"
+        },
+        {
+          "id": "requirements-views",
+          "title": "Focused requirement views",
+          "description": "SRR to virtual V&V: trace mission and owner inputs into focused design and evidence obligations.",
+          "path": "docs/requirements.md",
+          "stage": "Reference library"
+        },
+        {
+          "id": "publishing",
+          "path": "docs/publishing.md",
+          "title": "Authoring and publishing",
+          "description": "Across the V: publish model-linked methods and evidence consistently for review decisions.",
+          "hidden": false,
+          "stage": "Tools and methods"
         },
         {
           "id": "requirements-c-000",
@@ -488,13 +568,6 @@
           "hidden": true
         },
         {
-          "id": "operating-constraints",
-          "path": "docs/operating-constraints.md",
-          "title": "Establishing operating constraints",
-          "description": "SRR and test readiness: establish the operating context and constraints on design and deployment.",
-          "hidden": false
-        },
-        {
           "id": "cruise-reliability-results",
           "title": "Passage time, reliability and failure analysis",
           "path": "docs/reliability.md",
@@ -528,12 +601,6 @@
           "description": "Across the V: preserve requirement derivation, rationale and virtual-versus-physical evidence traceability."
         },
         {
-          "id": "requirements-views",
-          "title": "Focused requirement views",
-          "description": "SRR to virtual V&V: trace mission and owner inputs into focused design and evidence obligations.",
-          "path": "docs/requirements.md"
-        },
-        {
           "id": "sailing-performance-results",
           "title": "Coupled sizing with conservative aerodynamic assumptions",
           "path": "docs/sizing.md",
@@ -562,12 +629,6 @@
           "hidden": true
         },
         {
-          "id": "sail-trade",
-          "path": "docs/sail-trade.md",
-          "title": "Comparing sail architectures",
-          "description": "PDR and model credibility: compare rigs and identify the measurements needed to support selection."
-        },
-        {
           "id": "hull-length-results",
           "title": "Conservative sizing: reading the results",
           "path": "docs/results.md",
@@ -580,12 +641,6 @@
           "path": "docs/results.md",
           "hidden": true,
           "description": "PDR evidence: use archived numerical findings to identify design limits and the next experiments."
-        },
-        {
-          "id": "sailing-performance",
-          "title": "Coupled sizing with conservative aerodynamic assumptions",
-          "path": "docs/sizing.md",
-          "description": "Virtual design and PDR: use mission criteria and declared physics to assess coupled boat sizing."
         },
         {
           "id": "structure-requirements",
@@ -609,52 +664,11 @@
           "hidden": true
         },
         {
-          "id": "design-search-results",
-          "title": "Conservative sizing: reading the results",
-          "path": "docs/results.md",
-          "hidden": false,
-          "description": "PDR evidence: use archived numerical findings to identify design limits and the next experiments."
-        },
-        {
           "id": "sail-trade-results",
           "path": "docs/sail-trade.md",
           "title": "Comparing sail architectures",
           "description": "PDR and model credibility: compare rigs and identify the measurements needed to support selection.",
           "hidden": true
-        },
-        {
-          "id": "energy",
-          "path": "docs/energy.md",
-          "title": "Sustained operation: follow energy through the mission",
-          "description": "Virtual design to physical V&V: connect mission loads and harvesting to storage and control decisions.",
-          "hidden": false
-        },
-        {
-          "id": "recovery-propulsion",
-          "path": "docs/recovery-propulsion.md",
-          "title": "Comparing recovery propulsion",
-          "description": "PDR to implementation: compare installed recovery concepts and define their physical evidence needs.",
-          "hidden": false
-        },
-        {
-          "id": "cruise-reliability",
-          "title": "Passage time, reliability and failure analysis",
-          "path": "docs/reliability.md",
-          "hidden": false,
-          "description": "Virtual design to physical V&V: connect passage exposure and failure modes to fault and endurance evidence."
-        },
-        {
-          "id": "structure-sizing",
-          "title": "Manufacturing, structure and recovery",
-          "path": "docs/structures-and-recovery.md",
-          "description": "PDR to CDR and model validation: use geometry, construction and loads to plan structure and recovery evidence."
-        },
-        {
-          "id": "publishing",
-          "path": "docs/publishing.md",
-          "title": "Authoring and publishing",
-          "description": "Across the V: publish model-linked methods and evidence consistently for review decisions.",
-          "hidden": false
         }
       ],
       "note": "The repository owns the model and authored methods. Its publishing workflow resolves native SysML views into these pages; recorded numerical evidence is conditional.",

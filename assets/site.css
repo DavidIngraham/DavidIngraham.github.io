@@ -24,3 +24,8 @@
 .diagram-viewport svg { display: block; }
 
 .article video{display:block;width:100%;height:auto;border:1px solid var(--line);background:#0b1520;margin:12px 0 22px}
+
+/* Technical evidence stays available without dominating the reading path. */
+.article details { margin: 1.5rem 0; border-left: 3px solid #ccd3dc; padding: .6rem 1rem; }
+.article summary { cursor: pointer; font-weight: 600; }
+.article img { max-width: 100%; height: auto; }
