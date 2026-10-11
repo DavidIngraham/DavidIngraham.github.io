@@ -11,6 +11,19 @@
   const pageUrl = (collection, page) => `/research/?collection=${encodeURIComponent(collection.id)}&article=${encodeURIComponent(page.id)}`;
   const card = (title, tag, description, url, label) => `<article class="card"><span class="tag">${esc(tag)}</span><h3><a href="${esc(url)}">${esc(title)}</a></h3><p>${esc(description)}</p><a class="link" href="${esc(url)}">${esc(label)}</a></article>`;
 
+  function articleNavigation(collection, page) {
+    // Reference pages remain deep-linkable without entering the chapter sequence.
+    const chapters = collection.pages.filter(candidate => !candidate.hidden);
+    const index = chapters.findIndex(candidate => candidate.id === page.id);
+    const previous = index > 0 ? chapters[index - 1] : null;
+    const next = index >= 0 ? chapters[index + 1] : chapters[0];
+    const link = (target, label, rel) => `<a class="article-step" rel="${rel}" href="${esc(pageUrl(collection, target))}"><span>${label}</span><strong>${esc(target.title)}</strong></a>`;
+    return {
+      top: `<nav class="article-sequence" aria-label="Article sequence">${previous ? link(previous, '← Previous article', 'prev') : `<span class="article-sequence-end">${index === 0 ? 'First article' : 'Reference page'}</span>`}<a class="article-series-link" href="${esc(collectionUrl(collection))}">All articles</a>${next ? link(next, index < 0 ? 'Start the series →' : 'Next article →', 'next') : '<span class="article-sequence-end">Last article</span>'}</nav>`,
+      bottom: `<nav class="article-continue" aria-label="Continue reading">${next ? link(next, index < 0 ? 'Start the series →' : 'Next article →', 'next') : `<p>You’ve reached the end of this series.</p><a href="${esc(collectionUrl(collection))}">Return to all articles →</a>`}</nav>`,
+    };
+  }
+
   function validate(manifest) {
     if (manifest.version !== 1 || !Array.isArray(manifest.collections) || !Array.isArray(manifest.projects)) throw new Error('Unsupported publishing manifest.');
     const ids = new Set();
@@ -128,6 +141,8 @@
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.content = page.description;
     main.innerHTML = `<div class="article-heading"><div class="breadcrumbs"><a href="/">Home</a> / <a href="${esc(collectionUrl(collection))}">${esc(collection.title)}</a></div><h1>${esc(page.title)}</h1><p class="download">Source: <a href="${esc(sourceUrl(collection, page.path))}">${esc(collection.repository)} / ${esc(page.path)}</a> · <a href="${esc(markdownUrl(collection, page.path))}">Raw Markdown</a></p></div><div class="article-layout"><article class="article" aria-busy="true"><p role="status">Loading the write-up…</p></article><aside class="sidebar" aria-label="On this page"><div class="sidebar-inner"><div class="eyebrow">On this page</div><div id="toc"></div><a href="${esc(collectionUrl(collection))}">← All articles</a></div></aside></div>`;
+    const navigation = articleNavigation(collection, page);
+    document.querySelector('.article-heading').insertAdjacentHTML('beforeend', navigation.top);
     const response = await fetch(markdownUrl(collection, page.path), {cache: 'no-store', signal: AbortSignal.timeout(20000)});
     if (!response.ok) throw new Error(`The source Markdown returned HTTP ${response.status}.`);
     const text = await response.text();
@@ -135,6 +150,17 @@
     article.innerHTML = DOMPurify.sanitize(marked.parse(text, {gfm: true}), {FORBID_TAGS: ['style', 'form', 'iframe', 'object', 'embed'], FORBID_ATTR: ['style']});
     const firstHeading = article.firstElementChild;
     if (firstHeading && firstHeading.tagName === 'H1') firstHeading.remove();
+    // The Blue Dog source retains its GitHub reading cues. In this reader the
+    // manifest owns order, so replace the legacy closing cue, preserving provenance.
+    const closing = article.lastElementChild;
+    const nextCue = collection.id === 'sv-blue-dog' && closing?.tagName === 'P'
+      ? [...closing.children].find(child => child.tagName === 'STRONG' && child.textContent.trim() === 'Next:') : null;
+    if (nextCue) {
+      while (nextCue.nextSibling) nextCue.nextSibling.remove();
+      nextCue.remove();
+      if (closing.lastChild?.nodeType === Node.TEXT_NODE) closing.lastChild.textContent = closing.lastChild.textContent.replace(/[\s·]+$/, '');
+      if (!closing.textContent.trim()) closing.remove();
+    }
     for (const a of article.querySelectorAll('a[href]')) a.setAttribute('href', resolveRepositoryLink(collection, page, a.getAttribute('href'), false));
     for (const img of article.querySelectorAll('img[src]')) {
       img.setAttribute('src', resolveRepositoryLink(collection, page, img.getAttribute('src'), true));
@@ -173,6 +199,7 @@
         document.querySelector('#toc').append(link);
       }
     }
+    article.insertAdjacentHTML('beforeend', navigation.bottom);
     await renderDiagrams(article);
     article.removeAttribute('aria-busy');
     const revealAnchor = () => {

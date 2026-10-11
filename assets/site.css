@@ -29,3 +29,16 @@
 .article details { margin: 1.5rem 0; border-left: 3px solid #ccd3dc; padding: .6rem 1rem; }
 .article summary { cursor: pointer; font-weight: 600; }
 .article img { max-width: 100%; height: auto; }
+
+/* Reading order comes from the collection manifest, including chapter titles. */
+.article-sequence{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:20px;align-items:center;border-block:1px solid var(--line);padding:18px 0;margin-top:26px;font-size:14px}
+.article-step{display:flex;flex-direction:column;gap:4px;text-decoration:none;min-width:0;overflow-wrap:anywhere}
+.article-step span{font-size:12px;font-weight:650;color:var(--muted)}
+.article-step strong{font-weight:600;text-decoration:underline;text-underline-offset:4px}
+.article-sequence>:last-child{text-align:right}
+.article-sequence-end{color:var(--muted);font-size:12px}
+.article-series-link{font-size:12px}
+.article-continue{border-top:1px solid var(--line);margin-top:40px;padding-top:24px}
+.article-continue .article-step{font-size:21px}
+.article-continue p{color:var(--muted);font-size:14px;margin-bottom:8px}
+@media(max-width:620px){.article-sequence{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}.article-series-link{grid-column:1/-1;grid-row:2;text-align:center}.article-sequence>:last-child{grid-column:2;grid-row:1}.article-continue .article-step{font-size:19px}}
