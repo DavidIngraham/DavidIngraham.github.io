@@ -131,6 +131,13 @@
           "description": "From the Trans-Gorge mission to an inspectable model, conservative sizing and physical evidence."
         },
         {
+          "id": "development-plan",
+          "path": "docs/development-plan.md",
+          "title": "Developing Blue Dog: a V with room to learn",
+          "description": "A plan connecting mission, simulation, subsystem development, physical evidence and lightweight review gates.",
+          "hidden": false
+        },
+        {
           "id": "design-guide",
           "title": "SV Blue Dog",
           "path": "docs/index.md",
