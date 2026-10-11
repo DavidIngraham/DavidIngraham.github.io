@@ -95,6 +95,7 @@
           figure.append(controls, viewport); block.parentElement.replaceWith(figure);
           const drawing = viewport.querySelector('svg');
           const width = drawing.viewBox.baseVal.width;
+          const requirementThread = block.textContent.includes('%% source-node');
           let scale;
           const resize = next => {
             scale = Math.max(0.005, Math.min(3, next));
@@ -104,6 +105,7 @@
           for (const [label, action] of [
             ['Zoom in', () => resize(scale * 1.5)], ['Zoom out', () => resize(scale / 1.5)],
             ['Fit', () => resize(viewport.clientWidth / width)], ['Actual size', () => resize(1)],
+            ['Full screen', () => figure.requestFullscreen?.().catch(console.error)],
           ]) {
             const button = document.createElement('button'); button.type = 'button';
             button.textContent = label; button.addEventListener('click', action); controls.append(button);
@@ -119,7 +121,11 @@
             drawing.prepend(desc); drawing.setAttribute('aria-describedby', desc.id);
           }
           drawing.setAttribute('role', 'img');
-          const fit = () => resize(Math.min(1, (viewport.clientWidth || article.clientWidth) / width));
+          const fit = () => {
+            const fitted = Math.min(1, (viewport.clientWidth || article.clientWidth) / width);
+            resize(requirementThread ? Math.max(0.9, fitted) : fitted);
+            if (requirementThread) viewport.scrollLeft = Math.max(0, (width * scale - viewport.clientWidth) / 2);
+          };
           fit();
           figure.closest('details')?.addEventListener('toggle', fit);
           window.addEventListener('resize', fit);
