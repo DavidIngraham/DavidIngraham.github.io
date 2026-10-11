@@ -11,6 +11,7 @@ For each collection, set:
 - `id`: unique URL slug.
 - `repository`: public GitHub `owner/repo`.
 - `ref`: branch, tag or commit. A branch follows edits; a commit pins a snapshot.
+- Optional `content_base`: HTTPS directory containing rendered Markdown with the same repository-relative paths. SV Blue Dog uses its model publishing workflow to produce these imports. Source links still point to GitHub.
 - `pages`: each article's `id`, repository-relative Markdown `path`, `title` and `description`.
 - Optional `title`, `heading`, `intro`, `implementation_links` and `note` for the collection index.
 
@@ -20,6 +21,7 @@ Add a project referencing its `collection` ID to show it on the homepage. Set it
 
 - **Homepage or manifest changes:** push to this repo's `master`; GitHub Pages redeploys.
 - **Source Markdown or figures:** push to the source ref; the reader fetches that content directly on page load. No site commit or cross-repository workflow is needed. GitHub's raw-content cache can delay visibility briefly; already-open pages need reloading.
+- **Generated model views:** the source repository workflow rebuilds its Pages imports after a model or method change. The reader fetches those imports after deployment; no hand-copied diagram update is needed.
 - **Pinned commit refs:** change the manifest to publish a different snapshot.
 
 The reader resolves linked published Markdown to local article pages, image paths to raw GitHub files, and other relative links to their source GitHub pages. Sections, tables and fenced code render in the shared layout. Rendering requires JavaScript and access to GitHub raw content; source links and loading errors provide a fallback. Source refs must be publicly readable. Content is sanitized before rendering, using pinned, vendored Marked and DOMPurify with their licenses in `assets/vendor/`.
