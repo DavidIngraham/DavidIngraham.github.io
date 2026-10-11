@@ -136,6 +136,15 @@
         img.replaceWith(warning);
       }, {once: true});
     }
+    for (const media of article.querySelectorAll('video[src], video source[src]')) {
+      media.setAttribute('src', resolveRepositoryLink(collection, page, media.getAttribute('src'), true));
+    }
+    for (const video of article.querySelectorAll('video')) {
+      if (video.hasAttribute('poster')) video.setAttribute('poster', resolveRepositoryLink(collection, page, video.getAttribute('poster'), true));
+      video.muted = video.hasAttribute('muted');
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) video.autoplay = false;
+      video.load();
+    }
     for (const table of article.querySelectorAll('table')) {
       const wrapper = document.createElement('div'); wrapper.className = 'table-scroll';
       table.before(wrapper); wrapper.append(table);

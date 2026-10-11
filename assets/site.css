@@ -22,3 +22,5 @@
 .diagram-controls button { cursor: pointer; padding: .35rem .65rem; }
 .diagram-viewport { overflow: auto; max-height: 75vh; background: white; border: 1px solid #ccd3dc; }
 .diagram-viewport svg { display: block; }
+
+.article video{display:block;width:100%;height:auto;border:1px solid var(--line);background:#0b1520;margin:12px 0 22px}
