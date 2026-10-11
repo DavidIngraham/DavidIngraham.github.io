@@ -62,7 +62,7 @@
           "id": "paraglider",
           "path": "docs/paraglider.md",
           "title": "Steering a Parafoil with an Airplane Autopilot",
-          "description": "From the roll-loop workaround to direct heading-rate control: evolving diagrams, flight tuning, and steadier high-DOF AUTO missions."
+          "description": "From the roll-loop workaround to 9-DOF simulation: heading-rate control, Bode plots, root locus, and more robust filtering."
         },
         {
           "id": "longitudinal-observer",
