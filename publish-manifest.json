@@ -128,7 +128,7 @@
           "id": "restarting",
           "path": "docs/restarting-sv-blue-dog.md",
           "title": "SV Blue Dog: learning through an autonomous sailboat",
-          "description": "Current model views and the methods behind the design."
+          "description": "From the Trans-Gorge mission to an inspectable model, conservative sizing and physical evidence."
         },
         {
           "id": "design-guide",
@@ -483,19 +483,21 @@
           "title": "Passage time, reliability and failure analysis",
           "path": "docs/reliability.md",
           "hidden": false,
-          "description": "Current model views and the methods behind the design."
+          "description": "Conditional voyage duration, unattended exposure and architecture-linked failure analysis."
         },
         {
           "id": "cruise-reliability-results",
-          "title": "Cruise and reliability example",
+          "title": "Passage time, reliability and failure analysis",
           "path": "docs/reliability.md",
-          "hidden": true
+          "hidden": true,
+          "description": "Conditional voyage duration, unattended exposure and architecture-linked failure analysis."
         },
         {
           "id": "dfmea",
-          "title": "Architecture DFMEA",
+          "title": "Passage time, reliability and failure analysis",
           "path": "docs/reliability.md",
-          "hidden": true
+          "hidden": true,
+          "description": "Conditional voyage duration, unattended exposure and architecture-linked failure analysis."
         },
         {
           "id": "requirements-q-001",
@@ -517,92 +519,97 @@
         },
         {
           "id": "sailing-performance",
-          "title": "Coupled sizing method",
+          "title": "Coupled sizing with conservative aerodynamic assumptions",
           "path": "docs/sizing.md",
-          "description": "Current model views and the methods behind the design."
+          "description": "A full free-design search, restricted operating angles and refined six-scenario replay, with explicit evidence limits."
         },
         {
           "id": "sailing-performance-results",
-          "title": "Native polar demand and hull screening",
+          "title": "Coupled sizing with conservative aerodynamic assumptions",
           "path": "docs/sizing.md",
-          "hidden": true
+          "hidden": true,
+          "description": "A full free-design search, restricted operating angles and refined six-scenario replay, with explicit evidence limits."
         },
         {
           "id": "appendage-sizing",
-          "title": "Sizing the sail, keel and rudder",
+          "title": "Coupled sizing with conservative aerodynamic assumptions",
           "path": "docs/sizing.md",
-          "description": "Coupled drive, stability and steering analysis tied to the mission polar demand.",
+          "description": "A full free-design search, restricted operating angles and refined six-scenario replay, with explicit evidence limits.",
           "hidden": true
         },
         {
           "id": "appendage-sizing-results",
-          "title": "Native sail and appendage sizing results",
+          "title": "Coupled sizing with conservative aerodynamic assumptions",
           "path": "docs/sizing.md",
-          "hidden": true
+          "hidden": true,
+          "description": "A full free-design search, restricted operating angles and refined six-scenario replay, with explicit evidence limits."
         },
         {
           "id": "design-search",
-          "title": "Searching for a boat that can make progress",
+          "title": "Coupled sizing with conservative aerodynamic assumptions",
           "path": "docs/sizing.md",
-          "description": "Coupling geometry, sailing equilibrium and energy sizing in a native SysML and SciPy design search.",
+          "description": "A full free-design search, restricted operating angles and refined six-scenario replay, with explicit evidence limits.",
           "hidden": true
         },
         {
           "id": "design-search-results",
-          "title": "Reading the recorded sizing evidence",
+          "title": "Conservative sizing: reading the results",
           "path": "docs/results.md",
-          "hidden": true,
-          "description": "Current model views and the methods behind the design."
+          "hidden": false,
+          "description": "Current optimization and replay outcomes, generated from archived evidence and native SysML reviews."
         },
         {
           "id": "hull-length-results",
-          "title": "Native hull-length sensitivity results",
+          "title": "Conservative sizing: reading the results",
           "path": "docs/results.md",
-          "hidden": true
+          "hidden": true,
+          "description": "Current optimization and replay outcomes, generated from archived evidence and native SysML reviews."
         },
         {
           "id": "open-sizing-results",
-          "title": "Joint sizing results",
+          "title": "Conservative sizing: reading the results",
           "path": "docs/results.md",
-          "hidden": true
+          "hidden": true,
+          "description": "Current optimization and replay outcomes, generated from archived evidence and native SysML reviews."
         },
         {
           "id": "structure-sizing",
           "title": "Manufacturing, structure and recovery",
           "path": "docs/structures-and-recovery.md",
-          "description": "Current model views and the methods behind the design."
+          "description": "FDM and wet-layup sizing, refined free-pitch recovery, flooding sensitivity and qualification limits."
         },
         {
           "id": "structure-requirements",
-          "title": "FDM and wet-layup structural requirements",
+          "title": "Manufacturing, structure and recovery",
           "path": "docs/structures-and-recovery.md",
-          "hidden": true
+          "hidden": true,
+          "description": "FDM and wet-layup sizing, refined free-pitch recovery, flooding sensitivity and qualification limits."
         },
         {
           "id": "mission-sizing",
           "path": "docs/sizing.md",
-          "title": "Establishing a Two-Metre Baseline",
-          "description": "Removable assemblies, printed ribs, route-based optimization and explicit recovery evidence.",
+          "title": "Coupled sizing with conservative aerodynamic assumptions",
+          "description": "A full free-design search, restricted operating angles and refined six-scenario replay, with explicit evidence limits.",
           "hidden": true
         },
         {
           "id": "mission-sizing-results",
           "path": "docs/results.md",
-          "title": "Two-Metre Mission Sizing Results",
-          "description": "Generated architecture comparison, whole-ply sizing, route margins and polar coverage.",
+          "title": "Conservative sizing: reading the results",
+          "description": "Current optimization and replay outcomes, generated from archived evidence and native SysML reviews.",
           "hidden": true
         },
         {
           "id": "sail-trade",
           "path": "docs/sail-trade.md",
           "title": "Comparing sail architectures",
-          "description": "Current model views and the methods behind the design."
+          "description": "Tested geometry, alpha and heel sweeps, mesh/wake sensitivity and the evidence still needed to resolve the trade."
         },
         {
           "id": "sail-trade-results",
           "path": "docs/sail-trade.md",
-          "title": "Sail Architecture Trade Results",
-          "description": "Native candidate assessment, requirement links and explicit qualification gates.",
+          "title": "Comparing sail architectures",
+          "description": "Tested geometry, alpha and heel sweeps, mesh/wake sensitivity and the evidence still needed to resolve the trade.",
           "hidden": true
         },
         {
@@ -616,7 +623,7 @@
           "id": "energy",
           "path": "docs/energy.md",
           "title": "Sustained operation: follow energy through the mission",
-          "description": "Current model views and design methods.",
+          "description": "Independent actuator-moment assumptions, harvesting, storage and adverse-scenario energy replay.",
           "hidden": false
         },
         {
