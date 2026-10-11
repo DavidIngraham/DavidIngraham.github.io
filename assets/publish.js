@@ -240,6 +240,12 @@
       }
       const page = collection.pages.find(item => item.id === articleId);
       if (!page) throw new Error('This article is not in the publishing manifest.');
+      if (page.redirect) {
+        const destination = collection.pages.find(item => item.id === page.redirect);
+        if (!destination || destination.redirect) throw new Error('Invalid article redirect.');
+        location.replace(pageUrl(collection, destination) + (page.anchor ? '#' + encodeURIComponent(page.anchor) : ''));
+        return;
+      }
       await renderArticle(collection, page);
     } catch (error) {
       const destination = document.querySelector('.article') || document.querySelector('#project-grid') || main;

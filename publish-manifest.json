@@ -218,8 +218,8 @@
         },
         {
           "id": "requirements-views",
-          "title": "Requirements: mission-to-detail threads",
-          "description": "Trace complete requirement threads from mission goals and project constraints to acceptance criteria.",
+          "title": "Requirements: mission to implementation",
+          "description": "Six topic pages tracing mission goals to testable design obligations.",
           "path": "docs/requirements.md",
           "stage": "Reference library"
         },
@@ -236,329 +236,423 @@
           "title": "C-000 trans gorge challenge",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-c-000.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-mission",
+          "anchor": "mission-and-challenge-rules"
         },
         {
           "id": "requirements-c-001",
           "title": "C-001 course completion",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-c-001.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-mission",
+          "anchor": "mission-and-challenge-rules"
         },
         {
           "id": "requirements-c-002",
           "title": "C-002 repeated operation",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-c-002.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-mission",
+          "anchor": "mission-and-challenge-rules"
         },
         {
           "id": "requirements-c-003",
           "title": "C-003 unassisted attempt",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-c-003.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-mission",
+          "anchor": "mission-and-challenge-rules"
         },
         {
           "id": "requirements-c-004",
           "title": "C-004 sailing propulsion",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-c-004.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-mission",
+          "anchor": "mission-and-challenge-rules"
         },
         {
           "id": "requirements-c-005",
           "title": "C-005 live observation",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-c-005.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-safety",
+          "anchor": "live-monitoring-and-telemetry"
         },
         {
           "id": "requirements-c-006",
           "title": "C-006 emergency intervention",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-c-006.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-mission",
+          "anchor": "mission-and-challenge-rules"
         },
         {
           "id": "requirements-h-001",
           "title": "H-001 hawaii voyage",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-h-001.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-mission",
+          "anchor": "mission-and-challenge-rules"
         },
         {
           "id": "requirements-m-001",
           "title": "M-001 round trip",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-m-001.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-mission",
+          "anchor": "mission-and-challenge-rules"
         },
         {
           "id": "requirements-m-002",
           "title": "M-002 multi day endurance",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-m-002.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-mission",
+          "anchor": "endurance-and-cruise-performance"
         },
         {
           "id": "requirements-e-001",
           "title": "E-001 energy awareness",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-e-001.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-energy",
+          "anchor": "energy-awareness-and-low-energy-response"
         },
         {
           "id": "requirements-e-002",
           "title": "E-002 navigation and control",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-e-002.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-autonomy",
+          "anchor": "navigation-and-control"
         },
         {
           "id": "requirements-e-005",
           "title": "E-005 communications",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-e-005.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-safety",
+          "anchor": "live-monitoring-and-telemetry"
         },
         {
           "id": "requirements-e-003",
           "title": "E-003 reset recovery",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-e-003.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-autonomy",
+          "anchor": "fault-recovery-and-mission-evidence"
         },
         {
           "id": "requirements-e-004",
           "title": "E-004 low energy recovery",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-e-004.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-energy",
+          "anchor": "energy-awareness-and-low-energy-response"
         },
         {
           "id": "requirements-e-006",
           "title": "E-006 ingress response",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-e-006.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-autonomy",
+          "anchor": "fault-recovery-and-mission-evidence"
         },
         {
           "id": "requirements-e-007",
           "title": "E-007 mission evidence",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-e-007.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-autonomy",
+          "anchor": "fault-recovery-and-mission-evidence"
         },
         {
           "id": "requirements-e-008",
           "title": "E-008 navigation availability",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-e-008.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-autonomy",
+          "anchor": "navigation-and-control"
         },
         {
           "id": "requirements-e-200",
           "title": "E-200 sustained energy feasibility",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-e-200.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-energy",
+          "anchor": "sustained-energy-feasibility"
         },
         {
           "id": "requirements-n-001",
           "title": "N-001 environmental envelope",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-n-001.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-environment",
+          "anchor": "operating-environments"
         },
         {
           "id": "requirements-n-010",
           "title": "N-010 gorge environment",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-n-010.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-environment",
+          "anchor": "operating-environments"
         },
         {
           "id": "requirements-n-020",
           "title": "N-020 ocean environment",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-n-020.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-environment",
+          "anchor": "operating-environments"
         },
         {
           "id": "requirements-n-002",
           "title": "N-002 marine durability",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-n-002.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-environment",
+          "anchor": "marine-exposure-and-integrity"
         },
         {
           "id": "requirements-n-003",
           "title": "N-003 stability and fouling",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-n-003.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-environment",
+          "anchor": "stability-and-capsize-recovery"
         },
         {
           "id": "requirements-n-033",
           "title": "N-033 visibility",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-n-033.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-environment",
+          "anchor": "operating-environments"
         },
         {
           "id": "requirements-n-035",
           "title": "N-035 envelope transition",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-n-035.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-environment",
+          "anchor": "operating-environments"
         },
         {
           "id": "requirements-n-044",
           "title": "N-044 wet mechanical integrity",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-n-044.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-environment",
+          "anchor": "marine-exposure-and-integrity"
         },
         {
           "id": "requirements-n-045",
           "title": "N-045 wet electrical integrity",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-n-045.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-environment",
+          "anchor": "marine-exposure-and-integrity"
         },
         {
           "id": "requirements-n-046",
           "title": "N-046 solar heating",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-n-046.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-environment",
+          "anchor": "marine-exposure-and-integrity"
         },
         {
           "id": "requirements-n-051",
           "title": "N-051 self righting",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-n-051.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-environment",
+          "anchor": "stability-and-capsize-recovery"
         },
         {
           "id": "requirements-n-052",
           "title": "N-052 capsize control recovery",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-n-052.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-environment",
+          "anchor": "stability-and-capsize-recovery"
         },
         {
           "id": "requirements-n-053",
           "title": "N-053 submerged weed passage",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-n-053.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-environment",
+          "anchor": "weed-tolerance"
         },
         {
           "id": "requirements-n-054",
           "title": "N-054 weed snag shedding",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-n-054.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-environment",
+          "anchor": "weed-tolerance"
         },
         {
           "id": "requirements-n-055",
           "title": "N-055 weed blockage response",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-n-055.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-environment",
+          "anchor": "weed-tolerance"
         },
         {
           "id": "requirements-n-056",
           "title": "N-056 recovery propulsor weeds",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-n-056.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-environment",
+          "anchor": "weed-tolerance"
         },
         {
           "id": "requirements-p-001",
           "title": "P-001 transportability",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-p-001.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-practicality",
+          "anchor": "transport-and-manufacture"
         },
         {
           "id": "requirements-p-003",
           "title": "P-003 serviceability",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-p-003.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-practicality",
+          "anchor": "serviceability"
         },
         {
           "id": "requirements-s-001",
           "title": "S-001 traffic safety",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-s-001.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-safety",
+          "anchor": "traffic-and-operating-boundary"
         },
         {
           "id": "requirements-s-003",
           "title": "S-003 safe recovery",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-s-003.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-safety",
+          "anchor": "conspicuity-classification-and-recovery"
         },
         {
           "id": "requirements-r-001",
           "title": "R-001 recovery propulsion",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-r-001.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-energy",
+          "anchor": "recovery-propulsion-and-reserves"
         },
         {
           "id": "requirements-r-002",
           "title": "R-002 recovery energy",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-r-002.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-energy",
+          "anchor": "recovery-propulsion-and-reserves"
         },
         {
           "id": "requirements-s-002",
           "title": "S-002 operating boundary",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-s-002.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-safety",
+          "anchor": "traffic-and-operating-boundary"
         },
         {
           "id": "requirements-s-004",
           "title": "S-004 navigation conspicuity",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-s-004.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-safety",
+          "anchor": "conspicuity-classification-and-recovery"
         },
         {
           "id": "requirements-s-005",
           "title": "S-005 regulatory classification",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-s-005.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-safety",
+          "anchor": "conspicuity-classification-and-recovery"
         },
         {
           "id": "requirements-r-004",
           "title": "R-004 challenge motor inhibition",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-r-004.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-energy",
+          "anchor": "recovery-propulsion-and-reserves"
         },
         {
           "id": "requirements-c-101",
           "title": "C-101 telemetry equipment",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-c-101.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-safety",
+          "anchor": "live-monitoring-and-telemetry"
         },
         {
           "id": "requirements-c-102",
           "title": "C-102 command integrity",
           "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
           "path": "docs/requirements/requirements-c-102.md",
-          "hidden": true
+          "hidden": true,
+          "redirect": "requirements-safety",
+          "anchor": "command-integrity"
         },
         {
           "id": "requirements-context",
@@ -586,14 +680,18 @@
           "title": "Cruise-performance requirements",
           "path": "docs/requirements/requirements-q-001.md",
           "hidden": true,
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns."
+          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
+          "redirect": "requirements-mission",
+          "anchor": "endurance-and-cruise-performance"
         },
         {
           "id": "requirements-l-001",
           "title": "Mission-reliability requirements",
           "path": "docs/requirements/requirements-l-001.md",
           "hidden": true,
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns."
+          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
+          "redirect": "requirements-mission",
+          "anchor": "mission-reliability"
         },
         {
           "id": "relationship-register",
@@ -677,6 +775,50 @@
           "title": "E-009 wind observation",
           "description": "Autonomous sailing, onboard wind observations and sensor acceptance criteria.",
           "path": "docs/requirements/requirements-e-009.md",
+          "hidden": true,
+          "redirect": "requirements-autonomy",
+          "anchor": "wind-observation"
+        },
+        {
+          "id": "requirements-mission",
+          "title": "Mission, course completion and endurance",
+          "description": "The Gorge round trip is the first challenge; sustained operation and Hawaii extend the design horizon. These threads connect those goals to course performance and mission reliability.",
+          "path": "docs/requirements/requirements-mission.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-autonomy",
+          "title": "Autonomous sailing, navigation and wind sensing",
+          "description": "Autonomy turns the mission into onboard decisions. Navigation and wind observations supply the controller; recovery behavior keeps faults from silently becoming mission failures.",
+          "path": "docs/requirements/requirements-autonomy.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-energy",
+          "title": "Energy and recovery propulsion",
+          "description": "The energy budget must support sailing continuously and retain a deliberate recovery capability. These threads separate energy awareness, sustained balance and the motor rules for a qualifying attempt.",
+          "path": "docs/requirements/requirements-energy.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-environment",
+          "title": "Environment, durability and self-righting",
+          "description": "The Gorge and ocean environments set the loads and exposure conditions. The breakdown connects those environments to measurable limits, capsize recovery and weed tolerance.",
+          "path": "docs/requirements/requirements-environment.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-safety",
+          "title": "Traffic safety, communications and monitoring",
+          "description": "Other river users are part of the operating context. The vessel must remain observable, respect its operating boundary and distinguish monitoring from intervention that ends a qualifying attempt.",
+          "path": "docs/requirements/requirements-safety.md",
+          "hidden": true
+        },
+        {
+          "id": "requirements-practicality",
+          "title": "Manufacturing, handling and serviceability",
+          "description": "One-person handling and a 250 mm cubic printer are owner-imposed project constraints. They shape the build and maintenance approach alongside the mission goals.",
+          "path": "docs/requirements/requirements-practicality.md",
           "hidden": true
         }
       ],
