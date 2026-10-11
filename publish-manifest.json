@@ -31,6 +31,14 @@
       "collection": "sv-blue-dog",
       "article": "restarting",
       "link_label": "Read the project notes"
+    },
+    {
+      "description": "Reading FIT recordings as reaches, turns and carving: a heuristic detector, an experimental HSMM, and the work needed to validate them.",
+      "tag": "Wingfoil · Session analysis",
+      "article": "reading-a-session",
+      "collection": "wingfoil-analyzer",
+      "title": "Wingfoil Analyzer",
+      "link_label": "Read the project story"
     }
   ],
   "collections": [
@@ -838,6 +846,31 @@
           "url": "https://github.com/DavidIngraham/sv-blue-dog/tree/main/tools/boat_analysis"
         }
       ]
+    },
+    {
+      "repository": "DavidIngraham/WingFoilAnalyzer",
+      "note": "Exploratory candidate classifications from one development session; recognition accuracy has not been independently validated.",
+      "ref": "main",
+      "intro": [
+        "From GPS tracks to candidate gybes, carving sections and recovery intervals. An experimental hidden semi-Markov model adds a second interpretation to review against the heuristic baseline."
+      ],
+      "heading": "Reading a wingfoil session as a sequence of maneuvers.",
+      "pages": [
+        {
+          "id": "reading-a-session",
+          "title": "Reading a wingfoil session as a sequence of maneuvers",
+          "description": "What the prototype detects, why add explicit-duration states, and how to validate the next version.",
+          "path": "docs/reading-a-wingfoil-session.md"
+        },
+        {
+          "id": "roadmap",
+          "title": "Next milestones",
+          "description": "Rider review, independent labels, held-out evaluation, and eventual watch-style inference.",
+          "path": "docs/roadmap.md"
+        }
+      ],
+      "title": "Wingfoil Analyzer",
+      "id": "wingfoil-analyzer"
     }
   ]
 }
