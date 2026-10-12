@@ -49,7 +49,7 @@
       "heading": "micro AGU: from a small parafoil to autonomous flight.",
       "intro": [
         "Start with the build: the canopy, printed payload, avionics, and propulsion. Then follow the flight tests at Barrett Park in Hood River, tuning in a simple simulator, and autonomous missions at Collin’s house in Trout Lake.",
-        "The main story covers the build, flight tests and final controller design. Background chapters explain the flight-tested steering and throttle adaptations; appendices preserve the data, methods and experimental record."
+        "The controller story has two phases, each covering steering and altitude: the original design through Trout Lake, then the subsequent simulation, classical analysis and refined controller. Animations accompany both; appendices preserve the experimental record."
       ],
       "repository": "DavidIngraham/ArduPilot-tinkering",
       "ref": "main",
@@ -67,22 +67,30 @@
           "description": "Barrett Park → initial simulation → Collin’s house: measurements, fixes, tighter turns, and a 54.5-minute flight."
         },
         {
+          "id": "first-flight-controller",
+          "path": "docs/first-flight-controller.md",
+          "title": "Getting Micro-AGU to Autonomous Flight",
+          "description": "Part 1: original steering and TECS design, the pitch-damper mistake, and tuning through Trout Lake."
+        },
+        {
           "id": "controller-design",
           "path": "docs/controller-design.md",
           "title": "Designing the Micro-AGU Flight Controller",
-          "description": "The final steering and throttle architecture, full-loop classical analysis, tuning tradeoffs and native AUTO results."
+          "description": "Part 2: articulated simulation, the damper reversal, frequency-shaped control and classical optimization after Trout Lake."
         },
         {
           "id": "paraglider",
           "path": "docs/paraglider.md",
           "title": "Steering a Parafoil with an Airplane Autopilot",
-          "description": "Flight-tested background: adapting the roll loop to steering, from Hood River through simulation to Trout Lake."
+          "description": "Flight-tested background: adapting the roll loop to steering, from Hood River through simulation to Trout Lake.",
+          "hidden": true
         },
         {
           "id": "longitudinal-observer",
           "path": "docs/longitudinal-observer.md",
           "title": "Throttle, Pitch, and the Controller That Pushed the Wrong Way",
-          "description": "Flight-tested background: adapting TECS to throttle-only altitude control and understanding the original pitch damper."
+          "description": "Flight-tested background: adapting TECS to throttle-only altitude control and understanding the original pitch damper.",
+          "hidden": true
         },
         {
           "id": "data-and-methods",
