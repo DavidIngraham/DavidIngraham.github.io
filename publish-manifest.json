@@ -49,7 +49,7 @@
       "heading": "micro AGU: from a small parafoil to autonomous flight.",
       "intro": [
         "Start with the build: the canopy, printed payload, avionics, and propulsion. Then follow the flight tests at Barrett Park in Hood River, tuning in a simple simulator, and autonomous missions at Collin’s house in Trout Lake.",
-        "Four chapters cover the build, the flights, steering, and longitudinal control, including the evolution of the control loops and the latest native mission tests. A shared appendix records the evidence; the related Plane trajectory study follows the navigation questions further."
+        "The main story covers the build, flight tests and final controller design. Background chapters explain the flight-tested steering and throttle adaptations; appendices preserve the data, methods and experimental record."
       ],
       "repository": "DavidIngraham/ArduPilot-tinkering",
       "ref": "main",
@@ -67,22 +67,34 @@
           "description": "Barrett Park → initial simulation → Collin’s house: measurements, fixes, tighter turns, and a 54.5-minute flight."
         },
         {
+          "id": "controller-design",
+          "path": "docs/controller-design.md",
+          "title": "Designing the Micro-AGU Flight Controller",
+          "description": "The final steering and throttle architecture, full-loop classical analysis, tuning tradeoffs and native AUTO results."
+        },
+        {
           "id": "paraglider",
           "path": "docs/paraglider.md",
           "title": "Steering a Parafoil with an Airplane Autopilot",
-          "description": "From the roll-loop workaround to 9-DOF simulation: heading-rate control, Bode plots, root locus, and more robust filtering."
+          "description": "Flight-tested background: adapting the roll loop to steering, from Hood River through simulation to Trout Lake."
         },
         {
           "id": "longitudinal-observer",
           "path": "docs/longitudinal-observer.md",
           "title": "Throttle, Pitch, and the Controller That Pushed the Wrong Way",
-          "description": "The wrong-sign damper, canopy–payload motion, calibrated throttle feedforward, and smoother altitude captures."
+          "description": "Flight-tested background: adapting TECS to throttle-only altitude control and understanding the original pitch damper."
         },
         {
           "id": "data-and-methods",
           "path": "docs/data-and-methods.md",
           "title": "Micro-AGU: Data and Methods",
           "description": "Log provenance, parameter histories, measurement windows, model assumptions, and reproducible analysis."
+        },
+        {
+          "id": "controller-research-record",
+          "path": "docs/controller-research-record.md",
+          "title": "Controller Research Record",
+          "description": "Historical post-flight experiments, configurations, figures and videos supporting the final controller design."
         },
         {
           "id": "trajectory",
@@ -166,10 +178,10 @@
         },
         {
           "id": "design-search-results",
-          "title": "Conservative sizing: reading the results",
+          "title": "Sizing Blue Dog for the Gorge",
           "path": "docs/results.md",
           "hidden": false,
-          "description": "PDR evidence: use archived numerical findings to identify design limits and the next experiments.",
+          "description": "Current Gorge sizing: candidate geometry, challenge-profile replay, limiting margins and the next experiments.",
           "stage": "Current findings"
         },
         {
@@ -746,17 +758,17 @@
         },
         {
           "id": "hull-length-results",
-          "title": "Conservative sizing: reading the results",
+          "title": "Sizing Blue Dog for the Gorge",
           "path": "docs/results.md",
           "hidden": true,
-          "description": "PDR evidence: use archived numerical findings to identify design limits and the next experiments."
+          "description": "Current Gorge sizing: candidate geometry, challenge-profile replay, limiting margins and the next experiments."
         },
         {
           "id": "open-sizing-results",
-          "title": "Conservative sizing: reading the results",
+          "title": "Sizing Blue Dog for the Gorge",
           "path": "docs/results.md",
           "hidden": true,
-          "description": "PDR evidence: use archived numerical findings to identify design limits and the next experiments."
+          "description": "Current Gorge sizing: candidate geometry, challenge-profile replay, limiting margins and the next experiments."
         },
         {
           "id": "structure-requirements",
@@ -775,8 +787,8 @@
         {
           "id": "mission-sizing-results",
           "path": "docs/results.md",
-          "title": "Conservative sizing: reading the results",
-          "description": "PDR evidence: use archived numerical findings to identify design limits and the next experiments.",
+          "title": "Sizing Blue Dog for the Gorge",
+          "description": "Current Gorge sizing: candidate geometry, challenge-profile replay, limiting margins and the next experiments.",
           "hidden": true
         },
         {
