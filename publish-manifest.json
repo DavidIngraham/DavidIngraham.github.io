@@ -157,6 +157,14 @@
           "stage": "Development plan"
         },
         {
+          "id": "mission-simulation",
+          "path": "docs/mission-simulation.md",
+          "title": "Sailing the challenge before building the boat",
+          "description": "The mission-level virtual V: charted gates, chronological voyages and seeded weather and traffic experiments.",
+          "hidden": false,
+          "stage": "Mission validation"
+        },
+        {
           "id": "design-search-results",
           "title": "Conservative sizing: reading the results",
           "path": "docs/results.md",
