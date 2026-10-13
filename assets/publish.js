@@ -239,6 +239,20 @@
       if (!closing.textContent.trim()) closing.remove();
     }
     for (const a of article.querySelectorAll('a[href]')) a.setAttribute('href', resolveRepositoryLink(collection, page, a.getAttribute('href'), false));
+    // Only this locally owned viewer is embeddable; arbitrary article iframes stay forbidden.
+    if (collection.id === 'ardupilot-tinkering') {
+      const link = [...article.querySelectorAll('a[href]')].find(a =>
+        a.href === 'https://davidingraham.github.io/assets/microagu-viewer/landing.html');
+      if (link) {
+        const frame = document.createElement('iframe');
+        frame.src = '/assets/microagu-viewer/landing.html';
+        frame.title = 'Interactive Micro-AGU spot landing replay';
+        frame.loading = 'lazy';
+        frame.style.cssText = 'width:100%;aspect-ratio:1280/1230;border:0;min-height:420px';
+        frame.setAttribute('allow', 'autoplay; fullscreen');
+        link.parentElement.after(frame);
+      }
+    }
     for (const img of article.querySelectorAll('img[src]')) {
       img.setAttribute('src', resolveRepositoryLink(collection, page, img.getAttribute('src'), true));
       img.decoding = 'async';

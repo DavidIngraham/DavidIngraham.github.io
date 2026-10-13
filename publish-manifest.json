@@ -83,6 +83,13 @@
           "nav_title": "Simulation and controller refinement"
         },
         {
+          "id": "spot-landing",
+          "path": "docs/spot-landing.md",
+          "title": "Spot Landing: Fixing the Approach Before Tuning the Flare",
+          "nav_title": "Spot landing",
+          "description": "Native AUTO brake flare, a bounded landing-aim iteration, held-out Monte Carlo results and an interactive landing replay."
+        },
+        {
           "id": "paraglider",
           "path": "docs/paraglider.md",
           "title": "Steering a Parafoil with an Airplane Autopilot",
@@ -149,7 +156,8 @@
           "title": "Controller design",
           "pages": [
             "first-flight-controller",
-            "controller-design"
+            "controller-design",
+            "spot-landing"
           ]
         },
         {
