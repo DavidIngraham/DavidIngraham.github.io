@@ -23,7 +23,7 @@ try {
   const title=document.createElement('h3');title.textContent=`${c.design.length_m.toFixed(1)} m hull`;card.append(title);
   const p=document.createElement('p');p.textContent=c.design.length_m<1.5?'Current nominal sizing baseline':'Restored starting concept';card.append(p);
   const mv=document.createElement('model-viewer');mv.setAttribute('src',asset(c.file));mv.setAttribute('alt',`${title.textContent} Blue Dog concept: wing over hull, keel and ballast below, rudder aft.`);
-  for(const [key,value] of Object.entries({'camera-controls':'','touch-action':'pan-y','camera-orbit':'45deg 72deg 4.8m','camera-target':'0m 0.6m 0m','field-of-view':'35deg','min-camera-orbit':'auto auto 1m','max-camera-orbit':'auto auto 10m','interaction-prompt':'none','exposure':'1'}))mv.setAttribute(key,value);
+  for(const [key,value] of Object.entries({'loading':'eager','camera-controls':'','touch-action':'pan-y','camera-orbit':'45deg 72deg 4.8m','camera-target':'0m 0.6m 0m','field-of-view':'35deg','min-camera-orbit':'auto auto 1m','max-camera-orbit':'auto auto 10m','interaction-prompt':'none','exposure':'1'}))mv.setAttribute(key,value);
   mv.addEventListener('load',()=>{loaded++;status.textContent=`${loaded} of ${candidates.length} models loaded · dimensions in metres`;root.dataset.models=loaded===candidates.length?'ready':'loading';});
   mv.addEventListener('error',()=>{status.textContent='Unable to load a 3D model. Use the fixed views or download the GLB.';status.className='error';root.dataset.models='error';});
   card.append(mv);const details=document.createElement('div');details.className='details';
