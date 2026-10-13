@@ -244,6 +244,8 @@
       const replays = new Map([
         ['https://davidingraham.github.io/assets/microagu-viewer/landing.html', ''],
         ['https://davidingraham.github.io/assets/microagu-viewer/landing.html?case=before', '?case=before'],
+        ['https://davidingraham.github.io/assets/microagu-viewer/landing.html?case=calm', '?case=calm'],
+        ['https://davidingraham.github.io/assets/microagu-viewer/landing.html?case=turbulent', '?case=turbulent'],
         ['https://davidingraham.github.io/assets/microagu-viewer/landing.html?case=after', '?case=after'],
       ]);
       for (const link of article.querySelectorAll('a[href]')) {
