@@ -322,6 +322,10 @@
     await renderComparisons(article, collection);
     await renderDiagrams(article);
     await window.renderArticleMath?.(article);
+    if (page.presentation) {
+      const {mountReviewDeck} = await import('/assets/review-deck.js');
+      mountReviewDeck(article);
+    }
     article.removeAttribute('aria-busy');
   }
 

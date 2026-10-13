@@ -208,17 +208,8 @@
           "path": "docs/restarting-sv-blue-dog.md",
           "title": "SV Blue Dog: learning through an autonomous sailboat",
           "description": "The Gorge challenge, the SolidWorks testbed, getting lost in sizing decisions, and using SysML v2 to structure work with agents.",
-          "stage": "Project story",
+          "stage": "Introduction",
           "nav_title": "Why Blue Dog?"
-        },
-        {
-          "id": "architecture",
-          "path": "docs/architecture.md",
-          "title": "Mission, context and architecture",
-          "description": "Mission definition to PDR: translate goals, operating scenarios and constraints into subsystem responsibilities.",
-          "hidden": false,
-          "stage": "Mission and context",
-          "nav_title": "Mission and architecture"
         },
         {
           "id": "development-plan",
@@ -226,8 +217,34 @@
           "title": "Developing Blue Dog: a V with room to learn",
           "description": "The organizing plan: early virtual V&V, physical V&V, model credibility and scoped review gates.",
           "hidden": false,
-          "stage": "Development plan",
+          "stage": "Introduction",
           "nav_title": "Development plan and review gates"
+        },
+        {
+          "id": "design-guide",
+          "title": "SV Blue Dog: the development series",
+          "path": "docs/index.md",
+          "description": "Read the series through the development plan, with each article mapped to its inputs and design decisions.",
+          "stage": "Introduction",
+          "nav_title": "Reading guide"
+        },
+        {
+          "id": "architecture",
+          "path": "docs/architecture.md",
+          "title": "Mission, context and architecture",
+          "description": "Mission definition to PDR: translate goals, operating scenarios and constraints into subsystem responsibilities.",
+          "hidden": false,
+          "stage": "Mission and requirements · SRR",
+          "nav_title": "Mission and architecture"
+        },
+        {
+          "id": "operating-constraints",
+          "path": "docs/operating-constraints.md",
+          "title": "Establishing operating constraints",
+          "description": "SRR and test readiness: establish the operating context and constraints on design and deployment.",
+          "hidden": false,
+          "stage": "Mission and requirements · SRR",
+          "nav_title": "Operating constraints"
         },
         {
           "id": "mission-simulation",
@@ -235,8 +252,78 @@
           "title": "Sailing the challenge before building the boat",
           "description": "The mission-level virtual V: charted gates, chronological voyages and seeded weather and traffic experiments.",
           "hidden": false,
-          "stage": "Mission validation",
+          "stage": "Mission and requirements · SRR",
           "nav_title": "Mission simulation"
+        },
+        {
+          "id": "requirements-views",
+          "title": "Requirements: mission to implementation",
+          "description": "Six topic pages tracing mission goals to testable design obligations.",
+          "path": "docs/requirements.md",
+          "stage": "Mission and requirements · SRR",
+          "nav_title": "Requirements overview"
+        },
+        {
+          "id": "requirements-mission",
+          "title": "Mission, course completion and endurance",
+          "description": "The Gorge round trip is the first challenge; sustained operation and Hawaii extend the design horizon. These threads connect those goals to course performance and mission reliability.",
+          "path": "docs/requirements/requirements-mission.md",
+          "hidden": true,
+          "nav_title": "Mission and performance",
+          "stage": "Mission and requirements · SRR"
+        },
+        {
+          "id": "requirements-autonomy",
+          "title": "Autonomous sailing, navigation and wind sensing",
+          "description": "Autonomy turns the mission into onboard decisions. Navigation and wind observations supply the controller; recovery behavior keeps faults from silently becoming mission failures.",
+          "path": "docs/requirements/requirements-autonomy.md",
+          "hidden": true,
+          "nav_title": "Autonomy and wind sensing",
+          "stage": "Mission and requirements · SRR"
+        },
+        {
+          "id": "requirements-energy",
+          "title": "Energy and recovery propulsion",
+          "description": "The energy budget must support sailing continuously and retain a deliberate recovery capability. These threads separate energy awareness, sustained balance and the motor rules for a qualifying attempt.",
+          "path": "docs/requirements/requirements-energy.md",
+          "hidden": true,
+          "nav_title": "Energy and propulsion",
+          "stage": "Mission and requirements · SRR"
+        },
+        {
+          "id": "requirements-environment",
+          "title": "Environment, durability and self-righting",
+          "description": "The Gorge and ocean environments set the loads and exposure conditions. The breakdown connects those environments to measurable limits, capsize recovery and weed tolerance.",
+          "path": "docs/requirements/requirements-environment.md",
+          "hidden": true,
+          "nav_title": "Environment and recovery",
+          "stage": "Mission and requirements · SRR"
+        },
+        {
+          "id": "requirements-safety",
+          "title": "Traffic safety, communications and monitoring",
+          "description": "Other river users are part of the operating context. The vessel must remain observable, respect its operating boundary and distinguish monitoring from intervention that ends a qualifying attempt.",
+          "path": "docs/requirements/requirements-safety.md",
+          "hidden": true,
+          "nav_title": "Traffic, safety and communications",
+          "stage": "Mission and requirements · SRR"
+        },
+        {
+          "id": "requirements-practicality",
+          "title": "Manufacturing, handling and serviceability",
+          "description": "One-person handling and a 250 mm cubic printer are owner-imposed project constraints. They shape the build and maintenance approach alongside the mission goals.",
+          "path": "docs/requirements/requirements-practicality.md",
+          "hidden": true,
+          "nav_title": "Manufacturing and handling",
+          "stage": "Mission and requirements · SRR"
+        },
+        {
+          "id": "srr-review",
+          "path": "docs/srr-review.md",
+          "title": "Blue Dog system requirements review",
+          "stage": "Mission and requirements · SRR",
+          "description": "Review baseline, evidence limitations and open decisions.",
+          "presentation": true
         },
         {
           "id": "design-search-results",
@@ -244,7 +331,7 @@
           "path": "docs/results.md",
           "hidden": false,
           "description": "Current Gorge sizing: candidate geometry, challenge-profile replay, limiting margins and the next experiments.",
-          "stage": "Current findings",
+          "stage": "Concept and preliminary design · PDR",
           "nav_title": "Sizing results"
         },
         {
@@ -252,7 +339,7 @@
           "title": "Coupled sizing with conservative aerodynamic assumptions",
           "path": "docs/sizing.md",
           "description": "Virtual design and PDR: use mission criteria and declared physics to assess coupled boat sizing.",
-          "stage": "Design investigation",
+          "stage": "Concept and preliminary design · PDR",
           "nav_title": "Sizing method"
         },
         {
@@ -260,7 +347,7 @@
           "path": "docs/sail-trade.md",
           "title": "Comparing sail architectures",
           "description": "PDR and model credibility: compare rigs and identify the measurements needed to support selection.",
-          "stage": "Design investigation",
+          "stage": "Concept and preliminary design · PDR",
           "nav_title": "Sail trade study"
         },
         {
@@ -269,7 +356,7 @@
           "title": "Sustained operation: follow energy through the mission",
           "description": "Virtual design to physical V&V: connect mission loads and harvesting to storage and control decisions.",
           "hidden": false,
-          "stage": "Design investigation",
+          "stage": "Concept and preliminary design · PDR",
           "nav_title": "Mission energy"
         },
         {
@@ -278,16 +365,8 @@
           "title": "Comparing recovery propulsion",
           "description": "PDR to implementation: compare installed recovery concepts and define their physical evidence needs.",
           "hidden": false,
-          "stage": "Design investigation",
+          "stage": "Concept and preliminary design · PDR",
           "nav_title": "Recovery propulsion"
-        },
-        {
-          "id": "structure-sizing",
-          "title": "Manufacturing, structure and recovery",
-          "path": "docs/structures-and-recovery.md",
-          "description": "PDR to CDR and model validation: use geometry, construction and loads to plan structure and recovery evidence.",
-          "stage": "Design investigation",
-          "nav_title": "Structure and recovery"
         },
         {
           "id": "cruise-reliability",
@@ -295,33 +374,32 @@
           "path": "docs/reliability.md",
           "hidden": false,
           "description": "Virtual design to physical V&V: connect passage exposure and failure modes to fault and endurance evidence.",
-          "stage": "Design investigation",
+          "stage": "Concept and preliminary design · PDR",
           "nav_title": "Reliability and failure analysis"
         },
         {
-          "id": "operating-constraints",
-          "path": "docs/operating-constraints.md",
-          "title": "Establishing operating constraints",
-          "description": "SRR and test readiness: establish the operating context and constraints on design and deployment.",
-          "hidden": false,
-          "stage": "Operating context",
-          "nav_title": "Operating constraints"
+          "id": "structure-sizing",
+          "title": "Manufacturing, structure and recovery",
+          "path": "docs/structures-and-recovery.md",
+          "description": "PDR to CDR and model validation: use geometry, construction and loads to plan structure and recovery evidence.",
+          "stage": "Detailed design · CDR",
+          "nav_title": "Structure and recovery"
         },
         {
-          "id": "design-guide",
-          "title": "SV Blue Dog: the development series",
-          "path": "docs/index.md",
-          "description": "Read the series through the development plan, with each article mapped to its inputs and design decisions.",
-          "stage": "Reading guide",
-          "nav_title": "Reading guide"
+          "id": "validation-plan",
+          "path": "docs/validation-plan.md",
+          "title": "From virtual evidence to water trials",
+          "description": "Planned integration, model correlation and bounded trial readiness; no completed physical qualification is implied.",
+          "nav_title": "From virtual evidence to water trials",
+          "stage": "Integration and validation · TRR and trials"
         },
         {
-          "id": "requirements-views",
-          "title": "Requirements: mission to implementation",
-          "description": "Six topic pages tracing mission goals to testable design obligations.",
-          "path": "docs/requirements.md",
-          "stage": "Reference library",
-          "nav_title": "Requirements overview"
+          "id": "modeling-method",
+          "path": "docs/methods/modeling.md",
+          "title": "Modeling method",
+          "description": "How SysML requirements, rationale, analysis and evidence stay connected.",
+          "nav_title": "Modeling method",
+          "stage": "Appendix"
         },
         {
           "id": "publishing",
@@ -329,8 +407,16 @@
           "title": "Authoring and publishing",
           "description": "Across the V: publish model-linked methods and evidence consistently for review decisions.",
           "hidden": false,
-          "stage": "Tools and methods",
+          "stage": "Appendix",
           "nav_title": "Authoring and publishing"
+        },
+        {
+          "id": "srr-appendix",
+          "path": "docs/srr-appendix.md",
+          "title": "SRR technical appendix",
+          "stage": "Appendix",
+          "description": "Review baseline, evidence limitations and open decisions.",
+          "presentation": false
         },
         {
           "id": "requirements-c-000",
@@ -879,54 +965,6 @@
           "hidden": true,
           "redirect": "requirements-autonomy",
           "anchor": "wind-observation"
-        },
-        {
-          "id": "requirements-mission",
-          "title": "Mission, course completion and endurance",
-          "description": "The Gorge round trip is the first challenge; sustained operation and Hawaii extend the design horizon. These threads connect those goals to course performance and mission reliability.",
-          "path": "docs/requirements/requirements-mission.md",
-          "hidden": true,
-          "nav_title": "Mission and performance"
-        },
-        {
-          "id": "requirements-autonomy",
-          "title": "Autonomous sailing, navigation and wind sensing",
-          "description": "Autonomy turns the mission into onboard decisions. Navigation and wind observations supply the controller; recovery behavior keeps faults from silently becoming mission failures.",
-          "path": "docs/requirements/requirements-autonomy.md",
-          "hidden": true,
-          "nav_title": "Autonomy and wind sensing"
-        },
-        {
-          "id": "requirements-energy",
-          "title": "Energy and recovery propulsion",
-          "description": "The energy budget must support sailing continuously and retain a deliberate recovery capability. These threads separate energy awareness, sustained balance and the motor rules for a qualifying attempt.",
-          "path": "docs/requirements/requirements-energy.md",
-          "hidden": true,
-          "nav_title": "Energy and propulsion"
-        },
-        {
-          "id": "requirements-environment",
-          "title": "Environment, durability and self-righting",
-          "description": "The Gorge and ocean environments set the loads and exposure conditions. The breakdown connects those environments to measurable limits, capsize recovery and weed tolerance.",
-          "path": "docs/requirements/requirements-environment.md",
-          "hidden": true,
-          "nav_title": "Environment and recovery"
-        },
-        {
-          "id": "requirements-safety",
-          "title": "Traffic safety, communications and monitoring",
-          "description": "Other river users are part of the operating context. The vessel must remain observable, respect its operating boundary and distinguish monitoring from intervention that ends a qualifying attempt.",
-          "path": "docs/requirements/requirements-safety.md",
-          "hidden": true,
-          "nav_title": "Traffic, safety and communications"
-        },
-        {
-          "id": "requirements-practicality",
-          "title": "Manufacturing, handling and serviceability",
-          "description": "One-person handling and a 250 mm cubic printer are owner-imposed project constraints. They shape the build and maintenance approach alongside the mission goals.",
-          "path": "docs/requirements/requirements-practicality.md",
-          "hidden": true,
-          "nav_title": "Manufacturing and handling"
         }
       ],
       "note": "The repository owns the model and authored methods. Its publishing workflow resolves native SysML views into these pages; recorded numerical evidence is conditional.",
@@ -947,44 +985,58 @@
       ],
       "navigation": [
         {
-          "title": "Mission and development plan",
+          "title": "Introduction",
           "pages": [
             "restarting",
             "development-plan",
-            "architecture",
-            "operating-constraints",
             "design-guide"
           ]
         },
         {
-          "title": "Simulation and design studies",
+          "title": "Mission and requirements · SRR",
           "pages": [
+            "architecture",
+            "operating-constraints",
             "mission-simulation",
-            "design-search-results",
-            "sailing-performance",
-            "sail-trade",
-            "energy",
-            "recovery-propulsion",
-            "structure-sizing",
-            "cruise-reliability"
-          ]
-        },
-        {
-          "title": "Requirements",
-          "pages": [
             "requirements-views",
             "requirements-mission",
             "requirements-autonomy",
             "requirements-energy",
             "requirements-environment",
             "requirements-safety",
-            "requirements-practicality"
+            "requirements-practicality",
+            "srr-review"
           ]
         },
         {
-          "title": "Tools and methods",
+          "title": "Concept and preliminary design · PDR",
           "pages": [
-            "publishing"
+            "design-search-results",
+            "sailing-performance",
+            "sail-trade",
+            "energy",
+            "recovery-propulsion",
+            "cruise-reliability"
+          ]
+        },
+        {
+          "title": "Detailed design · CDR",
+          "pages": [
+            "structure-sizing"
+          ]
+        },
+        {
+          "title": "Integration and validation · TRR and trials",
+          "pages": [
+            "validation-plan"
+          ]
+        },
+        {
+          "title": "Appendix",
+          "pages": [
+            "modeling-method",
+            "publishing",
+            "srr-appendix"
           ]
         }
       ]

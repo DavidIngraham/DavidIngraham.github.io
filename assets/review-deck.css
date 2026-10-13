@@ -1,0 +1,9 @@
+.review-controls { display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; margin:2rem 0 1rem; padding:.8rem 0; border-bottom:1px solid currentColor; scroll-margin-top:1rem; }
+.review-controls button { font:inherit; cursor:pointer; padding:.45rem .8rem; border:1px solid currentColor; border-radius:.3rem; background:transparent; color:inherit; }
+.review-controls button:disabled { opacity:.4; cursor:default; }
+.review-slide { margin:2rem 0 3rem; }
+.review-slide[hidden], .review-controls [hidden] { display:none!important; }
+.review-presenting .review-slide { min-height:55vh; font-size:1.08em; }
+.review-presenting .review-slide h2 { font-size:1.7em; }
+.review-slide img { max-height:55vh; object-fit:contain; }
+@media print { .review-controls {display:none!important;} .review-slide, .review-slide[hidden] {display:block!important; break-before:page;} .review-slide img {max-height:45vh;} }
