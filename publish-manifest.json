@@ -87,7 +87,7 @@
           "path": "docs/spot-landing.md",
           "title": "Landing Micro-AGU: From TECS Approach to Brake Flare",
           "nav_title": "Spot landing",
-          "description": "Shared ArduPilot landing logic, throttle-only approach, brake flare allocation, final Monte Carlo results and an interactive replay."
+          "description": "Shared ArduPilot landing logic, descending-trim steering refinement, brake flare allocation, matched interactive replays and final Monte Carlo results."
         },
         {
           "id": "paraglider",
