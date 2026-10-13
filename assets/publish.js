@@ -194,6 +194,24 @@
     }
   }
 
+  async function renderDesignExplorers(article, collection) {
+    for (const code of article.querySelectorAll('pre > code.language-design-explorer')) {
+      const root = document.createElement('section');
+      try {
+        const config = JSON.parse(code.textContent), url = new URL(config.src);
+        const base = new URL(collection.content_base);
+        const expected = base.pathname.replace(/imports\/$/, '') + 'assets/design-explorer/design.json';
+        if (url.origin !== base.origin || url.pathname !== expected || url.username || url.password || url.search || url.hash) throw Error('Invalid design explorer source');
+        code.parentElement.replaceWith(root);
+        const {renderExplorer} = await import('/assets/design-explorer.js');
+        await renderExplorer(root, url.href);
+      } catch (error) {
+        root.className = 'note'; root.textContent = 'The interactive design explorer could not load. The sizing method and model inputs remain available in the repository.';
+        code.parentElement?.replaceWith(root); console.error('Design explorer:', error);
+      }
+    }
+  }
+
   async function renderArticle(collection, page) {
     document.title = `${page.title} — David Ingraham`;
     const meta = document.querySelector('meta[name="description"]');
@@ -300,6 +318,7 @@
           url.search === location.search && url.hash && url.hash === location.hash) revealAnchor();
     });
     revealAnchor();
+    await renderDesignExplorers(article, collection);
     await renderComparisons(article, collection);
     await renderDiagrams(article);
     await window.renderArticleMath?.(article);
