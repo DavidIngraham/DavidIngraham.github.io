@@ -24,6 +24,31 @@
     };
   }
 
+  function projectIndex(collection, page) {
+    const canonical = collection.pages.find(item => !item.hidden && item.path === page?.path) || page;
+    const groups = collection.navigation || [{title: 'Articles', pages: collection.pages.filter(item => !item.hidden).map(item => item.id)}];
+    const rows = groups.map(group => `<li class="project-group"><span>${esc(group.title)}</span><ul>${group.pages.map(id => {
+      const target = collection.pages.find(item => item.id === id);
+      const active = target.id === canonical?.id;
+      return `<li><a href="${esc(pageUrl(collection, target))}"${active ? ' aria-current="page"' : ''}>${esc(target.nav_title || target.title)}</a></li>`;
+    }).join('')}</ul></li>`).join('');
+    return `<aside class="project-index"><details open><summary>Project index <span>${esc(collection.title)}</span></summary><nav aria-label="Project index"><a class="project-overview" href="${esc(collectionUrl(collection))}"${!page ? ' aria-current="page"' : ''}>${esc(collection.title)} overview</a><ul>${rows}</ul></nav></details></aside>`;
+  }
+
+  function mountProjectIndex(collection, page) {
+    main.classList.add('project-reader');
+    const content = document.createElement('div'); content.className = 'project-content';
+    content.append(...main.childNodes);
+    main.append(content);
+    main.insertAdjacentHTML('afterbegin', projectIndex(collection, page));
+    const details = main.querySelector('.project-index details');
+    const narrow = window.matchMedia('(max-width: 1000px)');
+    const adapt = () => { details.open = !narrow.matches; };
+    adapt(); narrow.addEventListener('change', adapt);
+    const active = details.querySelector('[aria-current="page"]');
+    if (active && !narrow.matches && active.offsetTop > details.clientHeight - 60) details.scrollTop = Math.max(0, active.offsetTop - details.clientHeight / 2);
+  }
+
   function validate(manifest) {
     if (manifest.version !== 1 || !Array.isArray(manifest.collections) || !Array.isArray(manifest.projects)) throw new Error('Unsupported publishing manifest.');
     const ids = new Set();
@@ -40,6 +65,14 @@
       for (const page of collection.pages) {
         if (!/^[a-z0-9-]+$/.test(page.id) || pages.has(page.id) || !/\.md$/i.test(page.path) || page.path.startsWith('/') || page.path.split('/').some(p => p === '..' || !p)) throw new Error('Invalid article ID or Markdown path.');
         pages.add(page.id);
+      }
+      const indexed = new Set();
+      for (const group of collection.navigation || []) {
+        if (!group.title || !Array.isArray(group.pages)) throw new Error('Invalid project navigation group.');
+        for (const id of group.pages) {
+          if (!pages.has(id) || indexed.has(id) || collection.pages.find(page => page.id === id).redirect) throw new Error('Invalid project navigation article.');
+          indexed.add(id);
+        }
       }
       for (const link of collection.implementation_links || []) if (!/^https:\/\//.test(link.url)) throw new Error('Implementation links must use HTTPS.');
     }
@@ -166,6 +199,7 @@
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.content = page.description;
     main.innerHTML = `<div class="article-heading"><div class="breadcrumbs"><a href="/">Home</a> / <a href="${esc(collectionUrl(collection))}">${esc(collection.title)}</a></div><h1>${esc(page.title)}</h1><p class="download">Source: <a href="${esc(sourceUrl(collection, page.path))}">${esc(collection.repository)} / ${esc(page.path)}</a> · <a href="${esc(markdownUrl(collection, page.path))}">Raw Markdown</a></p></div><div class="article-layout"><article class="article" aria-busy="true"><p role="status">Loading the write-up…</p></article><aside class="sidebar" aria-label="On this page"><div class="sidebar-inner"><div class="eyebrow">On this page</div><div id="toc"></div><a href="${esc(collectionUrl(collection))}">← All articles</a></div></aside></div>`;
+    mountProjectIndex(collection, page);
     const navigation = articleNavigation(collection, page);
     document.querySelector('.article-heading').insertAdjacentHTML('beforeend', navigation.top);
     const response = await fetch(markdownUrl(collection, page.path), {cache: 'no-store', signal: AbortSignal.timeout(20000)});
@@ -284,7 +318,7 @@
       const articleId = query.get('article') || document.body.dataset.article;
       const collection = manifest.collections.find(item => item.id === id);
       if (!collection) throw new Error('This collection is not in the publishing manifest.');
-      if (!articleId) {renderCollection(collection); return;}
+      if (!articleId) {renderCollection(collection); mountProjectIndex(collection); return;}
       // Preserve the link to the study now folded into the existing chapters.
       if (id === 'ardupilot-tinkering' && articleId === 'longitudinal-mission-control') {
         const destination = collection.pages.find(item => item.id === 'longitudinal-observer');

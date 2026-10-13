@@ -13,6 +13,7 @@ For each collection, set:
 - `ref`: branch, tag or commit. A branch follows edits; a commit pins a snapshot.
 - Optional `content_base`: HTTPS directory containing rendered Markdown with the same repository-relative paths. SV Blue Dog uses its model publishing workflow to produce these imports. Source links still point to GitHub.
 - `pages`: each article's `id`, repository-relative Markdown `path`, `title` and `description`.
+- Optional `navigation`: ordered groups with `title` and a `pages` list of article IDs for the persistent project index. Include canonical reference pages here even when they are hidden from the chapter sequence. Without groups, the index lists visible articles. An article may supply `nav_title` for a short sidebar label.
 - Optional `title`, `heading`, `intro`, `implementation_links` and `note` for the collection index.
 
 Add a project referencing its `collection` ID to show it on the homepage. Set its optional `article` ID to link directly to a particular write-up. External projects use `url` instead. A collection without an explicit `url` uses `/research/?collection=ID`; articles use `/research/?collection=ID&article=ARTICLE`. Adding another collection or article only requires a manifest edit. The original `/ardupilot-tinkering/*.html` links remain lightweight reader shells for backward compatibility.

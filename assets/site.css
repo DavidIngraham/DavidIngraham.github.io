@@ -49,3 +49,27 @@
 /* Display equations remain scrollable on narrow screens. */
 .article-math[data-display="true"]{overflow-x:auto;max-width:100%;padding:.35rem 0}
 .article-math[data-display="false"]{white-space:normal}
+/* Project hierarchy stays visible beside the reader, independently of its section TOC. */
+body[data-reader] > .wrap{width:min(1520px,calc(100% - 48px))}
+.project-reader{display:grid;grid-template-columns:250px minmax(0,1fr);gap:42px;align-items:start}
+.project-content{min-width:0}
+.project-index{position:sticky;top:20px;margin-top:40px;min-width:0;font-size:13px;line-height:1.45}
+.project-index details{max-height:calc(100dvh - 40px);overflow:auto;scrollbar-width:thin;padding-right:12px}
+.project-index summary{font-weight:700;cursor:pointer;color:var(--ink);padding:10px 0;border-bottom:1px solid var(--line)}
+.project-index summary span{display:block;font-weight:400;color:var(--muted);margin-top:4px}
+.project-index ul{list-style:none;margin:0;padding:0}
+.project-index .project-group{margin-top:20px}
+.project-group>span{font-weight:700;color:var(--muted);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.project-group ul{border-left:1px solid var(--line);margin-top:8px;padding-left:10px}
+.project-index a{display:block;padding:7px 9px;text-decoration:none;overflow-wrap:anywhere;border-radius:3px}
+.project-index a:hover{background:#ecefe7}
+.project-index a[aria-current="page"]{background:#f0e2d8;color:#813820;font-weight:700;box-shadow:inset 3px 0 var(--accent)}
+.project-index .project-overview{margin-top:12px}
+.project-content .article-layout{grid-template-columns:minmax(0,1fr) 180px;gap:30px}
+@media(min-width:1001px){.project-index summary{list-style:none;}.project-index summary::-webkit-details-marker{display:none}}
+@media(min-width:1001px) and (max-width:1250px){.project-content .article-layout{grid-template-columns:minmax(0,1fr)}.project-content .sidebar{grid-row:1;margin-bottom:20px}.project-content .sidebar-inner{position:static}.project-content .sidebar a{display:inline-block;margin:6px 16px 6px 0}}
+@media(max-width:1000px){.project-reader{display:block}.project-index{top:0;margin:0 -8px;padding:0 8px;z-index:10;background:var(--paper);border-bottom:1px solid var(--line)}.project-index details{max-height:70dvh;padding-right:0}.project-index summary{padding:12px 0}.project-index summary span{display:inline;margin-left:8px}.project-index nav{padding-bottom:15px}.project-content .article-layout{grid-template-columns:minmax(0,1fr)}.project-content .sidebar{grid-row:1}.article h2,.article h3{scroll-margin-top:75px}}
+@media(max-width:620px){body[data-reader] > .wrap{width:calc(100% - 32px)}}
+@media print{.project-index{display:none}.project-reader{display:block}}
+
+.project-index summary{position:sticky;top:0;background:var(--paper);z-index:1}
