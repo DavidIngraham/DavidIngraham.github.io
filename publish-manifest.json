@@ -116,6 +116,14 @@
           "title": "Can planning turns improve on L1?",
           "description": "Line-to-line transitions, raster surveys and gust comparisons.",
           "nav_title": "Trajectory planning"
+        },
+        {
+          "id": "next-flight-test-card",
+          "path": "docs/next-flight-test-card.md",
+          "title": "Micro-AGU: Next Flight Test Card",
+          "nav_title": "Next flight test card",
+          "description": "A staged plan to validate ordinary throttle, pitch and turn response, then evaluate the new controllers.",
+          "stage": "Flight validation"
         }
       ],
       "implementation_links": [
@@ -142,6 +150,12 @@
           "pages": [
             "first-flight-controller",
             "controller-design"
+          ]
+        },
+        {
+          "title": "Next flight phase",
+          "pages": [
+            "next-flight-test-card"
           ]
         },
         {
