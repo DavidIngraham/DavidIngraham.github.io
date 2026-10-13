@@ -45,3 +45,7 @@
 
 .model-diagram:fullscreen { background: var(--paper); padding: 16px; margin: 0; }
 .model-diagram:fullscreen .diagram-viewport { max-height: calc(100vh - 80px); }
+
+/* Display equations remain scrollable on narrow screens. */
+.article-math[data-display="true"]{overflow-x:auto;max-width:100%;padding:.35rem 0}
+.article-math[data-display="false"]{white-space:normal}

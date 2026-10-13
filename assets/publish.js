@@ -268,6 +268,7 @@
     revealAnchor();
     await renderComparisons(article, collection);
     await renderDiagrams(article);
+    await window.renderArticleMath?.(article);
     article.removeAttribute('aria-busy');
   }
 
