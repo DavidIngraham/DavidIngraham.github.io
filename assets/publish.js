@@ -225,18 +225,50 @@
       }
     }
     article.insertAdjacentHTML('beforeend', navigation.bottom);
+    // Media and async diagrams can move headings after the initial hash jump.
+    // Maintain the requested anchor until the reader takes over scrolling.
+    let stopTracking = () => {};
+    const revealAnchor = () => {
+      stopTracking();
+      if (!location.hash) return;
+      let id;
+      try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+      const target = document.getElementById(id);
+      if (!target) return;
+      for (let parent = target.parentElement; parent; parent = parent.parentElement) {
+        if (parent.tagName === 'DETAILS') parent.open = true;
+      }
+      let frame = 0;
+      const align = () => {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+          // Override the site's smooth scrolling: repeated layout corrections
+          // must not start competing animations toward obsolete coordinates.
+          target.scrollIntoView({behavior: 'instant', block: 'start'});
+        });
+      };
+      const observer = new ResizeObserver(align);
+      observer.observe(main);
+      stopTracking = () => {observer.disconnect(); cancelAnimationFrame(frame);};
+      align();
+    };
+    for (const event of ['wheel', 'touchstart', 'pointerdown', 'keydown']) {
+      window.addEventListener(event, () => stopTracking(), {passive: true});
+    }
+    window.addEventListener('pagehide', () => stopTracking());
+    window.addEventListener('hashchange', revealAnchor);
+    main.addEventListener('click', event => {
+      const link = event.target.closest?.('a[href]');
+      if (!link || event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      const url = new URL(link.href);
+      // Clicking the current TOC entry does not fire hashchange.
+      if (url.origin === location.origin && url.pathname === location.pathname &&
+          url.search === location.search && url.hash && url.hash === location.hash) revealAnchor();
+    });
+    revealAnchor();
     await renderComparisons(article, collection);
     await renderDiagrams(article);
     article.removeAttribute('aria-busy');
-    const revealAnchor = () => {
-      if (!location.hash) return;
-      const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-      for (let parent = target?.parentElement; parent; parent = parent.parentElement) {
-        if (parent.tagName === 'DETAILS') parent.open = true;
-      }
-      target?.scrollIntoView();
-    };
-    revealAnchor(); window.addEventListener('hashchange', revealAnchor);
   }
 
   async function start() {
