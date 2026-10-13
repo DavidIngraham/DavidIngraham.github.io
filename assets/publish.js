@@ -241,14 +241,18 @@
     for (const a of article.querySelectorAll('a[href]')) a.setAttribute('href', resolveRepositoryLink(collection, page, a.getAttribute('href'), false));
     // Only this locally owned viewer is embeddable; arbitrary article iframes stay forbidden.
     if (collection.id === 'ardupilot-tinkering') {
-      const link = [...article.querySelectorAll('a[href]')].find(a =>
-        a.href === 'https://davidingraham.github.io/assets/microagu-viewer/landing.html');
-      if (link) {
+      const replays = new Map([
+        ['https://davidingraham.github.io/assets/microagu-viewer/landing.html', ''],
+        ['https://davidingraham.github.io/assets/microagu-viewer/landing.html?case=before', '?case=before'],
+        ['https://davidingraham.github.io/assets/microagu-viewer/landing.html?case=after', '?case=after'],
+      ]);
+      for (const link of article.querySelectorAll('a[href]')) {
+        if (!replays.has(link.href)) continue;
         const frame = document.createElement('iframe');
-        frame.src = '/assets/microagu-viewer/landing.html';
-        frame.title = 'Interactive Micro-AGU spot landing replay';
+        frame.src = '/assets/microagu-viewer/landing.html' + replays.get(link.href);
+        frame.title = link.textContent || 'Interactive Micro-AGU spot landing replay';
         frame.loading = 'lazy';
-        frame.style.cssText = 'width:100%;aspect-ratio:1280/1490;border:0;min-height:420px';
+        frame.style.cssText = 'width:100%;aspect-ratio:1280/1510;border:0;min-height:420px';
         frame.setAttribute('allow', 'autoplay; fullscreen');
         link.parentElement.after(frame);
       }
