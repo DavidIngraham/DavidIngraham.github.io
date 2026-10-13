@@ -73,3 +73,5 @@ body[data-reader] > .wrap{width:min(1520px,calc(100% - 48px))}
 @media print{.project-index{display:none}.project-reader{display:block}}
 
 .project-index summary{position:sticky;top:0;background:var(--paper);z-index:1}
+
+.collection-group{margin:36px 0 48px}.collection-group>h2{font-size:26px;line-height:1.25;margin-bottom:20px}
