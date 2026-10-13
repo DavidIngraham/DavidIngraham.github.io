@@ -58,25 +58,29 @@
           "id": "micro-agu-design",
           "path": "docs/micro-agu-design.md",
           "title": "Building Micro-AGU",
-          "description": "The affordable canopy, printed payload, avionics, and propulsion that made the experiment practical."
+          "description": "The affordable canopy, printed payload, avionics, and propulsion that made the experiment practical.",
+          "nav_title": "Building Micro-AGU"
         },
         {
           "id": "flight-testing",
           "path": "docs/flight-testing.md",
           "title": "From First Tosses to Autonomous Missions",
-          "description": "Barrett Park → initial simulation → Collin’s house: measurements, fixes, tighter turns, and a 54.5-minute flight."
+          "description": "Barrett Park → initial simulation → Collin’s house: measurements, fixes, tighter turns, and a 54.5-minute flight.",
+          "nav_title": "Flight testing"
         },
         {
           "id": "first-flight-controller",
           "path": "docs/first-flight-controller.md",
           "title": "Getting Micro-AGU to Autonomous Flight",
-          "description": "Part 1: original steering and TECS design, the pitch-damper mistake, and tuning through Trout Lake."
+          "description": "Part 1: original steering and TECS design, the pitch-damper mistake, and tuning through Trout Lake.",
+          "nav_title": "Controllers through Trout Lake"
         },
         {
           "id": "controller-design",
           "path": "docs/controller-design.md",
           "title": "Designing the Micro-AGU Flight Controller",
-          "description": "Part 2: articulated simulation, the damper reversal, frequency-shaped control and classical optimization after Trout Lake."
+          "description": "Part 2: articulated simulation, the damper reversal, frequency-shaped control and classical optimization after Trout Lake.",
+          "nav_title": "Simulation and controller refinement"
         },
         {
           "id": "paraglider",
@@ -96,19 +100,22 @@
           "id": "data-and-methods",
           "path": "docs/data-and-methods.md",
           "title": "Micro-AGU: Data and Methods",
-          "description": "Log provenance, parameter histories, measurement windows, model assumptions, and reproducible analysis."
+          "description": "Log provenance, parameter histories, measurement windows, model assumptions, and reproducible analysis.",
+          "nav_title": "Data and methods"
         },
         {
           "id": "controller-research-record",
           "path": "docs/controller-research-record.md",
           "title": "Controller Research Record",
-          "description": "Historical post-flight experiments, configurations, figures and videos supporting the final controller design."
+          "description": "Historical post-flight experiments, configurations, figures and videos supporting the final controller design.",
+          "nav_title": "Controller research record"
         },
         {
           "id": "trajectory",
           "path": "docs/trajectory.md",
           "title": "Can planning turns improve on L1?",
-          "description": "Line-to-line transitions, raster surveys and gust comparisons."
+          "description": "Line-to-line transitions, raster surveys and gust comparisons.",
+          "nav_title": "Trajectory planning"
         }
       ],
       "implementation_links": [
@@ -121,7 +128,36 @@
           "url": "https://github.com/DavidIngraham/ardupilot/tree/paraglider-rebase"
         }
       ],
-      "note": "The original controller flew the missions described here. Dedicated replacement controllers and observer designs remain simulation research. Flight measurements and simulation results are identified separately."
+      "note": "The original controller flew the missions described here. Dedicated replacement controllers and observer designs remain simulation research. Flight measurements and simulation results are identified separately.",
+      "navigation": [
+        {
+          "title": "Build and flight tests",
+          "pages": [
+            "micro-agu-design",
+            "flight-testing"
+          ]
+        },
+        {
+          "title": "Controller design",
+          "pages": [
+            "first-flight-controller",
+            "controller-design"
+          ]
+        },
+        {
+          "title": "Further research",
+          "pages": [
+            "trajectory"
+          ]
+        },
+        {
+          "title": "Data and research record",
+          "pages": [
+            "data-and-methods",
+            "controller-research-record"
+          ]
+        }
+      ]
     },
     {
       "id": "husum-gauge",
