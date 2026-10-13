@@ -248,7 +248,7 @@
         frame.src = '/assets/microagu-viewer/landing.html';
         frame.title = 'Interactive Micro-AGU spot landing replay';
         frame.loading = 'lazy';
-        frame.style.cssText = 'width:100%;aspect-ratio:1280/1230;border:0;min-height:420px';
+        frame.style.cssText = 'width:100%;aspect-ratio:1280/1490;border:0;min-height:420px';
         frame.setAttribute('allow', 'autoplay; fullscreen');
         link.parentElement.after(frame);
       }

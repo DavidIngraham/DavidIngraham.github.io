@@ -85,9 +85,9 @@
         {
           "id": "spot-landing",
           "path": "docs/spot-landing.md",
-          "title": "Spot Landing: Fixing the Approach Before Tuning the Flare",
+          "title": "Landing Micro-AGU: From TECS Approach to Brake Flare",
           "nav_title": "Spot landing",
-          "description": "Native AUTO brake flare, a bounded landing-aim iteration, held-out Monte Carlo results and an interactive landing replay."
+          "description": "Shared ArduPilot landing logic, throttle-only approach, brake flare allocation, final Monte Carlo results and an interactive replay."
         },
         {
           "id": "paraglider",
