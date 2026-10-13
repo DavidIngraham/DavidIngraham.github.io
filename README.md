@@ -37,3 +37,5 @@ python3 -m http.server 8000
 ```
 
 Open http://localhost:8000/. The preview fetches the same public Markdown as the deployed site. It does not need a research checkout or Python package dependencies. AI-assisted site implementation and research documentation.
+
+The reader supports `model-comparison` fenced JSON with a `src` pointing to a `candidates.json` manifest under the collection's rendered asset directory. A trusted blog component renders the models inline; imported Markdown cannot inject scripts or iframes. Geometry and metadata stay in the source project's generated assets.

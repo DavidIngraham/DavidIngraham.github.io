@@ -142,6 +142,25 @@
     }
   }
 
+  async function renderComparisons(article, collection) {
+    for (const code of article.querySelectorAll('pre > code.language-model-comparison')) {
+      const root=document.createElement('section');
+      try {
+        const config=JSON.parse(code.textContent);
+        const url=new URL(config.src);
+        const base=new URL(collection.content_base);
+        const projectRoot=base.pathname.replace(/imports\/$/, '');
+        if (url.origin!==base.origin || url.username || url.password || url.search || url.hash || !url.pathname.startsWith(projectRoot+'assets/') || !url.pathname.endsWith('/candidates.json')) throw Error('Invalid model comparison source');
+        code.parentElement.replaceWith(root);
+        const {renderComparison}=await import('/assets/model-comparison.js');
+        await renderComparison(root,url.href);
+      } catch(error) {
+        root.textContent='The interactive model could not load. The fixed views below remain available.';
+        root.className='note';code.parentElement?.replaceWith(root);console.error('Model comparison:',error);
+      }
+    }
+  }
+
   async function renderArticle(collection, page) {
     document.title = `${page.title} — David Ingraham`;
     const meta = document.querySelector('meta[name="description"]');
@@ -206,6 +225,7 @@
       }
     }
     article.insertAdjacentHTML('beforeend', navigation.bottom);
+    await renderComparisons(article, collection);
     await renderDiagrams(article);
     article.removeAttribute('aria-busy');
     const revealAnchor = () => {
