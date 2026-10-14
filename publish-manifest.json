@@ -51,7 +51,7 @@
         "Start with the build: the canopy, printed payload, avionics, and propulsion. Then follow the flight tests at Barrett Park in Hood River, tuning in a simple simulator, and autonomous missions at Collin’s house in Trout Lake.",
         "The controller story has two phases, each covering steering and altitude: the original design through Trout Lake, then the subsequent simulation, classical analysis and refined controller. Animations accompany both; appendices preserve the experimental record."
       ],
-      "repository": "DavidIngraham/ArduPilot-tinkering",
+      "repository": "DavidIngraham/micro-agu",
       "ref": "main",
       "pages": [
         {
@@ -141,6 +141,10 @@
         }
       ],
       "implementation_links": [
+        {
+          "label": "Micro-AGU project and CAD",
+          "url": "https://github.com/DavidIngraham/micro-agu"
+        },
         {
           "label": "Plane trajectory branch",
           "url": "https://github.com/DavidIngraham/ardupilot/tree/plane-trajectory-wip"
