@@ -94,7 +94,7 @@
           "path": "docs/swoop-landing.md",
           "title": "Toward a Precision Swoop Landing",
           "nav_title": "Swoop landing",
-          "description": "Soft and dramatic turning approaches in native SITL: interactive replays, precision across eight cases, and the remaining flare and payload-motion limits."
+          "description": "Turning approaches and sustained descending spirals in native SITL: interactive replays, landing precision and the limits of speed buildup and flare."
         },
         {
           "id": "paraglider",

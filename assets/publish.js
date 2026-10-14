@@ -242,6 +242,7 @@
     // Only this locally owned viewer is embeddable; arbitrary article iframes stay forbidden.
     if (collection.id === 'ardupilot-tinkering') {
       const replays = new Map([
+        ['https://davidingraham.github.io/assets/microagu-viewer/landing.html?case=spiral', '?case=spiral'],
         ['https://davidingraham.github.io/assets/microagu-viewer/landing.html?case=swoop-soft', '?case=swoop-soft'],
         ['https://davidingraham.github.io/assets/microagu-viewer/landing.html?case=swoop-dramatic', '?case=swoop-dramatic'],
         ['https://davidingraham.github.io/assets/microagu-viewer/landing.html', ''],
