@@ -90,6 +90,13 @@
           "description": "Shared ArduPilot landing logic, descending-trim steering refinement, brake flare allocation, matched interactive replays and final Monte Carlo results."
         },
         {
+          "id": "swoop-landing",
+          "path": "docs/swoop-landing.md",
+          "title": "Toward a Precision Swoop Landing",
+          "nav_title": "Swoop landing",
+          "description": "Soft and dramatic turning approaches in native SITL: interactive replays, precision across eight cases, and the remaining flare and payload-motion limits."
+        },
+        {
           "id": "paraglider",
           "path": "docs/paraglider.md",
           "title": "Steering a Parafoil with an Airplane Autopilot",
@@ -157,7 +164,8 @@
           "pages": [
             "first-flight-controller",
             "controller-design",
-            "spot-landing"
+            "spot-landing",
+            "swoop-landing"
           ]
         },
         {
