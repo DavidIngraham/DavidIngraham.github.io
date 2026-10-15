@@ -268,6 +268,15 @@
         frame.style.cssText = 'width:100%;aspect-ratio:1280/1880;border:0;min-height:700px';
         link.parentElement.after(frame);
       }
+      for (const link of article.querySelectorAll('a[href]')) {
+        if (link.href !== 'https://davidingraham.github.io/assets/microagu-viewer/rigging-comparison.html') continue;
+        const frame = document.createElement('iframe');
+        frame.src = '/assets/microagu-viewer/rigging-comparison.html';
+        frame.title = 'Compare routed brakes, wider spreader and canopy geometry hypotheses';
+        frame.loading = 'lazy';
+        frame.style.cssText = 'width:100%;aspect-ratio:1280/2110;border:0;min-height:750px';
+        link.parentElement.after(frame);
+      }
       const replays = new Map([
         ['https://davidingraham.github.io/assets/microagu-viewer/landing.html?case=spiral', '?case=spiral'],
         ['https://davidingraham.github.io/assets/microagu-viewer/landing.html?case=swoop-soft', '?case=swoop-soft'],

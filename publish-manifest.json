@@ -3,7 +3,7 @@
   "projects": [
     {
       "title": "SV Blue Dog",
-      "tag": "Sailing · Robotics",
+      "tag": "Sailing \u00b7 Robotics",
       "description": "Developing an autonomous sailboat through explicit requirements, architecture and executable analysis, from the Gorge toward Hawaii.",
       "collection": "sv-blue-dog",
       "article": "restarting",
@@ -11,7 +11,7 @@
     },
     {
       "title": "micro AGU",
-      "tag": "Flight · Research notebook",
+      "tag": "Flight \u00b7 Research notebook",
       "description": "Building and flying Micro-AGU: an affordable parafoil, real flight tests, simulation tuning, and the controllers they inspired.",
       "collection": "ardupilot-tinkering",
       "link_label": "Start with the build",
@@ -19,14 +19,14 @@
     },
     {
       "title": "Contour Workbench",
-      "tag": "Terrain · Browser tool",
+      "tag": "Terrain \u00b7 Browser tool",
       "description": "A browser-based workbench for designing terrain models and preparing them for 3D printing. Built with Rust, WebAssembly and Three.js.",
       "url": "https://davidingraham.github.io/contour_workbench/",
       "link_label": "Open the workbench"
     },
     {
       "title": "Husum Gauge",
-      "tag": "River · Data analysis",
+      "tag": "River \u00b7 Data analysis",
       "description": "Exploring the relationship between river levels at Husum and the Underwood gauge using recorded readings and regression models.",
       "link_label": "Read the analysis",
       "collection": "husum-gauge",
@@ -34,7 +34,7 @@
     },
     {
       "description": "Reading FIT recordings as reaches, turns and carving: a heuristic detector, an experimental HSMM, and the work needed to validate them.",
-      "tag": "Wingfoil · Session analysis",
+      "tag": "Wingfoil \u00b7 Session analysis",
       "article": "reading-a-session",
       "collection": "wingfoil-analyzer",
       "title": "Wingfoil Analyzer",
@@ -48,7 +48,7 @@
       "title": "micro AGU",
       "heading": "micro AGU: from a small parafoil to autonomous flight.",
       "intro": [
-        "Start with the build: the canopy, printed payload, avionics, and propulsion. Then follow the flight tests at Barrett Park in Hood River, tuning in a simple simulator, and autonomous missions at Collin’s house in Trout Lake.",
+        "Start with the build: the canopy, printed payload, avionics, and propulsion. Then follow the flight tests at Barrett Park in Hood River, tuning in a simple simulator, and autonomous missions at Collin\u2019s house in Trout Lake.",
         "The controller story has two phases, each covering steering and altitude: the original design through Trout Lake, then the subsequent simulation, classical analysis and refined controller. Animations accompany both; appendices preserve the experimental record."
       ],
       "repository": "DavidIngraham/micro-agu",
@@ -65,7 +65,7 @@
           "id": "flight-testing",
           "path": "docs/flight-testing.md",
           "title": "From First Tosses to Autonomous Missions",
-          "description": "Barrett Park → initial simulation → Collin’s house: measurements, fixes, tighter turns, and a 54.5-minute flight.",
+          "description": "Barrett Park \u2192 initial simulation \u2192 Collin\u2019s house: measurements, fixes, tighter turns, and a 54.5-minute flight.",
           "nav_title": "Flight testing"
         },
         {
@@ -85,7 +85,7 @@
         {
           "id": "controller-state-space",
           "path": "docs/controller-state-space.md",
-          "title": "What State-Space Analysis Added to Micro-AGU’s Controller Design",
+          "title": "What State-Space Analysis Added to Micro-AGU\u2019s Controller Design",
           "nav_title": "Frequency response and state space",
           "description": "Comparing coupled frequency response, internal modes, observability and full-state feedback, with matched nonlinear gust tests and native autopilot checks."
         },
@@ -139,6 +139,14 @@
           "nav_title": "Trajectory planning"
         },
         {
+          "id": "rigging-refinement",
+          "path": "docs/rigging-refinement.md",
+          "title": "Following the Brake Line: Rigging and the Wider Spreader",
+          "nav_title": "Rigging and wider spreader",
+          "description": "Annotated canopy and spreader photos, routed-brake replay tests, canopy-shape extrapolations, and linked 3D flight comparisons.",
+          "stage": "Flight validation"
+        },
+        {
           "id": "next-flight-test-card",
           "path": "docs/next-flight-test-card.md",
           "title": "Micro-AGU: Next Flight Test Card",
@@ -183,6 +191,7 @@
         {
           "title": "Next flight phase",
           "pages": [
+            "rigging-refinement",
             "next-flight-test-card"
           ]
         },
