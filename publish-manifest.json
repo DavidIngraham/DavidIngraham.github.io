@@ -223,10 +223,10 @@
     {
       "id": "sv-blue-dog",
       "title": "SV Blue Dog",
-      "heading": "Developing Blue Dog, from mission to evidence.",
+      "heading": "Blue Dog: the story, the design and what we are learning.",
       "intro": [
         "A small autonomous sailboat, named after my blue heeler Ozzy. I started with a sailing challenge and a manufacturing testbed, then got stalled by the coupled design decisions.",
-        "Follow the story from that testbed to a SysML v2 model, an iterative development plan and the experiments needed to turn a numerical candidate into a boat. The technical reference views remain linked from the articles."
+        "Follow the story from that testbed to a connected SysML v2 model. Explore the OOSEM layers and their running maturity assessment: current evidence, open questions and the next experiments."
       ],
       "repository": "DavidIngraham/sv-blue-dog",
       "ref": "main",
@@ -236,59 +236,41 @@
           "path": "docs/restarting-sv-blue-dog.md",
           "title": "SV Blue Dog: learning through an autonomous sailboat",
           "description": "The Gorge challenge, the SolidWorks testbed, getting lost in sizing decisions, and using SysML v2 to structure work with agents.",
-          "stage": "Introduction",
+          "stage": "Start with the story",
           "nav_title": "Why Blue Dog?"
         },
         {
           "id": "development-plan",
           "path": "docs/development-plan.md",
-          "title": "Developing Blue Dog: a V with room to learn",
-          "description": "The organizing plan: early virtual V&V, physical V&V, model credibility and scoped review gates.",
+          "title": "Blue Dog: a running OOSEM maturity assessment",
+          "description": "A running assessment of the OOSEM layers: coverage, traceability, virtual and physical evidence, gaps and next investigations.",
           "hidden": false,
-          "stage": "Introduction",
-          "nav_title": "Development plan and review gates"
+          "stage": "Start with the story",
+          "nav_title": "Current maturity and next questions"
         },
         {
           "id": "design-guide",
           "title": "SV Blue Dog: the development series",
           "path": "docs/index.md",
-          "description": "Read the series through the development plan, with each article mapped to its inputs and design decisions.",
-          "stage": "Introduction",
+          "description": "Start with the personal story, then explore mission, requirements, architecture, trades and evidence.",
+          "stage": "Start with the story",
           "nav_title": "Reading guide"
-        },
-        {
-          "id": "architecture",
-          "path": "docs/architecture.md",
-          "title": "Mission, context and architecture",
-          "description": "Mission definition to PDR: translate goals, operating scenarios and constraints into subsystem responsibilities.",
-          "hidden": false,
-          "stage": "Mission and requirements · SRR",
-          "nav_title": "Mission and architecture"
         },
         {
           "id": "operating-constraints",
           "path": "docs/operating-constraints.md",
           "title": "Establishing operating constraints",
-          "description": "SRR and test readiness: establish the operating context and constraints on design and deployment.",
+          "description": "Establish the mission context, operating conditions and unresolved deployment questions.",
           "hidden": false,
-          "stage": "Mission and requirements · SRR",
+          "stage": "Mission and stakeholder needs",
           "nav_title": "Operating constraints"
-        },
-        {
-          "id": "mission-simulation",
-          "path": "docs/mission-simulation.md",
-          "title": "Sailing the challenge before building the boat",
-          "description": "The mission-level virtual V: charted gates, chronological voyages and seeded weather and traffic experiments.",
-          "hidden": false,
-          "stage": "Mission and requirements · SRR",
-          "nav_title": "Mission simulation"
         },
         {
           "id": "requirements-views",
           "title": "Requirements: mission to implementation",
           "description": "Six topic pages tracing mission goals to testable design obligations.",
           "path": "docs/requirements.md",
-          "stage": "Mission and requirements · SRR",
+          "stage": "System requirements and scenarios",
           "nav_title": "Requirements overview"
         },
         {
@@ -298,7 +280,7 @@
           "path": "docs/requirements/requirements-mission.md",
           "hidden": true,
           "nav_title": "Mission and performance",
-          "stage": "Mission and requirements · SRR"
+          "stage": "System requirements and scenarios"
         },
         {
           "id": "requirements-autonomy",
@@ -307,7 +289,7 @@
           "path": "docs/requirements/requirements-autonomy.md",
           "hidden": true,
           "nav_title": "Autonomy and wind sensing",
-          "stage": "Mission and requirements · SRR"
+          "stage": "System requirements and scenarios"
         },
         {
           "id": "requirements-energy",
@@ -316,7 +298,7 @@
           "path": "docs/requirements/requirements-energy.md",
           "hidden": true,
           "nav_title": "Energy and propulsion",
-          "stage": "Mission and requirements · SRR"
+          "stage": "System requirements and scenarios"
         },
         {
           "id": "requirements-environment",
@@ -325,7 +307,7 @@
           "path": "docs/requirements/requirements-environment.md",
           "hidden": true,
           "nav_title": "Environment and recovery",
-          "stage": "Mission and requirements · SRR"
+          "stage": "System requirements and scenarios"
         },
         {
           "id": "requirements-safety",
@@ -334,7 +316,7 @@
           "path": "docs/requirements/requirements-safety.md",
           "hidden": true,
           "nav_title": "Traffic, safety and communications",
-          "stage": "Mission and requirements · SRR"
+          "stage": "System requirements and scenarios"
         },
         {
           "id": "requirements-practicality",
@@ -343,15 +325,50 @@
           "path": "docs/requirements/requirements-practicality.md",
           "hidden": true,
           "nav_title": "Manufacturing and handling",
-          "stage": "Mission and requirements · SRR"
+          "stage": "System requirements and scenarios"
         },
         {
-          "id": "srr-review",
-          "path": "docs/srr-review.md",
-          "title": "Blue Dog system requirements review",
-          "stage": "Mission and requirements · SRR",
-          "description": "Review baseline, evidence limitations and open decisions.",
-          "presentation": true
+          "id": "mission-simulation",
+          "path": "docs/mission-simulation.md",
+          "title": "Sailing the challenge before building the boat",
+          "description": "Exercise requirements and scenarios through charted gates, chronological voyages and seeded weather and traffic experiments.",
+          "hidden": false,
+          "stage": "System requirements and scenarios",
+          "nav_title": "Mission simulation"
+        },
+        {
+          "id": "architecture",
+          "path": "docs/architecture.md",
+          "title": "Mission, context and architecture",
+          "description": "Connect mission context and use cases to logical scenarios, responsibilities and initial physical allocations.",
+          "hidden": false,
+          "stage": "Logical architecture",
+          "nav_title": "Mission and architecture"
+        },
+        {
+          "id": "structure-sizing",
+          "title": "Manufacturing, structure and recovery",
+          "path": "docs/structures-and-recovery.md",
+          "description": "Connect candidate geometry, construction and loads to a buildable configuration and physical evidence.",
+          "stage": "Candidate physical architectures",
+          "nav_title": "Structure and recovery"
+        },
+        {
+          "id": "sail-trade",
+          "path": "docs/sail-trade.md",
+          "title": "Comparing sail architectures",
+          "description": "Compare candidate rigs and identify the measurements needed to support a physical architecture.",
+          "stage": "Candidate physical architectures",
+          "nav_title": "Sail trade study"
+        },
+        {
+          "id": "recovery-propulsion",
+          "path": "docs/recovery-propulsion.md",
+          "title": "Comparing recovery propulsion",
+          "description": "Compare installed recovery concepts and define the evidence needed to choose between them.",
+          "hidden": false,
+          "stage": "Candidate physical architectures",
+          "nav_title": "Recovery propulsion"
         },
         {
           "id": "design-search-results",
@@ -359,24 +376,16 @@
           "path": "docs/results.md",
           "hidden": false,
           "description": "Current Gorge sizing: candidate geometry, challenge-profile replay, limiting margins and the next experiments.",
-          "stage": "Concept and preliminary design · PDR",
+          "stage": "Trades, optimization and analysis",
           "nav_title": "Sizing results"
         },
         {
           "id": "sailing-performance",
           "title": "Coupled sizing with conservative aerodynamic assumptions",
           "path": "docs/sizing.md",
-          "description": "Virtual design and PDR: use mission criteria and declared physics to assess coupled boat sizing.",
-          "stage": "Concept and preliminary design · PDR",
+          "description": "Use mission criteria and declared physics to compare coupled boat designs and expose dominant assumptions.",
+          "stage": "Trades, optimization and analysis",
           "nav_title": "Sizing method"
-        },
-        {
-          "id": "sail-trade",
-          "path": "docs/sail-trade.md",
-          "title": "Comparing sail architectures",
-          "description": "PDR and model credibility: compare rigs and identify the measurements needed to support selection.",
-          "stage": "Concept and preliminary design · PDR",
-          "nav_title": "Sail trade study"
         },
         {
           "id": "energy",
@@ -384,17 +393,8 @@
           "title": "Sustained operation: follow energy through the mission",
           "description": "Virtual design to physical V&V: connect mission loads and harvesting to storage and control decisions.",
           "hidden": false,
-          "stage": "Concept and preliminary design · PDR",
+          "stage": "Trades, optimization and analysis",
           "nav_title": "Mission energy"
-        },
-        {
-          "id": "recovery-propulsion",
-          "path": "docs/recovery-propulsion.md",
-          "title": "Comparing recovery propulsion",
-          "description": "PDR to implementation: compare installed recovery concepts and define their physical evidence needs.",
-          "hidden": false,
-          "stage": "Concept and preliminary design · PDR",
-          "nav_title": "Recovery propulsion"
         },
         {
           "id": "cruise-reliability",
@@ -402,16 +402,8 @@
           "path": "docs/reliability.md",
           "hidden": false,
           "description": "Virtual design to physical V&V: connect passage exposure and failure modes to fault and endurance evidence.",
-          "stage": "Concept and preliminary design · PDR",
+          "stage": "Trades, optimization and analysis",
           "nav_title": "Reliability and failure analysis"
-        },
-        {
-          "id": "structure-sizing",
-          "title": "Manufacturing, structure and recovery",
-          "path": "docs/structures-and-recovery.md",
-          "description": "PDR to CDR and model validation: use geometry, construction and loads to plan structure and recovery evidence.",
-          "stage": "Detailed design · CDR",
-          "nav_title": "Structure and recovery"
         },
         {
           "id": "validation-plan",
@@ -419,7 +411,7 @@
           "title": "From virtual evidence to water trials",
           "description": "Planned integration, model correlation and bounded trial readiness; no completed physical qualification is implied.",
           "nav_title": "From virtual evidence to water trials",
-          "stage": "Integration and validation · TRR and trials"
+          "stage": "Verification, validation and learning"
         },
         {
           "id": "modeling-method",
@@ -427,24 +419,34 @@
           "title": "Modeling method",
           "description": "How SysML requirements, rationale, analysis and evidence stay connected.",
           "nav_title": "Modeling method",
-          "stage": "Appendix"
+          "stage": "Methods and historical assessments"
         },
         {
           "id": "publishing",
           "path": "docs/publishing.md",
           "title": "Authoring and publishing",
-          "description": "Across the V: publish model-linked methods and evidence consistently for review decisions.",
+          "description": "Publish model-linked methods, current maturity and evidence while preserving their provenance.",
           "hidden": false,
-          "stage": "Appendix",
+          "stage": "Methods and historical assessments",
           "nav_title": "Authoring and publishing"
+        },
+        {
+          "id": "srr-review",
+          "path": "docs/srr-review.md",
+          "title": "Blue Dog system requirements review",
+          "stage": "Methods and historical assessments",
+          "description": "Historical requirements assessment and its evidence limitations; formal SRR approval is no longer a current project gate.",
+          "presentation": true,
+          "nav_title": "Earlier SRR assessment"
         },
         {
           "id": "srr-appendix",
           "path": "docs/srr-appendix.md",
           "title": "SRR technical appendix",
-          "stage": "Appendix",
-          "description": "Review baseline, evidence limitations and open decisions.",
-          "presentation": false
+          "stage": "Methods and historical assessments",
+          "description": "Supporting evidence retained from the earlier requirements assessment.",
+          "presentation": false,
+          "nav_title": "Historical assessment evidence"
         },
         {
           "id": "requirements-c-000",
@@ -1013,7 +1015,7 @@
       ],
       "navigation": [
         {
-          "title": "Introduction",
+          "title": "Start with the story",
           "pages": [
             "restarting",
             "development-plan",
@@ -1021,11 +1023,14 @@
           ]
         },
         {
-          "title": "Mission and requirements · SRR",
+          "title": "Mission and stakeholder needs",
           "pages": [
-            "architecture",
-            "operating-constraints",
-            "mission-simulation",
+            "operating-constraints"
+          ]
+        },
+        {
+          "title": "System requirements and scenarios",
+          "pages": [
             "requirements-views",
             "requirements-mission",
             "requirements-autonomy",
@@ -1033,37 +1038,44 @@
             "requirements-environment",
             "requirements-safety",
             "requirements-practicality",
-            "srr-review"
+            "mission-simulation"
           ]
         },
         {
-          "title": "Concept and preliminary design · PDR",
+          "title": "Logical architecture",
+          "pages": [
+            "architecture"
+          ]
+        },
+        {
+          "title": "Candidate physical architectures",
+          "pages": [
+            "structure-sizing",
+            "sail-trade",
+            "recovery-propulsion"
+          ]
+        },
+        {
+          "title": "Trades, optimization and analysis",
           "pages": [
             "design-search-results",
             "sailing-performance",
-            "sail-trade",
             "energy",
-            "recovery-propulsion",
             "cruise-reliability"
           ]
         },
         {
-          "title": "Detailed design · CDR",
-          "pages": [
-            "structure-sizing"
-          ]
-        },
-        {
-          "title": "Integration and validation · TRR and trials",
+          "title": "Verification, validation and learning",
           "pages": [
             "validation-plan"
           ]
         },
         {
-          "title": "Appendix",
+          "title": "Methods and historical assessments",
           "pages": [
             "modeling-method",
             "publishing",
+            "srr-review",
             "srr-appendix"
           ]
         }
