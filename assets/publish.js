@@ -247,7 +247,7 @@
         frame.src = '/assets/controller-comparison/index.html';
         frame.title = 'Compare refined state feedback with conventional controllers';
         frame.loading = 'lazy';
-        frame.style.cssText = 'width:100%;height:1120px;border:1px solid #d5dfe6;border-radius:8px';
+        frame.style.cssText = 'width:100%;height:1650px;border:1px solid #d5dfe6;border-radius:8px';
         link.parentElement.after(frame);
       }
       const replays = new Map([
