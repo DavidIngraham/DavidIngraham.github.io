@@ -2,11 +2,12 @@
   "version": 1,
   "projects": [
     {
-      "title": "Contour Workbench",
-      "tag": "Terrain · Browser tool",
-      "description": "A browser-based workbench for designing terrain models and preparing them for 3D printing. Built with Rust, WebAssembly and Three.js.",
-      "url": "https://davidingraham.github.io/contour_workbench/",
-      "link_label": "Open the workbench"
+      "title": "SV Blue Dog",
+      "tag": "Sailing · Robotics",
+      "description": "Developing an autonomous sailboat through explicit requirements, architecture and executable analysis, from the Gorge toward Hawaii.",
+      "collection": "sv-blue-dog",
+      "article": "restarting",
+      "link_label": "Read the project notes"
     },
     {
       "title": "micro AGU",
@@ -17,20 +18,19 @@
       "article": "micro-agu-design"
     },
     {
+      "title": "Contour Workbench",
+      "tag": "Terrain · Browser tool",
+      "description": "A browser-based workbench for designing terrain models and preparing them for 3D printing. Built with Rust, WebAssembly and Three.js.",
+      "url": "https://davidingraham.github.io/contour_workbench/",
+      "link_label": "Open the workbench"
+    },
+    {
       "title": "Husum Gauge",
       "tag": "River · Data analysis",
       "description": "Exploring the relationship between river levels at Husum and the Underwood gauge using recorded readings and regression models.",
       "link_label": "Read the analysis",
       "collection": "husum-gauge",
       "article": "analysis"
-    },
-    {
-      "title": "SV Blue Dog",
-      "tag": "Sailing · Robotics",
-      "description": "Developing an autonomous sailboat through explicit requirements, architecture and executable analysis, from the Gorge toward Hawaii.",
-      "collection": "sv-blue-dog",
-      "article": "restarting",
-      "link_label": "Read the project notes"
     },
     {
       "description": "Reading FIT recordings as reaches, turns and carving: a heuristic detector, an experimental HSMM, and the work needed to validate them.",
