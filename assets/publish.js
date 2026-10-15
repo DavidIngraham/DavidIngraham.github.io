@@ -241,6 +241,15 @@
     for (const a of article.querySelectorAll('a[href]')) a.setAttribute('href', resolveRepositoryLink(collection, page, a.getAttribute('href'), false));
     // Only this locally owned viewer is embeddable; arbitrary article iframes stay forbidden.
     if (collection.id === 'ardupilot-tinkering') {
+      for (const link of article.querySelectorAll('a[href]')) {
+        if (link.href !== 'https://davidingraham.github.io/assets/controller-comparison/index.html') continue;
+        const frame = document.createElement('iframe');
+        frame.src = '/assets/controller-comparison/index.html';
+        frame.title = 'Compare refined state feedback with conventional controllers';
+        frame.loading = 'lazy';
+        frame.style.cssText = 'width:100%;height:1120px;border:1px solid #d5dfe6;border-radius:8px';
+        link.parentElement.after(frame);
+      }
       const replays = new Map([
         ['https://davidingraham.github.io/assets/microagu-viewer/landing.html?case=spiral', '?case=spiral'],
         ['https://davidingraham.github.io/assets/microagu-viewer/landing.html?case=swoop-soft', '?case=swoop-soft'],
