@@ -18,6 +18,7 @@ export function validateData(data) {
  }
  return data;
 }
+const riskBand = (data,risk) => data.bands?.[data.likelihood.indexOf(risk.likelihood)]?.[data.consequence.indexOf(risk.consequence)] || '';
 const title = value => value.charAt(0).toUpperCase()+value.slice(1);
 let sequence=0;
 export async function renderRiskExplorer(root, url) {
@@ -55,7 +56,7 @@ export function mountRiskExplorer(root,data) {
   const risk=data.risks.find(r=>r.identifier===selected);
   if(!risk){detail.append(el('p','Select a risk in a cube to see its description, evidence and reduction action.'));return;}
   const h=el('h4',`${risk.identifier} · ${title(risk.area)}`);h.tabIndex=-1;detail.append(h);
-  detail.append(el('p',`${title(risk.kind)} · ${title(statusName(risk))} · ${risk.likelihood || 'Unassessed'} / ${risk.consequence || 'Unassessed'} · ${risk.confidence || 'Unassessed'} confidence`,'risk-summary'));
+  detail.append(el('p',`${title(risk.kind)} · ${title(statusName(risk))} · ${risk.likelihood || 'Unassessed'} / ${risk.consequence || 'Unassessed'} · ${risk.confidence || 'Unassessed'} confidence${riskBand(data,risk) ? ' · '+title(riskBand(data,risk))+' risk' : ''}`,'risk-summary'));
   const list=el('dl');detail.append(list);
   const fields=[['Risk description','statement'],['Consequence if unresolved','effect'],['Assessment basis','basis'],['Evidence gap','uncertainty'],['Work priority','priority'],['Why investigate','priorityRationale'],['Reduction action','reductionAction'],['Closure evidence','closureEvidence'],['Disposition','disposition'],['Assessment scope','scope'],['Assessed on','assessedOn'],['Assessor','assessor'],['Owner','owner']];
   for(const [label,key] of fields)if(risk[key])list.append(el('dt',label),el('dd',risk[key]));
@@ -95,11 +96,12 @@ export function mountRiskExplorer(root,data) {
    const body=el('tbody');
    for(const likelihood of [...data.likelihood].reverse()){
     const row=el('tr'),th=el('th',likelihood);th.scope='row';row.append(th);
-    for(const consequence of data.consequence){const cell=el('td');const entries=group.risks.filter(r=>r.likelihood===likelihood&&r.consequence===consequence);if(entries.length)cell.className='risk-occupied';for(const r of entries)cell.append(riskLink(r));row.append(cell);}body.append(row);
+    for(const consequence of data.consequence){const cell=el('td');const entries=group.risks.filter(r=>r.likelihood===likelihood&&r.consequence===consequence);const band=riskBand(data,{likelihood,consequence});if(['low','moderate','high'].includes(band)){cell.className='risk-band-'+band;cell.setAttribute('aria-label',`${likelihood}, ${consequence}: ${band} risk`);cell.title=title(band)+' risk';}for(const r of entries)cell.append(riskLink(r));row.append(cell);}body.append(row);
    }
    grid.append(body);scroll.append(grid);section.append(scroll);
    const unknown=group.risks.filter(r=>!r.likelihood||!r.consequence);
    if(unknown.length){const p=el('p','Unassessed: ');for(const r of unknown)p.append(riskLink(r));section.append(p);}
+   if(data.bands){const legend=el('div',undefined,'risk-legend');for(const band of ['low','moderate','high'])legend.append(el('span',title(band)+' risk','risk-band-'+band));section.append(legend);}
    section.append(el('p','Qualitative judgments; not probabilities of accidents. Demonstrated means a current limitation already restricts the conclusion. No residual-risk acceptance implied.','risk-help'));
    cubes.append(section);
   }
