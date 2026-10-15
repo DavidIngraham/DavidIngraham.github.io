@@ -408,11 +408,20 @@
         {
           "id": "energy",
           "path": "docs/energy.md",
-          "title": "Sustained operation: follow energy through the mission",
-          "description": "Virtual design to physical V&V: connect mission loads and harvesting to storage and control decisions.",
+          "title": "Power and energy budget for the Gorge candidate",
+          "description": "Reconciled candidate loads, storage, recovery reserve and unresolved equipment allocations.",
           "hidden": false,
           "stage": "Trades, optimization and analysis",
-          "nav_title": "Mission energy"
+          "nav_title": "Power and energy budget"
+        },
+        {
+          "id": "encounter-feasibility",
+          "path": "docs/encounter-feasibility.md",
+          "title": "Seeing hazards early enough to act",
+          "description": "Detection-distance sensitivity, imperfect observations, sensing and energy hypotheses, and casualty recovery evidence.",
+          "hidden": false,
+          "stage": "Trades, optimization and analysis",
+          "nav_title": "Detection, avoidance and recovery"
         },
         {
           "id": "cruise-reliability",
