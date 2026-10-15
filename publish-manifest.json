@@ -419,7 +419,7 @@
           "title": "Modeling method",
           "description": "How SysML requirements, rationale, analysis and evidence stay connected.",
           "nav_title": "Modeling method",
-          "stage": "Methods and historical assessments"
+          "stage": "Methods and evidence"
         },
         {
           "id": "publishing",
@@ -427,26 +427,26 @@
           "title": "Authoring and publishing",
           "description": "Publish model-linked methods, current maturity and evidence while preserving their provenance.",
           "hidden": false,
-          "stage": "Methods and historical assessments",
+          "stage": "Methods and evidence",
           "nav_title": "Authoring and publishing"
         },
         {
           "id": "srr-review",
           "path": "docs/srr-review.md",
-          "title": "Blue Dog system requirements review",
-          "stage": "Methods and historical assessments",
-          "description": "Historical requirements assessment and its evidence limitations; formal SRR approval is no longer a current project gate.",
+          "title": "Blue Dog mission and design assessment",
+          "stage": "Methods and evidence",
+          "description": "The Gorge mission, candidate design, supporting evidence and next investigations.",
           "presentation": true,
-          "nav_title": "Earlier SRR assessment"
+          "nav_title": "Mission and design assessment"
         },
         {
           "id": "srr-appendix",
           "path": "docs/srr-appendix.md",
-          "title": "SRR technical appendix",
-          "stage": "Methods and historical assessments",
-          "description": "Supporting evidence retained from the earlier requirements assessment.",
+          "title": "Design evidence and open questions",
+          "stage": "Methods and evidence",
+          "description": "Course, environment, traffic, recovery and candidate calculations, with their applicability and evidence gaps.",
           "presentation": false,
-          "nav_title": "Historical assessment evidence"
+          "nav_title": "Design evidence"
         },
         {
           "id": "requirements-c-000",
@@ -874,7 +874,7 @@
         {
           "id": "requirements-context",
           "title": "Reading the design through the model",
-          "description": "Across the V: preserve requirement derivation, rationale and virtual-versus-physical evidence traceability.",
+          "description": "Across the OOSEM layers: preserve requirement derivation, rationale and virtual-versus-physical evidence traceability.",
           "path": "docs/methods/modeling.md",
           "hidden": true
         },
@@ -915,20 +915,20 @@
           "title": "Refinements and design-basis dependencies",
           "path": "docs/methods/modeling.md",
           "hidden": true,
-          "description": "Across the V: preserve requirement derivation, rationale and virtual-versus-physical evidence traceability."
+          "description": "Across the OOSEM layers: preserve requirement derivation, rationale and virtual-versus-physical evidence traceability."
         },
         {
           "id": "sailing-performance-results",
           "title": "Coupled sizing with conservative aerodynamic assumptions",
           "path": "docs/sizing.md",
           "hidden": true,
-          "description": "Virtual design and PDR: use mission criteria and declared physics to assess coupled boat sizing."
+          "description": "Trades and analysis: use mission criteria and declared physics to assess coupled boat sizing."
         },
         {
           "id": "appendage-sizing",
           "title": "Coupled sizing with conservative aerodynamic assumptions",
           "path": "docs/sizing.md",
-          "description": "Virtual design and PDR: use mission criteria and declared physics to assess coupled boat sizing.",
+          "description": "Trades and analysis: use mission criteria and declared physics to assess coupled boat sizing.",
           "hidden": true
         },
         {
@@ -936,13 +936,13 @@
           "title": "Coupled sizing with conservative aerodynamic assumptions",
           "path": "docs/sizing.md",
           "hidden": true,
-          "description": "Virtual design and PDR: use mission criteria and declared physics to assess coupled boat sizing."
+          "description": "Trades and analysis: use mission criteria and declared physics to assess coupled boat sizing."
         },
         {
           "id": "design-search",
           "title": "Coupled sizing with conservative aerodynamic assumptions",
           "path": "docs/sizing.md",
-          "description": "Virtual design and PDR: use mission criteria and declared physics to assess coupled boat sizing.",
+          "description": "Trades and analysis: use mission criteria and declared physics to assess coupled boat sizing.",
           "hidden": true
         },
         {
@@ -964,13 +964,13 @@
           "title": "Manufacturing, structure and recovery",
           "path": "docs/structures-and-recovery.md",
           "hidden": true,
-          "description": "PDR to CDR and model validation: use geometry, construction and loads to plan structure and recovery evidence."
+          "description": "Physical architecture and model validation: use geometry, construction and loads to plan structure and recovery evidence."
         },
         {
           "id": "mission-sizing",
           "path": "docs/sizing.md",
           "title": "Coupled sizing with conservative aerodynamic assumptions",
-          "description": "Virtual design and PDR: use mission criteria and declared physics to assess coupled boat sizing.",
+          "description": "Trades and analysis: use mission criteria and declared physics to assess coupled boat sizing.",
           "hidden": true
         },
         {
@@ -984,7 +984,7 @@
           "id": "sail-trade-results",
           "path": "docs/sail-trade.md",
           "title": "Comparing sail architectures",
-          "description": "PDR and model credibility: compare rigs and identify the measurements needed to support selection.",
+          "description": "Trades and model credibility: compare rigs and identify the measurements needed to support selection.",
           "hidden": true
         },
         {
@@ -1071,7 +1071,7 @@
           ]
         },
         {
-          "title": "Methods and historical assessments",
+          "title": "Methods and evidence",
           "pages": [
             "modeling-method",
             "publishing",
