@@ -83,6 +83,13 @@
           "nav_title": "Simulation and controller refinement"
         },
         {
+          "id": "controller-state-space",
+          "path": "docs/controller-state-space.md",
+          "title": "What State-Space Analysis Added to Micro-AGU’s Controller Design",
+          "nav_title": "Frequency response and state space",
+          "description": "Comparing coupled frequency response, internal modes, observability and full-state feedback, with matched nonlinear gust tests and native autopilot checks."
+        },
+        {
           "id": "spot-landing",
           "path": "docs/spot-landing.md",
           "title": "Landing Micro-AGU: From TECS Approach to Brake Flare",
@@ -168,6 +175,7 @@
           "pages": [
             "first-flight-controller",
             "controller-design",
+            "controller-state-space",
             "spot-landing",
             "swoop-landing"
           ]
