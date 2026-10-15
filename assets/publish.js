@@ -247,7 +247,7 @@
         frame.src = '/assets/microagu-viewer/controller-comparison.html';
         frame.title = 'Compare refined state feedback with conventional controllers';
         frame.loading = 'lazy';
-        frame.style.cssText = 'width:100%;aspect-ratio:1280/1530;border:0;min-height:700px';
+        frame.style.cssText = 'width:100%;aspect-ratio:1280/1880;border:0;min-height:700px';
         link.parentElement.after(frame);
       }
       const replays = new Map([
