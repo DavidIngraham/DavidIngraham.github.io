@@ -259,6 +259,21 @@
     for (const a of article.querySelectorAll('a[href]')) a.setAttribute('href', resolveRepositoryLink(collection, page, a.getAttribute('href'), false));
     // Only this locally owned viewer is embeddable; arbitrary article iframes stay forbidden.
     if (collection.id === 'ardupilot-tinkering') {
+      const nativeReplays = new Map([["joint-tour.html", "1280/1600"], ["pitch-comparison.html", "1600/1250"], ["altitude-comparison.html", "1600/1250"], ["pitch-fbd.html", "1600/1250"], ["trim-launch.html", "1600/1050"], ["simulation-replay.html?case=turn", "1280/1120"], ["simulation-replay.html?case=calm", "1280/1120"], ["simulation-replay.html?case=gust", "1280/1120"], ["simulation-replay.html?case=crosswind", "1280/1120"], ["flight-replay.html?recording=flight-replays/hood-river.json", "1600/1250"], ["flight-replay.html?recording=flight-replays/trout-lake.json", "1600/1250"]]);
+      for (const link of article.querySelectorAll('a[href]')) {
+        if(link.parentElement.tagName!=='P'||link.parentElement.textContent.trim()!==link.textContent.trim())continue;
+        const url=new URL(link.href),key=url.pathname.replace('/assets/microagu-viewer/','')+url.search;
+        if(url.origin!=='https://davidingraham.github.io'||!url.pathname.startsWith('/assets/microagu-viewer/')||url.hash||!nativeReplays.has(key))continue;
+        const frame=document.createElement('iframe');frame.src='/assets/microagu-viewer/'+key;frame.title=link.textContent||'Interactive MicroAGU replay';frame.loading='lazy';frame.allow='autoplay; fullscreen';
+        frame.style.cssText='width:100%;aspect-ratio:'+nativeReplays.get(key)+';border:0;min-height:480px';
+        frame.addEventListener('load',()=>{
+          const body=frame.contentDocument?.body;if(!body)return;
+          const resize=()=>{const style=frame.contentWindow.getComputedStyle(body);frame.style.aspectRatio='auto';frame.style.height=Math.ceil(body.getBoundingClientRect().height+parseFloat(style.marginTop)+parseFloat(style.marginBottom)+16)+'px';};
+          const observer=new ResizeObserver(resize);observer.observe(body);resize();
+        });
+        link.parentElement.after(frame);
+      }
+
       for (const link of article.querySelectorAll('a[href]')) {
         if (!['https://davidingraham.github.io/assets/controller-comparison/index.html', 'https://davidingraham.github.io/assets/microagu-viewer/controller-comparison.html'].includes(link.href)) continue;
         const frame = document.createElement('iframe');
