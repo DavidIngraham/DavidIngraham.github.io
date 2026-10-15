@@ -249,6 +249,15 @@
           "nav_title": "Current maturity and next questions"
         },
         {
+          "id": "simulation-spirals",
+          "path": "docs/simulation-spirals.md",
+          "title": "Developing the mission simulation in spirals",
+          "description": "How successive investigations connect mission behavior, vessel physics and evidence, and expose the next fidelity gap.",
+          "hidden": false,
+          "stage": "Start with the story",
+          "nav_title": "Simulation development spirals"
+        },
+        {
           "id": "design-guide",
           "title": "SV Blue Dog: the development series",
           "path": "docs/index.md",
@@ -331,7 +340,7 @@
           "id": "mission-simulation",
           "path": "docs/mission-simulation.md",
           "title": "Sailing the challenge before building the boat",
-          "description": "Exercise requirements and scenarios through charted gates, chronological voyages and seeded weather and traffic experiments.",
+          "description": "Executable supervisory decisions, charted voyages, candidate performance and seeded weather and traffic experiments.",
           "hidden": false,
           "stage": "System requirements and scenarios",
           "nav_title": "Mission simulation"
@@ -340,7 +349,7 @@
           "id": "architecture",
           "path": "docs/architecture.md",
           "title": "Mission, context and architecture",
-          "description": "Connect mission context and use cases to logical scenarios, responsibilities and initial physical allocations.",
+          "description": "Mission context, logical scenarios, executable supervisory behavior and physical allocations.",
           "hidden": false,
           "stage": "Logical architecture",
           "nav_title": "Mission and architecture"
@@ -1019,6 +1028,7 @@
           "pages": [
             "restarting",
             "development-plan",
+            "simulation-spirals",
             "design-guide"
           ]
         },
