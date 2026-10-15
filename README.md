@@ -42,3 +42,7 @@ Open http://localhost:8000/. The preview fetches the same public Markdown as the
 The reader supports `model-comparison` fenced JSON with a `src` pointing to a `candidates.json` manifest under the collection's rendered asset directory. A trusted blog component renders the models inline; imported Markdown cannot inject scripts or iframes. Geometry and metadata stay in the source project's generated assets.
 
 The `design-explorer` Markdown fence accepts a `src` pointing to the collection’s generated `assets/design-explorer/design.json`. The source repository exports native sizing inputs and brackets; the trusted reader component provides a geometry sketch and local configuration editing. It does not execute the engineering solver. Verify its dimensional contract with `node tests/design-explorer.cjs /path/to/generated/design.json`.
+
+### Risk explorer
+
+The `risk-explorer` fence accepts the collection's generated `assets/risk/risks.json`. The trusted reader displays one cube per risk type, with shared type, status and text filters. Selecting an ID shows only that risk's description, assessment and actions. The data is exported through the native SysML report; the browser does not assign ratings. Run `node tests/risk-explorer.cjs /path/to/generated/risks.json` to check the contract and filters.

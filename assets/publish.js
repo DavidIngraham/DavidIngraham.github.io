@@ -212,6 +212,24 @@
     }
   }
 
+  async function renderRiskExplorers(article, collection) {
+    for (const code of article.querySelectorAll('pre > code.language-risk-explorer')) {
+      const root = document.createElement('section');
+      try {
+        const config = JSON.parse(code.textContent), url = new URL(config.src);
+        const base = new URL(collection.content_base);
+        const expected = base.pathname.replace(/imports\/$/, '') + 'assets/risk/risks.json';
+        if (url.origin !== base.origin || url.pathname !== expected || url.username || url.password || url.search || url.hash) throw Error('Invalid risk explorer source');
+        code.parentElement.replaceWith(root);
+        const {renderRiskExplorer} = await import('/assets/risk-explorer.js');
+        await renderRiskExplorer(root, url.href);
+      } catch (error) {
+        root.className = 'note'; root.textContent = 'The risk explorer could not load. Reload to try again; the risk inventory remains available in the repository.';
+        code.parentElement?.replaceWith(root); console.error('Risk explorer:', error);
+      }
+    }
+  }
+
   async function renderArticle(collection, page) {
     document.title = `${page.title} — David Ingraham`;
     const meta = document.querySelector('meta[name="description"]');
@@ -351,6 +369,7 @@
     });
     revealAnchor();
     await renderDesignExplorers(article, collection);
+    await renderRiskExplorers(article, collection);
     await renderComparisons(article, collection);
     await renderDiagrams(article);
     await window.renderArticleMath?.(article);
