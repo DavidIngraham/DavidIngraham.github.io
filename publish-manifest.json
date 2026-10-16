@@ -165,12 +165,16 @@
           "url": "https://github.com/DavidIngraham/micro-agu"
         },
         {
+          "label": "External 9-DOF model, launch and calibration",
+          "url": "https://github.com/DavidIngraham/micro-agu/tree/main/simulation"
+        },
+        {
           "label": "Plane trajectory branch",
           "url": "https://github.com/DavidIngraham/ardupilot/tree/plane-trajectory-wip"
         },
         {
-          "label": "Paraglider branch",
-          "url": "https://github.com/DavidIngraham/ardupilot/tree/paraglider-rebase"
+          "label": "Paraglider firmware and built-in model",
+          "url": "https://github.com/DavidIngraham/ardupilot/tree/paraglider-browser-9dof"
         }
       ],
       "note": "The original controller flew the missions described here. Dedicated replacement controllers and observer designs remain simulation research. Flight measurements and simulation results are identified separately.",
