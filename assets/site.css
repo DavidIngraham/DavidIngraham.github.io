@@ -73,3 +73,7 @@ body[data-reader] > .wrap{width:min(1520px,calc(100% - 48px))}
 @media print{.project-index{display:none}.project-reader{display:block}}
 
 .project-index summary{position:sticky;top:0;background:var(--paper);z-index:1}
+
+/* Keep Blue Dog prose readable while figures and tables use the article width. */
+[data-collection="sv-blue-dog"] .article :is(p,ul,ol,dl,blockquote){max-width:74ch}
+[data-collection="sv-blue-dog"] .article p:has(>img),[data-collection="sv-blue-dog"] .article p:has(>a>img){max-width:none}

@@ -37,6 +37,7 @@
 
   function mountProjectIndex(collection, page) {
     main.classList.add('project-reader');
+    main.dataset.collection = collection.id;
     const content = document.createElement('div'); content.className = 'project-content';
     content.append(...main.childNodes);
     main.append(content);
