@@ -8,7 +8,7 @@
     />
     <meta name="theme-color" content="#101c22" />
     <title>MicroAGU · Flight simulator</title>
-    <script type="module" crossorigin src="./assets/index-BRiHJoBw.js"></script>
+    <script type="module" crossorigin src="./assets/index-nWPe0YpO.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/three-CgABN-FB.js">
     <link rel="modulepreload" crossorigin href="./assets/models-BT7UtUfU.js">
     <link rel="modulepreload" crossorigin href="./assets/math-P8kuyxM6.js">
@@ -16,7 +16,7 @@
     <link rel="modulepreload" crossorigin href="./assets/mechanisms-vOWu3rXn.js">
     <link rel="modulepreload" crossorigin href="./assets/OrbitControls-DC3bA9or.js">
     <link rel="modulepreload" crossorigin href="./assets/paraglider-U-Pwh3Sp.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-xDc9vJfg.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-DHqL_U0e.css">
   </head>
   <body class="panel-closed">
     <main id="scene" aria-label="Three-dimensional flight view"></main>
@@ -300,7 +300,41 @@
         Trail
       </button>
       <button id="fullscreen">Full screen</button>
+      <button
+        id="plot-toggle"
+        aria-pressed="false"
+        aria-controls="flight-plots"
+      >
+        Plots
+      </button>
     </div>
+    <section
+      id="flight-plots"
+      hidden
+      aria-label="Altitude and cross-track history"
+    >
+      <div class="plot-heading">
+        <span>ALT / HOME <b id="plot-alt">—</b></span
+        ><span><i>Actual</i> · <em>Target</em></span>
+      </div>
+      <svg
+        id="alt-plot"
+        viewBox="0 0 300 60"
+        role="img"
+        aria-label="Altitude above home in metres, actual and target"
+      ></svg>
+      <div class="plot-heading">
+        <span>CROSS TRACK <b id="plot-xtrack">—</b></span
+        ><span>m · signed</span>
+      </div>
+      <svg
+        id="xtrack-plot"
+        viewBox="0 0 300 60"
+        role="img"
+        aria-label="Signed autopilot cross-track error in metres"
+      ></svg>
+      <div class="plot-footer">−120 s <span>Now · simulation time</span></div>
+    </section>
     <div class="flight-status">
       <p id="status" role="status">Initializing upright…</p>
     </div>
