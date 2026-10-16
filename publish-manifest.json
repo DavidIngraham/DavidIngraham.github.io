@@ -165,7 +165,7 @@
           "url": "https://github.com/DavidIngraham/micro-agu"
         },
         {
-          "label": "External 9-DOF model, launch and calibration",
+          "label": "Rust 9-DOF simulator, Python/TypeScript bindings and calibration",
           "url": "https://github.com/DavidIngraham/micro-agu/tree/main/simulation"
         },
         {

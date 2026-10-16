@@ -3,19 +3,19 @@
   "flight": "trout_lake",
   "profile": "as_built",
   "model": "9-DOF two-body modal research model",
-  "source_revision": "556fd9053069c9de846a2dd0f9a39c7d85800d4e",
+  "source_revision": "63ce1728c83442a5f22f488174c19e026bb4550f",
   "source_repository": "https://github.com/DavidIngraham/micro-agu",
-  "surface_sha256": "4ab2ce508dcb7b777fac14e30384138f5044347ebbde6cf559759b27c46f2821",
+  "surface_sha256": "9a11b4678381408d02ff0aedef29e9d303c84924ebbe1ad172007cb02d6f9182",
   "calibration": {
     "schema": "microagu.as-built-fit.v1",
     "spacing_m": 0.132,
     "ring_height_m": 0.06,
-    "damping_scale": 3.0,
-    "brake_scale": 1.0,
+    "damping_scale": 3,
+    "brake_scale": 1,
     "yaw_scale": 1.1257575757575757,
     "ranked": [
       {
-        "damping": 3.0,
+        "damping": 3,
         "score": 0.926560130518893
       },
       {
@@ -23,7 +23,7 @@
         "score": 0.9345271334084031
       },
       {
-        "damping": 2.0,
+        "damping": 2,
         "score": 0.945974172618643
       },
       {
@@ -31,7 +31,7 @@
         "score": 0.9642435154285044
       },
       {
-        "damping": 1.0,
+        "damping": 1,
         "score": 0.9990608535266949
       }
     ],
@@ -60,11 +60,11 @@
     0.1,
     1.2,
     4.5,
-    3.0,
+    3,
     0.8,
     0.5
   ],
-  "kernel_sha256": "1aeb42442d50f0f10fb07db0e718bee8475bbb6e6cabfb073a1390901d4160bc",
+  "kernel_sha256": "74f751d45aefabaa5a4c2e530e00d782f7e33766c16c6864ee5cc02e66dd104a",
   "parameters": [
     1.225,
     1.16,
