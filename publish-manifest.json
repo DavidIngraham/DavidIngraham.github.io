@@ -157,6 +157,10 @@
       ],
       "implementation_links": [
         {
+          "label": "Fly MicroAGU — browser simulator",
+          "url": "https://davidingraham.github.io/assets/microagu-viewer/simulator.html"
+        },
+        {
           "label": "Micro-AGU project and CAD",
           "url": "https://github.com/DavidIngraham/micro-agu"
         },
