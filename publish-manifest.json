@@ -532,6 +532,15 @@
           "hidden": true
         },
         {
+          "id": "acoustic-sensing",
+          "path": "docs/reference/acoustic-sensing.md",
+          "title": "What acoustic sensing could add",
+          "description": "Concrete passive-array and forward-sonar alternatives, observation limits and installation budgets.",
+          "nav_title": "Acoustic sensing alternatives",
+          "stage": "Methods and reproduction",
+          "hidden": true
+        },
+        {
           "id": "sensing-measurements",
           "path": "docs/reference/sensing-measurements.md",
           "title": "Importing synchronized sensing and power measurements",
@@ -628,6 +637,7 @@
             "encounter-envelope",
             "maneuver-dynamics",
             "sensing-configurations",
+            "acoustic-sensing",
             "sensing-measurements",
             "model-runtime"
           ]
