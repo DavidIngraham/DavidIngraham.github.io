@@ -2,6 +2,7 @@
   "id": "trim-launch",
   "title": "MicroAGU · Trim Launch",
   "page": "trim-launch.html",
+  "html": "apps/applets/trim-launch/index.html",
   "entry": "apps/applets/trim-launch/applet.ts",
   "kind": "explanation",
   "assets": [
@@ -15,11 +16,11 @@
   "available": true,
   "missing": [],
   "files": {
-    "assets/models-DwUAXtgd.js": "c677f25e1b4e3c6fb1079c0d6e8c2035111ba112f07282a230948529f14426d0",
-    "assets/paraglider-BqZcopxb.js": "e4b98a233f86897a93fd95ab2a42398a1d24fedf8a29328672a2f2c441643e26",
-    "assets/three-Bfvioo3L.js": "3428a83d7d77f5e0ec6bd8a66377bd16ded64b166e2e03102a425cc4fcf6d836",
-    "assets/trim-launch-BdroScp3.js": "a6471dc93dd3dd9626dc8e79f46423e71ad53de38fdbbaf4cf12dbf114ff4bb8",
+    "assets/index-CQ-MM8Mz.js": "9339ed9533808a2a8add5579b86cd157458bac1a162adfd7756f2d41a038a2a1",
+    "assets/models-CUH5rlaZ.js": "69eca696c23fcad6836e76190b617ea23d57e6239f155fd7e7892233d8f3b1a8",
+    "assets/paraglider-CJa0ulyB.js": "f3ef48536c261791f29bca701f286f0b0476f33906c1dfe644b2758032c3c681",
+    "assets/three-CWNO0hZv.js": "0a82a5752ecce5e39e37e65271537d54eef3ef0b9cffb31ab2074c7a563b0a3e",
     "models/microagu-payload-tl.glb": "10cd498d78de60020ad97f4febc46010a585496b124575c25bc9ec6998596288",
-    "trim-launch.html": "ebbe513dcc8133efe695deb89e1d8c143052673f8c6df957939efdeeb6dba910"
+    "trim-launch.html": "987fbfa45c9d54d1f8c28bea423c32392b4c22eacb4458b397a734a52df582ac"
   }
 }

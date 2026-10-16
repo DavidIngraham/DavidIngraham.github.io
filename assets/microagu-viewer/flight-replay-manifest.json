@@ -2,6 +2,7 @@
   "id": "flight-replay",
   "title": "MicroAGU · Flight Replay",
   "page": "flight-replay.html",
+  "html": "apps/applets/flight-replay/index.html",
   "entry": "apps/applets/flight-replay/applet.ts",
   "kind": "replay",
   "assets": [
@@ -16,12 +17,12 @@
   "available": true,
   "missing": [],
   "files": {
-    "assets/flight-replay-DafA9eoK.js": "5ed61bbf964e252f1837831598ccc41c4cf163bbb41413b8d5f8406b86bdef39",
+    "assets/index-DUDSLxVq.js": "18287d8c73b0032f5c68bb014eba96b40cf81d1d5d0147ca3e4376d2b255d01c",
     "assets/math-P8kuyxM6.js": "d100be9f007bc6a51c0c1e5f5103c99ae0db235c409fab011832894d05bd517b",
-    "assets/mechanisms-sPPcZpnK.js": "99c813c3aebc42c51b183499802a61847371c67c5fbec93fc4b20bd06142f88b",
-    "assets/models-DwUAXtgd.js": "c677f25e1b4e3c6fb1079c0d6e8c2035111ba112f07282a230948529f14426d0",
-    "assets/three-Bfvioo3L.js": "3428a83d7d77f5e0ec6bd8a66377bd16ded64b166e2e03102a425cc4fcf6d836",
-    "flight-replay.html": "476ea84cc79b6a47c900f7663b624de79f62a68de43b58ee280983f7102ca193",
+    "assets/mechanisms-B-Kj-IEh.js": "90b52d4464f28bb371a60cde8d49c4083558b86293cb4f3e67f1cb64da0a6c31",
+    "assets/models-CUH5rlaZ.js": "69eca696c23fcad6836e76190b617ea23d57e6239f155fd7e7892233d8f3b1a8",
+    "assets/three-CWNO0hZv.js": "0a82a5752ecce5e39e37e65271537d54eef3ef0b9cffb31ab2074c7a563b0a3e",
+    "flight-replay.html": "90873596c4f5cff7a9fad5e24fee9e12b16e427679a85f6db35e400c58cbcc8d",
     "flight-replays/hood-river.json": "100306e85de277545981325dce4c019541aafec34dd85a37416885bedffc5d21",
     "flight-replays/trout-lake.json": "b7168073e2a647e088f8c372241d6cb7949a8740975be9b776272c7704a6faf7",
     "models/microagu-payload-tl.glb": "10cd498d78de60020ad97f4febc46010a585496b124575c25bc9ec6998596288"

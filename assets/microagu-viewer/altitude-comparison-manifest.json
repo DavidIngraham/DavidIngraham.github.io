@@ -2,6 +2,7 @@
   "id": "altitude-comparison",
   "title": "MicroAGU · Altitude Comparison",
   "page": "altitude-comparison.html",
+  "html": "apps/applets/altitude-comparison/index.html",
   "entry": "apps/applets/altitude-comparison/applet.ts",
   "kind": "replay",
   "assets": [
@@ -16,21 +17,21 @@
   "available": true,
   "missing": [],
   "files": {
-    "altitude-comparison.html": "acb27f1e9730a76695794d4403a352134df0359e66b520b85f8245d206637eaf",
+    "altitude-comparison.html": "750649d510f27119eaf4cd106726bcd8d5fae29c05d9029959c03edcdd02e296",
     "altitude-comparison/Current-filter.jsonl": "ace74a4f4a1713ff7ce5e68d437279ce602eab70cd6cb5d788301f59bdd9ca01",
     "altitude-comparison/Damper-off.jsonl": "9f6ed41a3bb24c096f53c1a23291481f001cdffe93df38a59fef95676a499e98",
     "altitude-comparison/Original-sign.jsonl": "ab822b74dc60cfe14d8ac232d0daab26f1ffc81c2ccc6341f3c89a12006d96c0",
     "altitude-comparison/Reversed-sign.jsonl": "8ce973bf182aec042c3bd4878ef401bf4a3af7d188d46b0f7eba89d05f47db61",
-    "assets/OrbitControls-CB1Cfp2T.js": "e146019f2de8c567dcd05c8b33c747b5a0dcc56a290bca2c85bcb651bf862f8a",
-    "assets/altitude-comparison-C1nPQXwU.js": "a0f30836c6f5cfae86664f9a1bd2f71d58ab1b0a6cbe80f8d3c2713db21532fb",
+    "assets/OrbitControls-z5A4bBOW.js": "b4ad5984a74ccd13ebb56c59b645e7cdaa9dc79f35241e5d83d0d57a7d492ca1",
+    "assets/index-C5Va4PX2.js": "8110f5fd0275d850e86fabd90dab2892f4683642ada0f1a625e62911f0cff2e6",
     "assets/math-P8kuyxM6.js": "d100be9f007bc6a51c0c1e5f5103c99ae0db235c409fab011832894d05bd517b",
-    "assets/mechanisms-sPPcZpnK.js": "99c813c3aebc42c51b183499802a61847371c67c5fbec93fc4b20bd06142f88b",
-    "assets/models-DwUAXtgd.js": "c677f25e1b4e3c6fb1079c0d6e8c2035111ba112f07282a230948529f14426d0",
-    "assets/paraglider-BqZcopxb.js": "e4b98a233f86897a93fd95ab2a42398a1d24fedf8a29328672a2f2c441643e26",
+    "assets/mechanisms-B-Kj-IEh.js": "90b52d4464f28bb371a60cde8d49c4083558b86293cb4f3e67f1cb64da0a6c31",
+    "assets/models-CUH5rlaZ.js": "69eca696c23fcad6836e76190b617ea23d57e6239f155fd7e7892233d8f3b1a8",
+    "assets/paraglider-CJa0ulyB.js": "f3ef48536c261791f29bca701f286f0b0476f33906c1dfe644b2758032c3c681",
     "assets/playback-AjlpAjXB.js": "7ab889c952aae11de56f562d9e394ef738907535c41d2df4d430f2eee68016f0",
     "assets/recordings-DzXGklQC.js": "f699abfd38963c856b25bef3a4719123d782d5425c683ecb17ad33a1854c17c1",
     "assets/recordings-GxEI3cxb.js": "1ab2382f3c5895f6976ca92a7407f5106656129386502de49aae7bfe8b082f4f",
-    "assets/three-Bfvioo3L.js": "3428a83d7d77f5e0ec6bd8a66377bd16ded64b166e2e03102a425cc4fcf6d836",
+    "assets/three-CWNO0hZv.js": "0a82a5752ecce5e39e37e65271537d54eef3ef0b9cffb31ab2074c7a563b0a3e",
     "models/microagu-payload-tl.glb": "10cd498d78de60020ad97f4febc46010a585496b124575c25bc9ec6998596288"
   }
 }

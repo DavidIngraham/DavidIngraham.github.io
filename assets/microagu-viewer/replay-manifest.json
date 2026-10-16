@@ -2,6 +2,7 @@
   "id": "replay",
   "title": "MicroAGU · Replay",
   "page": "index.html",
+  "html": "apps/applets/replay/index.html",
   "entry": "apps/applets/replay/applet.ts",
   "kind": "replay",
   "assets": [
@@ -15,19 +16,19 @@
   "available": true,
   "missing": [],
   "files": {
-    "assets/OrbitControls-CB1Cfp2T.js": "e146019f2de8c567dcd05c8b33c747b5a0dcc56a290bca2c85bcb651bf862f8a",
+    "assets/OrbitControls-z5A4bBOW.js": "b4ad5984a74ccd13ebb56c59b645e7cdaa9dc79f35241e5d83d0d57a7d492ca1",
     "assets/controls-BQMtqnA1.js": "062784b55f17ba08a96ee6d6b927407930cf5f658611175c55bccb37a81c1ee1",
-    "assets/index-COd2AC6V.js": "ad8708246c603b22a3aa0df50c83ae6ff3b1a227b6b0a27e90b454c54a909fa9",
+    "assets/index-CN1-R0Ko.js": "80d45d063982aaa8626035c9ed39d80ba787087d3b3bf61a4c2a0a97071e25b8",
     "assets/index-CY2J6cW6.css": "43b5eaf00c2e6e4cc33e73457c83c0715dcbbfa1e6ab6e03c9197740cf3398d4",
     "assets/math-P8kuyxM6.js": "d100be9f007bc6a51c0c1e5f5103c99ae0db235c409fab011832894d05bd517b",
-    "assets/mechanisms-sPPcZpnK.js": "99c813c3aebc42c51b183499802a61847371c67c5fbec93fc4b20bd06142f88b",
-    "assets/models-DwUAXtgd.js": "c677f25e1b4e3c6fb1079c0d6e8c2035111ba112f07282a230948529f14426d0",
-    "assets/paraglider-BqZcopxb.js": "e4b98a233f86897a93fd95ab2a42398a1d24fedf8a29328672a2f2c441643e26",
+    "assets/mechanisms-B-Kj-IEh.js": "90b52d4464f28bb371a60cde8d49c4083558b86293cb4f3e67f1cb64da0a6c31",
+    "assets/models-CUH5rlaZ.js": "69eca696c23fcad6836e76190b617ea23d57e6239f155fd7e7892233d8f3b1a8",
+    "assets/paraglider-CJa0ulyB.js": "f3ef48536c261791f29bca701f286f0b0476f33906c1dfe644b2758032c3c681",
     "assets/profile-C2GNkWIb.js": "c2f2c77091bec54acdfe366361463b020e1fb73355b5ee951d52f5479941f85f",
     "assets/recordings-DzXGklQC.js": "f699abfd38963c856b25bef3a4719123d782d5425c683ecb17ad33a1854c17c1",
     "assets/recordings-GxEI3cxb.js": "1ab2382f3c5895f6976ca92a7407f5106656129386502de49aae7bfe8b082f4f",
-    "assets/three-Bfvioo3L.js": "3428a83d7d77f5e0ec6bd8a66377bd16ded64b166e2e03102a425cc4fcf6d836",
-    "index.html": "adc438ab241e9fdb374313d535e6add9f27449cc2e04c1b464db4055047ec000",
+    "assets/three-CWNO0hZv.js": "0a82a5752ecce5e39e37e65271537d54eef3ef0b9cffb31ab2074c7a563b0a3e",
+    "index.html": "d3dbfd7e580209e39864f6bc7ed55fb7c6f0a592f36251be1dadb6e37814426d",
     "models/microagu-payload-tl.glb": "10cd498d78de60020ad97f4febc46010a585496b124575c25bc9ec6998596288"
   }
 }

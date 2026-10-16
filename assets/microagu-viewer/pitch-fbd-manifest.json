@@ -2,6 +2,7 @@
   "id": "pitch-fbd",
   "title": "MicroAGU · Pitch Fbd",
   "page": "pitch-fbd.html",
+  "html": "apps/applets/pitch-fbd/index.html",
   "entry": "apps/applets/pitch-fbd/applet.ts",
   "kind": "explanation",
   "assets": [
@@ -15,12 +16,12 @@
   "available": true,
   "missing": [],
   "files": {
-    "assets/models-DwUAXtgd.js": "c677f25e1b4e3c6fb1079c0d6e8c2035111ba112f07282a230948529f14426d0",
-    "assets/paraglider-BqZcopxb.js": "e4b98a233f86897a93fd95ab2a42398a1d24fedf8a29328672a2f2c441643e26",
-    "assets/pitch-fbd-DV8m8otp.js": "81ecf884b5a70e410c79eadee42ee43c0b506ed5727341d42c7c7afd756af644",
+    "assets/index-DYbjnKTX.js": "18c6c87c538b4fe7beddb98c0329ec45daa0a4b1b968f04f9ef216e0cf98b4de",
+    "assets/models-CUH5rlaZ.js": "69eca696c23fcad6836e76190b617ea23d57e6239f155fd7e7892233d8f3b1a8",
+    "assets/paraglider-CJa0ulyB.js": "f3ef48536c261791f29bca701f286f0b0476f33906c1dfe644b2758032c3c681",
     "assets/playback-AjlpAjXB.js": "7ab889c952aae11de56f562d9e394ef738907535c41d2df4d430f2eee68016f0",
-    "assets/three-Bfvioo3L.js": "3428a83d7d77f5e0ec6bd8a66377bd16ded64b166e2e03102a425cc4fcf6d836",
+    "assets/three-CWNO0hZv.js": "0a82a5752ecce5e39e37e65271537d54eef3ef0b9cffb31ab2074c7a563b0a3e",
     "models/microagu-payload-tl.glb": "10cd498d78de60020ad97f4febc46010a585496b124575c25bc9ec6998596288",
-    "pitch-fbd.html": "b5f4146ebb116d8fd92d2961de5f26562043e76946d87aee0460369c7ef5d231"
+    "pitch-fbd.html": "ba1e3246ab25cd8c8ab3831e185845cc8df7d76104a66c79257b1725c6a7c09b"
   }
 }
