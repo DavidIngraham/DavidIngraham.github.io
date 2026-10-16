@@ -8,7 +8,7 @@
     />
     <meta name="theme-color" content="#101c22" />
     <title>MicroAGU · Flight simulator</title>
-    <script type="module" crossorigin src="./assets/index-A45wwr6K.js"></script>
+    <script type="module" crossorigin src="./assets/index-JDFWq4Yk.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/three-BLBi63xu.js">
     <link rel="modulepreload" crossorigin href="./assets/models-C_pYcma0.js">
     <link rel="modulepreload" crossorigin href="./assets/math-P8kuyxM6.js">
@@ -16,7 +16,7 @@
     <link rel="modulepreload" crossorigin href="./assets/mechanisms-Be-utSbU.js">
     <link rel="modulepreload" crossorigin href="./assets/OrbitControls-fGNB2AwC.js">
     <link rel="modulepreload" crossorigin href="./assets/paraglider-B3OfeQPg.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-qIdK3er8.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-Cr7sT3xH.css">
   </head>
   <body class="panel-closed">
     <main id="scene" aria-label="Three-dimensional flight view"></main>
@@ -265,6 +265,12 @@
     </div>
     <div class="flight-status">
       <p id="status" role="status">Initializing upright…</p>
+      <output
+        id="wind-truth"
+        aria-label="Local simulated wind truth"
+        title="Instantaneous local air: horizontal wind from bearing and vertical air, including gusts and thermals"
+        >WIND TRUTH · —</output
+      >
     </div>
     <section class="pilot-controls" aria-label="Pilot controls">
       <div class="throttle-box">
