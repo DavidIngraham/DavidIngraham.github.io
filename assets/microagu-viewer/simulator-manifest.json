@@ -44,8 +44,8 @@
     "wasm/COPYING.txt": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
     "wasm/RUST-NOTICES.txt": "f5e9c70192d8e79a97ca305a2fbf637f7fb9471f42e10e23e74404edefdebfb7",
     "wasm/arduplane.js": "893b28e3cbea410e48736d7f7426928cbe8b56f22c1813914aa290172f1e8565",
-    "wasm/arduplane.wasm": "bd6951ff18713e21f88a59491860b5dc9f6257d8ea79de1ead22973cae015deb",
-    "wasm/build.json": "719d5f2fedd05b5b15888040626f519e3feb88a9961391d50dff083e320618e5",
+    "wasm/arduplane.wasm": "b54aa6c58700729ed66e3a7eea063fce71f55e0ac91c69933ad3d3a25b032393",
+    "wasm/build.json": "745801b42827ede818053a5769844407c2eba4a4a12a027815fda3621ff8f52c",
     "wasm/highdof.json": "e30470823ff62bfa8fd03fdd19af4af677321cb6f7f0b1b8d81ee30598428f05",
     "wasm/sim_wasm.js": "400f027b6e8f2968179d2070c9157fa913bad58aa1d1d54e5db034eb19ea6097",
     "wasm/sim_wasm_bg.wasm": "f5d479506baad4065fbfa082e985ab2d930018d7bba700b0cc184102b71a636e"
