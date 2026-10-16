@@ -4,7 +4,7 @@
     {
       "title": "SV Blue Dog",
       "tag": "Sailing \u00b7 Robotics",
-      "description": "Developing an autonomous sailboat through explicit requirements, architecture and executable analysis, from the Gorge toward Hawaii.",
+      "description": "Designing and building a small autonomous sailboat for a Columbia River Gorge round trip, from coupled design choices to physical experiments.",
       "collection": "sv-blue-dog",
       "article": "restarting",
       "link_label": "Read the project notes"
@@ -240,10 +240,10 @@
     {
       "id": "sv-blue-dog",
       "title": "SV Blue Dog",
-      "heading": "Blue Dog: the story, the design and what we are learning.",
+      "heading": "Blue Dog: designing a small autonomous sailboat.",
       "intro": [
-        "A small autonomous sailboat, named after my blue heeler Ozzy. I started with a sailing challenge and a manufacturing testbed, then got stalled by the coupled design decisions.",
-        "Follow the story from that testbed to a connected SysML v2 model. Explore the OOSEM layers and their running maturity assessment: current evidence, open questions and the next experiments."
+        "Blue Dog is my attempt to build a small boat that can sail a Columbia River Gorge round trip on its own. The design connects hull, rig, sensing, energy and recovery around one working candidate: IC-01.",
+        "Start with the story, then follow the engineering questions from mission to measurements. The series assumes basic systems engineering knowledge, but no familiarity with this project or SysML."
       ],
       "repository": "DavidIngraham/sv-blue-dog",
       "ref": "main",
@@ -252,787 +252,278 @@
           "id": "restarting",
           "path": "docs/restarting-sv-blue-dog.md",
           "title": "SV Blue Dog: learning through an autonomous sailboat",
-          "description": "The Gorge challenge, the SolidWorks testbed, getting lost in sizing decisions, and using SysML v2 to structure work with agents.",
-          "stage": "Start with the story",
-          "nav_title": "Why Blue Dog?"
-        },
-        {
-          "id": "development-plan",
-          "path": "docs/development-plan.md",
-          "title": "Blue Dog: a running OOSEM maturity assessment",
-          "description": "A running assessment of the OOSEM layers: coverage, traceability, virtual and physical evidence, gaps and next investigations.",
-          "hidden": false,
-          "stage": "Start with the story",
-          "nav_title": "Current maturity and next questions"
-        },
-        {
-          "id": "simulation-spirals",
-          "path": "docs/simulation-spirals.md",
-          "title": "Developing the mission simulation in spirals",
-          "description": "How successive investigations connect mission behavior, vessel physics and evidence, and expose the next fidelity gap.",
-          "hidden": false,
-          "stage": "Start with the story",
-          "nav_title": "Simulation development spirals"
-        },
-        {
-          "id": "design-guide",
-          "title": "SV Blue Dog: the development series",
-          "path": "docs/index.md",
-          "description": "Start with the personal story, then explore mission, requirements, architecture, trades and evidence.",
-          "stage": "Start with the story",
-          "nav_title": "Reading guide"
-        },
-        {
-          "id": "operating-constraints",
-          "path": "docs/operating-constraints.md",
-          "title": "Establishing operating constraints",
-          "description": "Establish the mission context, operating conditions and unresolved deployment questions.",
-          "hidden": false,
-          "stage": "Mission and stakeholder needs",
-          "nav_title": "Operating constraints"
-        },
-        {
-          "id": "requirements-views",
-          "title": "Requirements: mission to implementation",
-          "description": "Six topic pages tracing mission goals to testable design obligations.",
-          "path": "docs/requirements.md",
-          "stage": "System requirements and scenarios",
-          "nav_title": "Requirements overview"
-        },
-        {
-          "id": "requirements-mission",
-          "title": "Mission, course completion and endurance",
-          "description": "The Gorge round trip is the first challenge; sustained operation and Hawaii extend the design horizon. These threads connect those goals to course performance and mission reliability.",
-          "path": "docs/requirements/requirements-mission.md",
-          "hidden": true,
-          "nav_title": "Mission and performance",
-          "stage": "System requirements and scenarios"
-        },
-        {
-          "id": "requirements-autonomy",
-          "title": "Autonomous sailing, navigation and wind sensing",
-          "description": "Autonomy turns the mission into onboard decisions. Navigation and wind observations supply the controller; recovery behavior keeps faults from silently becoming mission failures.",
-          "path": "docs/requirements/requirements-autonomy.md",
-          "hidden": true,
-          "nav_title": "Autonomy and wind sensing",
-          "stage": "System requirements and scenarios"
-        },
-        {
-          "id": "requirements-energy",
-          "title": "Energy and recovery propulsion",
-          "description": "The energy budget must support sailing continuously and retain a deliberate recovery capability. These threads separate energy awareness, sustained balance and the motor rules for a qualifying attempt.",
-          "path": "docs/requirements/requirements-energy.md",
-          "hidden": true,
-          "nav_title": "Energy and propulsion",
-          "stage": "System requirements and scenarios"
-        },
-        {
-          "id": "requirements-environment",
-          "title": "Environment, durability and self-righting",
-          "description": "The Gorge and ocean environments set the loads and exposure conditions. The breakdown connects those environments to measurable limits, capsize recovery and weed tolerance.",
-          "path": "docs/requirements/requirements-environment.md",
-          "hidden": true,
-          "nav_title": "Environment and recovery",
-          "stage": "System requirements and scenarios"
-        },
-        {
-          "id": "requirements-safety",
-          "title": "Traffic safety, communications and monitoring",
-          "description": "Other river users are part of the operating context. The vessel must remain observable, respect its operating boundary and distinguish monitoring from intervention that ends a qualifying attempt.",
-          "path": "docs/requirements/requirements-safety.md",
-          "hidden": true,
-          "nav_title": "Traffic, safety and communications",
-          "stage": "System requirements and scenarios"
-        },
-        {
-          "id": "requirements-practicality",
-          "title": "Manufacturing, handling and serviceability",
-          "description": "One-person handling and a 250 mm cubic printer are owner-imposed project constraints. They shape the build and maintenance approach alongside the mission goals.",
-          "path": "docs/requirements/requirements-practicality.md",
-          "hidden": true,
-          "nav_title": "Manufacturing and handling",
-          "stage": "System requirements and scenarios"
-        },
-        {
-          "id": "mission-simulation",
-          "path": "docs/mission-simulation.md",
-          "title": "Sailing the challenge before building the boat",
-          "description": "Executable supervisory decisions, charted voyages, candidate performance and seeded weather and traffic experiments.",
-          "hidden": false,
-          "stage": "System requirements and scenarios",
-          "nav_title": "Mission simulation"
+          "description": "The Gorge challenge, the original design maze and IC-01 as the starting point for my first build.",
+          "nav_title": "Why Blue Dog?",
+          "stage": "The challenge"
         },
         {
           "id": "architecture",
           "path": "docs/architecture.md",
           "title": "Mission, context and architecture",
-          "description": "Mission context, logical scenarios, executable supervisory behavior and physical allocations.",
-          "hidden": false,
-          "stage": "Logical architecture",
-          "nav_title": "Mission and architecture"
+          "description": "The course, qualification rules, onboard responsibilities and independent recovery allocation.",
+          "nav_title": "Mission and architecture",
+          "stage": "The challenge"
         },
         {
-          "id": "structure-sizing",
-          "title": "Manufacturing, structure and recovery",
-          "path": "docs/structures-and-recovery.md",
-          "description": "Connect candidate geometry, construction and loads to a buildable configuration and physical evidence.",
-          "stage": "Candidate physical architectures",
-          "nav_title": "Structure and recovery"
+          "id": "operating-constraints",
+          "path": "docs/operating-constraints.md",
+          "title": "Establishing operating constraints",
+          "description": "Gorge weather, launch windows and the evidence behind the operating assumptions.",
+          "nav_title": "Operating conditions",
+          "stage": "The challenge"
+        },
+        {
+          "id": "requirements",
+          "path": "docs/requirements.md",
+          "title": "Requirements: what the boat must achieve",
+          "description": "The governing decisions, with detailed obligations available by engineering question.",
+          "nav_title": "Requirements",
+          "stage": "The challenge"
+        },
+        {
+          "id": "results",
+          "path": "docs/results.md",
+          "title": "Sizing Blue Dog for the Gorge",
+          "description": "IC-01, the lighter sizing reference and why sensing and recovery change the whole boat.",
+          "nav_title": "Candidate results",
+          "stage": "The candidate and physical choices"
+        },
+        {
+          "id": "sizing",
+          "path": "docs/sizing.md",
+          "title": "Coupled sizing method",
+          "description": "How geometry, sailing performance, mass and energy constrain each other.",
+          "nav_title": "Sizing method",
+          "stage": "The candidate and physical choices"
         },
         {
           "id": "sail-trade",
           "path": "docs/sail-trade.md",
           "title": "Comparing sail architectures",
-          "description": "Compare candidate rigs and identify the measurements needed to support a physical architecture.",
-          "stage": "Candidate physical architectures",
-          "nav_title": "Sail trade study"
+          "description": "Compare soft sail, tail-controlled wing and directly rotated wing for the finite Gorge mission.",
+          "nav_title": "Rig comparison",
+          "stage": "The candidate and physical choices"
+        },
+        {
+          "id": "structures-and-recovery",
+          "path": "docs/structures-and-recovery.md",
+          "title": "Manufacturing, structure and recovery",
+          "description": "Printed construction, loads, material evidence and recovery after an upset.",
+          "nav_title": "Construction and recovery",
+          "stage": "The candidate and physical choices"
         },
         {
           "id": "recovery-propulsion",
           "path": "docs/recovery-propulsion.md",
           "title": "Comparing recovery propulsion",
-          "description": "Compare installed recovery concepts and define the evidence needed to choose between them.",
-          "hidden": false,
-          "stage": "Candidate physical architectures",
-          "nav_title": "Recovery propulsion"
-        },
-        {
-          "id": "design-search-results",
-          "title": "Sizing Blue Dog for the Gorge",
-          "path": "docs/results.md",
-          "hidden": false,
-          "description": "Current Gorge sizing: candidate geometry, challenge-profile replay, limiting margins and the next experiments.",
-          "stage": "Trades, optimization and analysis",
-          "nav_title": "Sizing results"
-        },
-        {
-          "id": "sailing-performance",
-          "title": "Coupled sizing with conservative aerodynamic assumptions",
-          "path": "docs/sizing.md",
-          "description": "Use mission criteria and declared physics to compare coupled boat designs and expose dominant assumptions.",
-          "stage": "Trades, optimization and analysis",
-          "nav_title": "Sizing method"
-        },
-        {
-          "id": "energy",
-          "path": "docs/energy.md",
-          "title": "Power and energy budget for the Gorge candidate",
-          "description": "Reconciled candidate loads, storage, recovery reserve and unresolved equipment allocations.",
-          "hidden": false,
-          "stage": "Trades, optimization and analysis",
-          "nav_title": "Power and energy budget"
+          "description": "Compare water and air propulsion for upright and inverted casualty recovery.",
+          "nav_title": "Recovery propulsion",
+          "stage": "The candidate and physical choices"
         },
         {
           "id": "encounter-feasibility",
           "path": "docs/encounter-feasibility.md",
           "title": "Seeing hazards early enough to act",
-          "description": "Detection-distance sensitivity, imperfect observations, sensing and energy hypotheses, and casualty recovery evidence.",
-          "hidden": false,
-          "stage": "Trades, optimization and analysis",
-          "nav_title": "Detection, avoidance and recovery"
+          "description": "Detection range, observation delays, maneuver timing and the integrated candidate cases.",
+          "nav_title": "Sensing and encounters",
+          "stage": "Operating the boat"
         },
         {
-          "id": "cruise-reliability",
-          "title": "Passage time, reliability and failure analysis",
+          "id": "energy",
+          "path": "docs/energy.md",
+          "title": "Power and energy budget for the Gorge candidate",
+          "description": "Carry sensing, sailing and independent recovery loads through the voyage.",
+          "nav_title": "Power and energy",
+          "stage": "Operating the boat"
+        },
+        {
+          "id": "mission-simulation",
+          "path": "docs/mission-simulation.md",
+          "title": "Sailing the challenge before building the boat",
+          "description": "Exercise the candidate, onboard decisions and continuing casualty consequences together.",
+          "nav_title": "Mission simulation",
+          "stage": "Operating the boat"
+        },
+        {
+          "id": "reliability",
           "path": "docs/reliability.md",
-          "hidden": false,
-          "description": "Virtual design to physical V&V: connect passage exposure and failure modes to fault and endurance evidence.",
-          "stage": "Trades, optimization and analysis",
-          "nav_title": "Reliability and failure analysis"
+          "title": "Passage time, reliability and failure analysis",
+          "description": "Connect passage duration, exposure and failure mechanisms to completion.",
+          "nav_title": "Reliability",
+          "stage": "Operating the boat"
         },
         {
           "id": "validation-plan",
           "path": "docs/validation-plan.md",
           "title": "From virtual evidence to water trials",
-          "description": "Planned integration, model correlation and bounded trial readiness; no completed physical qualification is implied.",
-          "nav_title": "From virtual evidence to water trials",
-          "stage": "Verification, validation and learning"
+          "description": "Choose the measurements and trials that could change the next design decision.",
+          "nav_title": "Measurements and water trials",
+          "stage": "Operating the boat"
+        },
+        {
+          "id": "reading-guide",
+          "path": "docs/index.md",
+          "title": "SV Blue Dog: designing a small autonomous sailboat",
+          "description": "The ordered engineering story and supporting references.",
+          "nav_title": "Reading guide",
+          "stage": "Evidence and project references",
+          "hidden": true
+        },
+        {
+          "id": "current-assessment",
+          "path": "docs/current-assessment.md",
+          "title": "What the evidence supports, and what I need to learn next",
+          "description": "What the evidence supports, open risks and the next investigations.",
+          "nav_title": "Current assessment",
+          "stage": "Evidence and project references",
+          "hidden": true
+        },
+        {
+          "id": "simulation-spirals",
+          "path": "docs/simulation-spirals.md",
+          "title": "Developing the mission simulation in spirals",
+          "description": "How experiments developed, with each result tied to its original configuration.",
+          "nav_title": "Development history",
+          "stage": "Evidence and project references",
+          "hidden": true
+        },
+        {
+          "id": "site-and-environment-evidence",
+          "path": "docs/site-and-environment-evidence.md",
+          "title": "Course, recovery sites and environmental evidence",
+          "description": "Course, bridge, recovery approaches and environmental allocations needing field evidence.",
+          "nav_title": "Site and environment evidence",
+          "stage": "Evidence and project references",
+          "hidden": true
         },
         {
           "id": "modeling-method",
           "path": "docs/methods/modeling.md",
-          "title": "Modeling method",
-          "description": "How SysML requirements, rationale, analysis and evidence stay connected.",
-          "nav_title": "Modeling method",
-          "stage": "Methods and evidence"
-        },
-        {
-          "id": "publishing",
-          "path": "docs/publishing.md",
-          "title": "Authoring and publishing",
-          "description": "Publish model-linked methods, current maturity and evidence while preserving their provenance.",
-          "hidden": false,
-          "stage": "Methods and evidence",
-          "nav_title": "Authoring and publishing"
-        },
-        {
-          "id": "srr-review",
-          "path": "docs/srr-review.md",
-          "title": "Blue Dog mission and design assessment",
-          "stage": "Methods and evidence",
-          "description": "The Gorge mission, candidate design, supporting evidence and next investigations.",
-          "presentation": true,
-          "nav_title": "Mission and design assessment"
-        },
-        {
-          "id": "srr-appendix",
-          "path": "docs/srr-appendix.md",
-          "title": "Design evidence and open questions",
-          "stage": "Methods and evidence",
-          "description": "Course, environment, traffic, recovery and candidate calculations, with their applicability and evidence gaps.",
-          "presentation": false,
-          "nav_title": "Design evidence"
-        },
-        {
-          "id": "requirements-c-000",
-          "title": "C-000 trans gorge challenge",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-c-000.md",
-          "hidden": true,
-          "redirect": "requirements-mission",
-          "anchor": "mission-and-challenge-rules"
-        },
-        {
-          "id": "requirements-c-001",
-          "title": "C-001 course completion",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-c-001.md",
-          "hidden": true,
-          "redirect": "requirements-mission",
-          "anchor": "mission-and-challenge-rules"
-        },
-        {
-          "id": "requirements-c-002",
-          "title": "C-002 repeated operation",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-c-002.md",
-          "hidden": true,
-          "redirect": "requirements-mission",
-          "anchor": "mission-and-challenge-rules"
-        },
-        {
-          "id": "requirements-c-003",
-          "title": "C-003 unassisted attempt",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-c-003.md",
-          "hidden": true,
-          "redirect": "requirements-mission",
-          "anchor": "mission-and-challenge-rules"
-        },
-        {
-          "id": "requirements-c-004",
-          "title": "C-004 sailing propulsion",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-c-004.md",
-          "hidden": true,
-          "redirect": "requirements-mission",
-          "anchor": "mission-and-challenge-rules"
-        },
-        {
-          "id": "requirements-c-005",
-          "title": "C-005 live observation",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-c-005.md",
-          "hidden": true,
-          "redirect": "requirements-safety",
-          "anchor": "live-monitoring-and-telemetry"
-        },
-        {
-          "id": "requirements-c-006",
-          "title": "C-006 emergency intervention",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-c-006.md",
-          "hidden": true,
-          "redirect": "requirements-mission",
-          "anchor": "mission-and-challenge-rules"
-        },
-        {
-          "id": "requirements-h-001",
-          "title": "H-001 hawaii voyage",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-h-001.md",
-          "hidden": true,
-          "redirect": "requirements-mission",
-          "anchor": "mission-and-challenge-rules"
-        },
-        {
-          "id": "requirements-m-001",
-          "title": "M-001 round trip",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-m-001.md",
-          "hidden": true,
-          "redirect": "requirements-mission",
-          "anchor": "mission-and-challenge-rules"
-        },
-        {
-          "id": "requirements-m-002",
-          "title": "M-002 multi day endurance",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-m-002.md",
-          "hidden": true,
-          "redirect": "requirements-mission",
-          "anchor": "endurance-and-cruise-performance"
-        },
-        {
-          "id": "requirements-e-001",
-          "title": "E-001 energy awareness",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-e-001.md",
-          "hidden": true,
-          "redirect": "requirements-energy",
-          "anchor": "energy-awareness-and-low-energy-response"
-        },
-        {
-          "id": "requirements-e-002",
-          "title": "E-002 navigation and control",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-e-002.md",
-          "hidden": true,
-          "redirect": "requirements-autonomy",
-          "anchor": "navigation-and-control"
-        },
-        {
-          "id": "requirements-e-005",
-          "title": "E-005 communications",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-e-005.md",
-          "hidden": true,
-          "redirect": "requirements-safety",
-          "anchor": "live-monitoring-and-telemetry"
-        },
-        {
-          "id": "requirements-e-003",
-          "title": "E-003 reset recovery",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-e-003.md",
-          "hidden": true,
-          "redirect": "requirements-autonomy",
-          "anchor": "fault-recovery-and-mission-evidence"
-        },
-        {
-          "id": "requirements-e-004",
-          "title": "E-004 low energy recovery",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-e-004.md",
-          "hidden": true,
-          "redirect": "requirements-energy",
-          "anchor": "energy-awareness-and-low-energy-response"
-        },
-        {
-          "id": "requirements-e-006",
-          "title": "E-006 ingress response",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-e-006.md",
-          "hidden": true,
-          "redirect": "requirements-autonomy",
-          "anchor": "fault-recovery-and-mission-evidence"
-        },
-        {
-          "id": "requirements-e-007",
-          "title": "E-007 mission evidence",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-e-007.md",
-          "hidden": true,
-          "redirect": "requirements-autonomy",
-          "anchor": "fault-recovery-and-mission-evidence"
-        },
-        {
-          "id": "requirements-e-008",
-          "title": "E-008 navigation availability",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-e-008.md",
-          "hidden": true,
-          "redirect": "requirements-autonomy",
-          "anchor": "navigation-and-control"
-        },
-        {
-          "id": "requirements-e-200",
-          "title": "E-200 sustained energy feasibility",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-e-200.md",
-          "hidden": true,
-          "redirect": "requirements-energy",
-          "anchor": "sustained-energy-feasibility"
-        },
-        {
-          "id": "requirements-n-001",
-          "title": "N-001 environmental envelope",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-n-001.md",
-          "hidden": true,
-          "redirect": "requirements-environment",
-          "anchor": "operating-environments"
-        },
-        {
-          "id": "requirements-n-010",
-          "title": "N-010 gorge environment",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-n-010.md",
-          "hidden": true,
-          "redirect": "requirements-environment",
-          "anchor": "operating-environments"
-        },
-        {
-          "id": "requirements-n-020",
-          "title": "N-020 ocean environment",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-n-020.md",
-          "hidden": true,
-          "redirect": "requirements-environment",
-          "anchor": "operating-environments"
-        },
-        {
-          "id": "requirements-n-002",
-          "title": "N-002 marine durability",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-n-002.md",
-          "hidden": true,
-          "redirect": "requirements-environment",
-          "anchor": "marine-exposure-and-integrity"
-        },
-        {
-          "id": "requirements-n-003",
-          "title": "N-003 stability and fouling",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-n-003.md",
-          "hidden": true,
-          "redirect": "requirements-environment",
-          "anchor": "stability-and-capsize-recovery"
-        },
-        {
-          "id": "requirements-n-033",
-          "title": "N-033 visibility",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-n-033.md",
-          "hidden": true,
-          "redirect": "requirements-environment",
-          "anchor": "operating-environments"
-        },
-        {
-          "id": "requirements-n-035",
-          "title": "N-035 envelope transition",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-n-035.md",
-          "hidden": true,
-          "redirect": "requirements-environment",
-          "anchor": "operating-environments"
-        },
-        {
-          "id": "requirements-n-044",
-          "title": "N-044 wet mechanical integrity",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-n-044.md",
-          "hidden": true,
-          "redirect": "requirements-environment",
-          "anchor": "marine-exposure-and-integrity"
-        },
-        {
-          "id": "requirements-n-045",
-          "title": "N-045 wet electrical integrity",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-n-045.md",
-          "hidden": true,
-          "redirect": "requirements-environment",
-          "anchor": "marine-exposure-and-integrity"
-        },
-        {
-          "id": "requirements-n-046",
-          "title": "N-046 solar heating",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-n-046.md",
-          "hidden": true,
-          "redirect": "requirements-environment",
-          "anchor": "marine-exposure-and-integrity"
-        },
-        {
-          "id": "requirements-n-051",
-          "title": "N-051 self righting",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-n-051.md",
-          "hidden": true,
-          "redirect": "requirements-environment",
-          "anchor": "stability-and-capsize-recovery"
-        },
-        {
-          "id": "requirements-n-052",
-          "title": "N-052 capsize control recovery",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-n-052.md",
-          "hidden": true,
-          "redirect": "requirements-environment",
-          "anchor": "stability-and-capsize-recovery"
-        },
-        {
-          "id": "requirements-n-053",
-          "title": "N-053 submerged weed passage",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-n-053.md",
-          "hidden": true,
-          "redirect": "requirements-environment",
-          "anchor": "weed-tolerance"
-        },
-        {
-          "id": "requirements-n-054",
-          "title": "N-054 weed snag shedding",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-n-054.md",
-          "hidden": true,
-          "redirect": "requirements-environment",
-          "anchor": "weed-tolerance"
-        },
-        {
-          "id": "requirements-n-055",
-          "title": "N-055 weed blockage response",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-n-055.md",
-          "hidden": true,
-          "redirect": "requirements-environment",
-          "anchor": "weed-tolerance"
-        },
-        {
-          "id": "requirements-n-056",
-          "title": "N-056 recovery propulsor weeds",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-n-056.md",
-          "hidden": true,
-          "redirect": "requirements-environment",
-          "anchor": "weed-tolerance"
-        },
-        {
-          "id": "requirements-p-001",
-          "title": "P-001 transportability",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-p-001.md",
-          "hidden": true,
-          "redirect": "requirements-practicality",
-          "anchor": "transport-and-manufacture"
-        },
-        {
-          "id": "requirements-p-003",
-          "title": "P-003 serviceability",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-p-003.md",
-          "hidden": true,
-          "redirect": "requirements-practicality",
-          "anchor": "serviceability"
-        },
-        {
-          "id": "requirements-s-001",
-          "title": "S-001 traffic safety",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-s-001.md",
-          "hidden": true,
-          "redirect": "requirements-safety",
-          "anchor": "traffic-and-operating-boundary"
-        },
-        {
-          "id": "requirements-s-003",
-          "title": "S-003 safe recovery",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-s-003.md",
-          "hidden": true,
-          "redirect": "requirements-safety",
-          "anchor": "conspicuity-classification-and-recovery"
-        },
-        {
-          "id": "requirements-r-001",
-          "title": "R-001 recovery propulsion",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-r-001.md",
-          "hidden": true,
-          "redirect": "requirements-energy",
-          "anchor": "recovery-propulsion-and-reserves"
-        },
-        {
-          "id": "requirements-r-002",
-          "title": "R-002 recovery energy",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-r-002.md",
-          "hidden": true,
-          "redirect": "requirements-energy",
-          "anchor": "recovery-propulsion-and-reserves"
-        },
-        {
-          "id": "requirements-s-002",
-          "title": "S-002 operating boundary",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-s-002.md",
-          "hidden": true,
-          "redirect": "requirements-safety",
-          "anchor": "traffic-and-operating-boundary"
-        },
-        {
-          "id": "requirements-s-004",
-          "title": "S-004 navigation conspicuity",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-s-004.md",
-          "hidden": true,
-          "redirect": "requirements-safety",
-          "anchor": "conspicuity-classification-and-recovery"
-        },
-        {
-          "id": "requirements-s-005",
-          "title": "S-005 regulatory classification",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-s-005.md",
-          "hidden": true,
-          "redirect": "requirements-safety",
-          "anchor": "conspicuity-classification-and-recovery"
-        },
-        {
-          "id": "requirements-r-004",
-          "title": "R-004 challenge motor inhibition",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-r-004.md",
-          "hidden": true,
-          "redirect": "requirements-energy",
-          "anchor": "recovery-propulsion-and-reserves"
-        },
-        {
-          "id": "requirements-c-101",
-          "title": "C-101 telemetry equipment",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-c-101.md",
-          "hidden": true,
-          "redirect": "requirements-safety",
-          "anchor": "live-monitoring-and-telemetry"
-        },
-        {
-          "id": "requirements-c-102",
-          "title": "C-102 command integrity",
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "path": "docs/requirements/requirements-c-102.md",
-          "hidden": true,
-          "redirect": "requirements-safety",
-          "anchor": "command-integrity"
-        },
-        {
-          "id": "requirements-context",
           "title": "Reading the design through the model",
-          "description": "Across the OOSEM layers: preserve requirement derivation, rationale and virtual-versus-physical evidence traceability.",
-          "path": "docs/methods/modeling.md",
+          "description": "Connect requirements, assumptions, decisions, calculations and evidence.",
+          "nav_title": "Reading the model",
+          "stage": "Methods and reproduction",
           "hidden": true
         },
         {
-          "id": "cruise-reliability-results",
-          "title": "Passage time, reliability and failure analysis",
-          "path": "docs/reliability.md",
-          "hidden": true,
-          "description": "Virtual design to physical V&V: connect passage exposure and failure modes to fault and endurance evidence."
-        },
-        {
-          "id": "dfmea",
-          "title": "Passage time, reliability and failure analysis",
-          "path": "docs/reliability.md",
-          "hidden": true,
-          "description": "Virtual design to physical V&V: connect passage exposure and failure modes to fault and endurance evidence."
-        },
-        {
-          "id": "requirements-q-001",
-          "title": "Cruise-performance requirements",
-          "path": "docs/requirements/requirements-q-001.md",
-          "hidden": true,
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "redirect": "requirements-mission",
-          "anchor": "endurance-and-cruise-performance"
-        },
-        {
-          "id": "requirements-l-001",
-          "title": "Mission-reliability requirements",
-          "path": "docs/requirements/requirements-l-001.md",
-          "hidden": true,
-          "description": "Mission-to-detail requirement thread, statements and linked breakdowns.",
-          "redirect": "requirements-mission",
-          "anchor": "mission-reliability"
-        },
-        {
-          "id": "relationship-register",
-          "title": "Refinements and design-basis dependencies",
-          "path": "docs/methods/modeling.md",
-          "hidden": true,
-          "description": "Across the OOSEM layers: preserve requirement derivation, rationale and virtual-versus-physical evidence traceability."
-        },
-        {
-          "id": "sailing-performance-results",
-          "title": "Coupled sizing with conservative aerodynamic assumptions",
-          "path": "docs/sizing.md",
-          "hidden": true,
-          "description": "Trades and analysis: use mission criteria and declared physics to assess coupled boat sizing."
-        },
-        {
-          "id": "appendage-sizing",
-          "title": "Coupled sizing with conservative aerodynamic assumptions",
-          "path": "docs/sizing.md",
-          "description": "Trades and analysis: use mission criteria and declared physics to assess coupled boat sizing.",
+          "id": "authoring",
+          "path": "docs/reference/authoring.md",
+          "title": "Authoring and publishing",
+          "description": "Build and publish the articles and reproduce their model views.",
+          "nav_title": "Contributor guide",
+          "stage": "Methods and reproduction",
           "hidden": true
         },
         {
-          "id": "appendage-sizing-results",
-          "title": "Coupled sizing with conservative aerodynamic assumptions",
-          "path": "docs/sizing.md",
-          "hidden": true,
-          "description": "Trades and analysis: use mission criteria and declared physics to assess coupled boat sizing."
-        },
-        {
-          "id": "design-search",
-          "title": "Coupled sizing with conservative aerodynamic assumptions",
-          "path": "docs/sizing.md",
-          "description": "Trades and analysis: use mission criteria and declared physics to assess coupled boat sizing.",
+          "id": "requirements-mission",
+          "path": "docs/requirements/requirements-mission.md",
+          "title": "Mission, course completion and endurance",
+          "description": "Course completion, qualification, launch admission and reliability.",
+          "nav_title": "Mission and endurance",
+          "stage": "Requirement references",
           "hidden": true
         },
         {
-          "id": "hull-length-results",
-          "title": "Sizing Blue Dog for the Gorge",
-          "path": "docs/results.md",
-          "hidden": true,
-          "description": "Current Gorge sizing: candidate geometry, challenge-profile replay, limiting margins and the next experiments."
-        },
-        {
-          "id": "open-sizing-results",
-          "title": "Sizing Blue Dog for the Gorge",
-          "path": "docs/results.md",
-          "hidden": true,
-          "description": "Current Gorge sizing: candidate geometry, challenge-profile replay, limiting margins and the next experiments."
-        },
-        {
-          "id": "structure-requirements",
-          "title": "Manufacturing, structure and recovery",
-          "path": "docs/structures-and-recovery.md",
-          "hidden": true,
-          "description": "Physical architecture and model validation: use geometry, construction and loads to plan structure and recovery evidence."
-        },
-        {
-          "id": "mission-sizing",
-          "path": "docs/sizing.md",
-          "title": "Coupled sizing with conservative aerodynamic assumptions",
-          "description": "Trades and analysis: use mission criteria and declared physics to assess coupled boat sizing.",
+          "id": "requirements-autonomy",
+          "path": "docs/requirements/requirements-autonomy.md",
+          "title": "Autonomous sailing, navigation and wind sensing",
+          "description": "Navigation, wind data, faults, restarts and trustworthy records.",
+          "nav_title": "Autonomy and observation",
+          "stage": "Requirement references",
           "hidden": true
         },
         {
-          "id": "mission-sizing-results",
-          "path": "docs/results.md",
-          "title": "Sizing Blue Dog for the Gorge",
-          "description": "Current Gorge sizing: candidate geometry, challenge-profile replay, limiting margins and the next experiments.",
+          "id": "requirements-energy",
+          "path": "docs/requirements/requirements-energy.md",
+          "title": "Energy and recovery propulsion",
+          "description": "Energy estimates, low-energy priorities, motor permission and reserve.",
+          "nav_title": "Energy and propulsion",
+          "stage": "Requirement references",
           "hidden": true
         },
         {
-          "id": "sail-trade-results",
-          "path": "docs/sail-trade.md",
-          "title": "Comparing sail architectures",
-          "description": "Trades and model credibility: compare rigs and identify the measurements needed to support selection.",
+          "id": "requirements-environment",
+          "path": "docs/requirements/requirements-environment.md",
+          "title": "Environment, durability and casualty recovery",
+          "description": "Operating exposure, wet integrity, capsize, weeds and retained components.",
+          "nav_title": "Environment and casualty recovery",
+          "stage": "Requirement references",
           "hidden": true
         },
         {
-          "id": "requirements-e-009",
-          "title": "E-009 wind observation",
-          "description": "Autonomous sailing, onboard wind observations and sensor acceptance criteria.",
-          "path": "docs/requirements/requirements-e-009.md",
-          "hidden": true,
-          "redirect": "requirements-autonomy",
-          "anchor": "wind-observation"
+          "id": "requirements-safety",
+          "path": "docs/requirements/requirements-safety.md",
+          "title": "Traffic safety, communications and monitoring",
+          "description": "Traffic response, signals, telemetry, command integrity and autonomous abort.",
+          "nav_title": "Traffic safety and monitoring",
+          "stage": "Requirement references",
+          "hidden": true
+        },
+        {
+          "id": "requirements-practicality",
+          "path": "docs/requirements/requirements-practicality.md",
+          "title": "Manufacturing, handling and serviceability",
+          "description": "Printed construction, material qualification, handling and service.",
+          "nav_title": "Manufacturing and handling",
+          "stage": "Requirement references",
+          "hidden": true
+        },
+        {
+          "id": "environmental-replays",
+          "path": "docs/reference/environmental-replays.md",
+          "title": "Wind and wave studies on archived boats",
+          "description": "Configuration-specific wind, wave and candidate replay evidence.",
+          "nav_title": "Archived wind and wave studies",
+          "stage": "Methods and reproduction",
+          "hidden": true
+        },
+        {
+          "id": "original-mission-campaign",
+          "path": "docs/reference/original-mission-campaign.md",
+          "title": "Original conceptual-vessel mission campaign",
+          "description": "The earlier conceptual-vessel mission campaign and its limits.",
+          "nav_title": "Original conceptual campaign",
+          "stage": "Methods and reproduction",
+          "hidden": true
+        },
+        {
+          "id": "encounter-continuation",
+          "path": "docs/reference/encounter-continuation.md",
+          "title": "Earlier sensing and casualty comparison",
+          "description": "The earlier observation, timing and continued casualty comparison.",
+          "nav_title": "Earlier sensing and casualty study",
+          "stage": "Methods and reproduction",
+          "hidden": true
+        },
+        {
+          "id": "sizing-workflow",
+          "path": "docs/reference/sizing-workflow.md",
+          "title": "Sizing workflow and numerical diagnostics",
+          "description": "Reproduction commands, search controls and numerical diagnostics.",
+          "nav_title": "Sizing workflow",
+          "stage": "Methods and reproduction",
+          "hidden": true
+        },
+        {
+          "id": "sensing-measurements",
+          "path": "docs/reference/sensing-measurements.md",
+          "title": "Importing synchronized sensing and power measurements",
+          "description": "Synchronize installed sensing observations and power measurements.",
+          "nav_title": "Sensing measurement import",
+          "stage": "Methods and reproduction",
+          "hidden": true
+        },
+        {
+          "id": "model-runtime",
+          "path": "docs/reference/model-runtime.md",
+          "title": "Running the model calculations",
+          "description": "Run the native calculations and their numerical adapters.",
+          "nav_title": "Model runtime",
+          "stage": "Methods and reproduction",
+          "hidden": true
         }
       ],
-      "note": "The repository owns the model and authored methods. Its publishing workflow resolves native SysML views into these pages; recorded numerical evidence is conditional.",
+      "note": "IC-01 is the working candidate for the first build. Recorded simulations support bounded predictions; installed performance and physical qualification require measurements.",
       "content_base": "https://davidingraham.github.io/sv-blue-dog/imports/",
       "implementation_links": [
         {
@@ -1050,69 +541,65 @@
       ],
       "navigation": [
         {
-          "title": "Start with the story",
+          "title": "The challenge",
           "pages": [
             "restarting",
-            "development-plan",
+            "architecture",
+            "operating-constraints",
+            "requirements"
+          ]
+        },
+        {
+          "title": "The candidate and physical choices",
+          "pages": [
+            "results",
+            "sizing",
+            "sail-trade",
+            "structures-and-recovery",
+            "recovery-propulsion"
+          ]
+        },
+        {
+          "title": "Operating the boat",
+          "pages": [
+            "encounter-feasibility",
+            "energy",
+            "mission-simulation",
+            "reliability",
+            "validation-plan"
+          ]
+        },
+        {
+          "title": "Evidence and project references",
+          "pages": [
+            "reading-guide",
+            "current-assessment",
             "simulation-spirals",
-            "design-guide"
+            "site-and-environment-evidence"
           ]
         },
         {
-          "title": "Mission and stakeholder needs",
+          "title": "Requirement references",
           "pages": [
-            "operating-constraints"
-          ]
-        },
-        {
-          "title": "System requirements and scenarios",
-          "pages": [
-            "requirements-views",
             "requirements-mission",
             "requirements-autonomy",
             "requirements-energy",
             "requirements-environment",
             "requirements-safety",
-            "requirements-practicality",
-            "mission-simulation"
+            "requirements-practicality"
           ]
         },
         {
-          "title": "Logical architecture",
-          "pages": [
-            "architecture"
-          ]
-        },
-        {
-          "title": "Candidate physical architectures",
-          "pages": [
-            "structure-sizing",
-            "sail-trade",
-            "recovery-propulsion"
-          ]
-        },
-        {
-          "title": "Trades, optimization and analysis",
-          "pages": [
-            "design-search-results",
-            "sailing-performance",
-            "energy",
-            "cruise-reliability"
-          ]
-        },
-        {
-          "title": "Verification, validation and learning",
-          "pages": [
-            "validation-plan"
-          ]
-        },
-        {
-          "title": "Methods and evidence",
+          "title": "Methods and reproduction",
           "pages": [
             "modeling-method",
-            "publishing",
-            "srr-review",
-            "srr-appendix"
+            "authoring",
+            "environmental-replays",
+            "original-mission-campaign",
+            "encounter-continuation",
+            "sizing-workflow",
+            "sensing-measurements",
+            "model-runtime"
           ]
         }
       ]
