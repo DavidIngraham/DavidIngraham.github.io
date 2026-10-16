@@ -1,0 +1,52 @@
+{
+  "id": "simulator",
+  "title": "MicroAGU · Simulator",
+  "page": "simulator.html",
+  "entry": "apps/simulator/main.ts",
+  "kind": "simulator",
+  "assets": [
+    "models/microagu-payload-tl.glb",
+    "wasm/arduplane.js",
+    "wasm/arduplane.wasm",
+    "wasm/sim_wasm.js",
+    "wasm/sim_wasm_bg.wasm",
+    "wasm/highdof.json",
+    "wasm/build.json",
+    "wasm/COPYING.txt",
+    "wasm/RUST-NOTICES.txt",
+    "simulator-sw.js"
+  ],
+  "controls": [
+    "joystick",
+    "throttle",
+    "wind",
+    "mission",
+    "camera"
+  ],
+  "defaultCamera": "follow",
+  "available": true,
+  "missing": [],
+  "files": {
+    "assets/OrbitControls-CB1Cfp2T.js": "e146019f2de8c567dcd05c8b33c747b5a0dcc56a290bca2c85bcb651bf862f8a",
+    "assets/math-P8kuyxM6.js": "d100be9f007bc6a51c0c1e5f5103c99ae0db235c409fab011832894d05bd517b",
+    "assets/mechanisms-sPPcZpnK.js": "99c813c3aebc42c51b183499802a61847371c67c5fbec93fc4b20bd06142f88b",
+    "assets/models-DwUAXtgd.js": "c677f25e1b4e3c6fb1079c0d6e8c2035111ba112f07282a230948529f14426d0",
+    "assets/paraglider-BqZcopxb.js": "e4b98a233f86897a93fd95ab2a42398a1d24fedf8a29328672a2f2c441643e26",
+    "assets/recordings-DzXGklQC.js": "f699abfd38963c856b25bef3a4719123d782d5425c683ecb17ad33a1854c17c1",
+    "assets/simulator-BB3SIRCB.js": "ab4739728af56b248dc98facba65593a23cb41a12f8e64446ef38dc4a820238f",
+    "assets/simulator-DRDa4uwG.css": "7022df0b3cc88637436cc76bbf024f9feed461129ce68399cf15c4d8af280e2e",
+    "assets/three-Bfvioo3L.js": "3428a83d7d77f5e0ec6bd8a66377bd16ded64b166e2e03102a425cc4fcf6d836",
+    "assets/worker-BmBMg8s8.js": "5630579c68624829f04a54638a5785c6dd5143b0ded8b666ae13e1a5323581a5",
+    "models/microagu-payload-tl.glb": "10cd498d78de60020ad97f4febc46010a585496b124575c25bc9ec6998596288",
+    "simulator-sw.js": "330dad7e7098d68a7ceaed89cb5543e0d8511205b4a160a8e60dcc85e025672a",
+    "simulator.html": "87bb393666dd7fb89f8b2185bc2787c535f374c6841373a254bed82d0407fa58",
+    "wasm/COPYING.txt": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "wasm/RUST-NOTICES.txt": "f5e9c70192d8e79a97ca305a2fbf637f7fb9471f42e10e23e74404edefdebfb7",
+    "wasm/arduplane.js": "def1c4c428a32489ea25ad102280727f14b6bb8e1e11f3e840e5793766e6d50b",
+    "wasm/arduplane.wasm": "021029da5d95132b8287aef7e79d0f22939696a2c311f61d8954c956a8384205",
+    "wasm/build.json": "1ca92c355203e2201b6a4eb380c7d4f9704ea5a9caa6f8737c50c2434246c769",
+    "wasm/highdof.json": "e30470823ff62bfa8fd03fdd19af4af677321cb6f7f0b1b8d81ee30598428f05",
+    "wasm/sim_wasm.js": "1eb10d13972d5956d1bf439726678535299da3f6c685d075b252d8ad9fc77957",
+    "wasm/sim_wasm_bg.wasm": "e1f4c29a63f8f627407e384fbb608e7200ccd7ffa8fd49dbd780020359dac975"
+  }
+}

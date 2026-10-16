@@ -1,0 +1,41 @@
+{
+  "id": "simulation-replay",
+  "title": "MicroAGU · Simulation Replay",
+  "page": "simulation-replay.html",
+  "entry": "apps/applets/simulation-replay/applet.ts",
+  "kind": "replay",
+  "assets": [
+    "models/microagu-payload-tl.glb",
+    "gust-showcase.jsonl",
+    "compare-calm.jsonl",
+    "compare-gust.jsonl",
+    "compare-crosswind.jsonl"
+  ],
+  "controls": [
+    "playback",
+    "camera"
+  ],
+  "defaultCamera": "orbit",
+  "available": true,
+  "missing": [],
+  "files": {
+    "assets/OrbitControls-CB1Cfp2T.js": "e146019f2de8c567dcd05c8b33c747b5a0dcc56a290bca2c85bcb651bf862f8a",
+    "assets/controls-BQMtqnA1.js": "062784b55f17ba08a96ee6d6b927407930cf5f658611175c55bccb37a81c1ee1",
+    "assets/math-P8kuyxM6.js": "d100be9f007bc6a51c0c1e5f5103c99ae0db235c409fab011832894d05bd517b",
+    "assets/mechanisms-sPPcZpnK.js": "99c813c3aebc42c51b183499802a61847371c67c5fbec93fc4b20bd06142f88b",
+    "assets/models-DwUAXtgd.js": "c677f25e1b4e3c6fb1079c0d6e8c2035111ba112f07282a230948529f14426d0",
+    "assets/paraglider-BqZcopxb.js": "e4b98a233f86897a93fd95ab2a42398a1d24fedf8a29328672a2f2c441643e26",
+    "assets/playback-AjlpAjXB.js": "7ab889c952aae11de56f562d9e394ef738907535c41d2df4d430f2eee68016f0",
+    "assets/profile-C2GNkWIb.js": "c2f2c77091bec54acdfe366361463b020e1fb73355b5ee951d52f5479941f85f",
+    "assets/recordings-DzXGklQC.js": "f699abfd38963c856b25bef3a4719123d782d5425c683ecb17ad33a1854c17c1",
+    "assets/recordings-GxEI3cxb.js": "1ab2382f3c5895f6976ca92a7407f5106656129386502de49aae7bfe8b082f4f",
+    "assets/simulation-replay-CIsCWc-8.js": "4e33cea5f051801152faab2c8bea38ada5f8b4f1752ce75513609d92ad504ac8",
+    "assets/three-Bfvioo3L.js": "3428a83d7d77f5e0ec6bd8a66377bd16ded64b166e2e03102a425cc4fcf6d836",
+    "compare-calm.jsonl": "761d900b8081450d0dde84817cda49fa817a24e5cafffbe50df1cdf438fb5dd2",
+    "compare-crosswind.jsonl": "1a498036cb583502a9486e620345c1c17d26428893494c13cd3f9862678643d0",
+    "compare-gust.jsonl": "ad8828c67a40f81de7fb4416af3617f91401c37960fdc8318ae0d1c2fb5cba3a",
+    "gust-showcase.jsonl": "1e53095119dbf9aa83b90df8c11417247070348099d8592f1b09e231474622f5",
+    "models/microagu-payload-tl.glb": "10cd498d78de60020ad97f4febc46010a585496b124575c25bc9ec6998596288",
+    "simulation-replay.html": "c15e03ba8765c7bc9984ce6acef2668020602e19ceed6c12f9a63cfffc47904a"
+  }
+}

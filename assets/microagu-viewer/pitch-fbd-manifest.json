@@ -1,0 +1,26 @@
+{
+  "id": "pitch-fbd",
+  "title": "MicroAGU · Pitch Fbd",
+  "page": "pitch-fbd.html",
+  "entry": "apps/applets/pitch-fbd/applet.ts",
+  "kind": "explanation",
+  "assets": [
+    "models/microagu-payload-tl.glb"
+  ],
+  "controls": [
+    "playback",
+    "camera"
+  ],
+  "defaultCamera": "orbit",
+  "available": true,
+  "missing": [],
+  "files": {
+    "assets/models-DwUAXtgd.js": "c677f25e1b4e3c6fb1079c0d6e8c2035111ba112f07282a230948529f14426d0",
+    "assets/paraglider-BqZcopxb.js": "e4b98a233f86897a93fd95ab2a42398a1d24fedf8a29328672a2f2c441643e26",
+    "assets/pitch-fbd-DV8m8otp.js": "81ecf884b5a70e410c79eadee42ee43c0b506ed5727341d42c7c7afd756af644",
+    "assets/playback-AjlpAjXB.js": "7ab889c952aae11de56f562d9e394ef738907535c41d2df4d430f2eee68016f0",
+    "assets/three-Bfvioo3L.js": "3428a83d7d77f5e0ec6bd8a66377bd16ded64b166e2e03102a425cc4fcf6d836",
+    "models/microagu-payload-tl.glb": "10cd498d78de60020ad97f4febc46010a585496b124575c25bc9ec6998596288",
+    "pitch-fbd.html": "b5f4146ebb116d8fd92d2961de5f26562043e76946d87aee0460369c7ef5d231"
+  }
+}

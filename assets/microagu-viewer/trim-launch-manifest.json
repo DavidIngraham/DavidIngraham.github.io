@@ -1,0 +1,25 @@
+{
+  "id": "trim-launch",
+  "title": "MicroAGU · Trim Launch",
+  "page": "trim-launch.html",
+  "entry": "apps/applets/trim-launch/applet.ts",
+  "kind": "explanation",
+  "assets": [
+    "models/microagu-payload-tl.glb"
+  ],
+  "controls": [
+    "playback",
+    "camera"
+  ],
+  "defaultCamera": "orbit",
+  "available": true,
+  "missing": [],
+  "files": {
+    "assets/models-DwUAXtgd.js": "c677f25e1b4e3c6fb1079c0d6e8c2035111ba112f07282a230948529f14426d0",
+    "assets/paraglider-BqZcopxb.js": "e4b98a233f86897a93fd95ab2a42398a1d24fedf8a29328672a2f2c441643e26",
+    "assets/three-Bfvioo3L.js": "3428a83d7d77f5e0ec6bd8a66377bd16ded64b166e2e03102a425cc4fcf6d836",
+    "assets/trim-launch-BdroScp3.js": "a6471dc93dd3dd9626dc8e79f46423e71ad53de38fdbbaf4cf12dbf114ff4bb8",
+    "models/microagu-payload-tl.glb": "10cd498d78de60020ad97f4febc46010a585496b124575c25bc9ec6998596288",
+    "trim-launch.html": "ebbe513dcc8133efe695deb89e1d8c143052673f8c6df957939efdeeb6dba910"
+  }
+}
