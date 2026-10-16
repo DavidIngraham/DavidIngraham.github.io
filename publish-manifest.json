@@ -505,6 +505,33 @@
           "hidden": true
         },
         {
+          "id": "encounter-envelope",
+          "path": "docs/reference/encounter-envelope.md",
+          "title": "Encounter geometry and occupied response time",
+          "description": "Class-specific observation needs and maneuver timing limits.",
+          "nav_title": "Encounter envelope",
+          "stage": "Methods and reproduction",
+          "hidden": true
+        },
+        {
+          "id": "maneuver-dynamics",
+          "path": "docs/reference/maneuver-dynamics.md",
+          "title": "How long does an avoidance turn occupy the boat?",
+          "description": "Bounded maneuver hypotheses and reproducible component trajectories.",
+          "nav_title": "Maneuver dynamics",
+          "stage": "Methods and reproduction",
+          "hidden": true
+        },
+        {
+          "id": "sensing-configurations",
+          "path": "docs/reference/sensing-configurations.md",
+          "title": "Physical sensing configurations to measure",
+          "description": "Specific camera, compute and AIS installations with explicit budget gaps.",
+          "nav_title": "Physical sensing configurations",
+          "stage": "Methods and reproduction",
+          "hidden": true
+        },
+        {
           "id": "sensing-measurements",
           "path": "docs/reference/sensing-measurements.md",
           "title": "Importing synchronized sensing and power measurements",
@@ -598,6 +625,9 @@
             "original-mission-campaign",
             "encounter-continuation",
             "sizing-workflow",
+            "encounter-envelope",
+            "maneuver-dynamics",
+            "sensing-configurations",
             "sensing-measurements",
             "model-runtime"
           ]
