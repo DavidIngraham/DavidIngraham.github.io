@@ -8,7 +8,7 @@
     />
     <meta name="theme-color" content="#101c22" />
     <title>MicroAGU · Flight simulator</title>
-    <script type="module" crossorigin src="./assets/index-nWPe0YpO.js"></script>
+    <script type="module" crossorigin src="./assets/index-CmMRDuOf.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/three-CgABN-FB.js">
     <link rel="modulepreload" crossorigin href="./assets/models-BT7UtUfU.js">
     <link rel="modulepreload" crossorigin href="./assets/math-P8kuyxM6.js">
@@ -16,7 +16,7 @@
     <link rel="modulepreload" crossorigin href="./assets/mechanisms-vOWu3rXn.js">
     <link rel="modulepreload" crossorigin href="./assets/OrbitControls-DC3bA9or.js">
     <link rel="modulepreload" crossorigin href="./assets/paraglider-U-Pwh3Sp.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-DHqL_U0e.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-CP7ewW92.css">
   </head>
   <body class="panel-closed">
     <main id="scene" aria-label="Three-dimensional flight view"></main>
@@ -31,7 +31,7 @@
       </div>
       <span id="connection" role="status">Preparing</span
       ><button id="panel-toggle" aria-expanded="false" aria-controls="panel">
-        Mission &amp; weather
+        Settings
       </button>
     </header>
     <section class="telemetry" aria-label="Flight telemetry">
@@ -121,6 +121,14 @@
       <div><small>HEADING</small><strong id="heading">000°</strong></div>
     </section>
     <aside id="panel" hidden>
+      <label class="controller-picker" for="controller"
+        >Control
+        <select id="controller" disabled aria-label="Control scheme">
+          <option value="baseline">PG + TECS</option>
+          <option value="lqi">LQI · experimental</option>
+        </select>
+        <span id="controller-status" role="status">Baseline</span>
+      </label>
       <div class="eyebrow">
         MISSION &amp; WEATHER <span id="armed">DISARMED</span>
       </div>
