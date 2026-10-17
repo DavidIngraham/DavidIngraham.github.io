@@ -15,7 +15,9 @@
     "wasm/build.json",
     "wasm/COPYING.txt",
     "wasm/RUST-NOTICES.txt",
-    "simulator-sw.js"
+    "simulator-sw.js",
+    "wasm/lqi-filter-tune.patch",
+    "wasm/lqi-filter-design.json"
   ],
   "controls": [
     "joystick",
@@ -44,10 +46,12 @@
     "wasm/COPYING.txt": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
     "wasm/RUST-NOTICES.txt": "f5e9c70192d8e79a97ca305a2fbf637f7fb9471f42e10e23e74404edefdebfb7",
     "wasm/arduplane.js": "893b28e3cbea410e48736d7f7426928cbe8b56f22c1813914aa290172f1e8565",
-    "wasm/arduplane.wasm": "d8a838c250b937f8fbc13e41219ac8a412e3bacbcb780da00b738f4fae15c045",
-    "wasm/build.json": "ac77f1e62e7c806c2acc45b7c227ee10c3e889e98df1b118a8d5ffe04c406095",
-    "wasm/highdof.json": "e30470823ff62bfa8fd03fdd19af4af677321cb6f7f0b1b8d81ee30598428f05",
+    "wasm/arduplane.wasm": "b6acedf6ed9f9729af8a125c7f5a555d854893f693b2ea38dc6609d747acd167",
+    "wasm/build.json": "46099d6defe478e8df8d4310472fcaf29ffdfde6dfde7fa0ea59523cf1aac2f4",
+    "wasm/highdof.json": "6bdfab403bb0d56945b93bec196d1e9f3c3abb5073ff120603ba2bf900e3c155",
     "wasm/sim_wasm.js": "400f027b6e8f2968179d2070c9157fa913bad58aa1d1d54e5db034eb19ea6097",
-    "wasm/sim_wasm_bg.wasm": "f5d479506baad4065fbfa082e985ab2d930018d7bba700b0cc184102b71a636e"
+    "wasm/sim_wasm_bg.wasm": "f5d479506baad4065fbfa082e985ab2d930018d7bba700b0cc184102b71a636e",
+    "wasm/lqi-filter-tune.patch": "5d84fe7e2dffb8dfb3ecc24b39a5993bcd7283a014ac6b2a21b032fd4cd8e1a3",
+    "wasm/lqi-filter-design.json": "88c56e43ad4c0b4aa3a4e444be925c5bae571395169799a10b3da7b4097a7bba"
   }
 }

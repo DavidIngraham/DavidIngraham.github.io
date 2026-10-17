@@ -9,12 +9,12 @@
   "transport": "Emscripten SOCKFS local UDP peer",
   "emscripten": "6.0.8",
   "sha256": {
-    "highdof.json": "e30470823ff62bfa8fd03fdd19af4af677321cb6f7f0b1b8d81ee30598428f05",
+    "highdof.json": "6bdfab403bb0d56945b93bec196d1e9f3c3abb5073ff120603ba2bf900e3c155",
     "sim_wasm_bg.wasm.d.ts": "20c6b4faa8cc91f0d0ea36e5130f3cbb0e19209ab6ef7ab069098e4b5fe6c16c",
     "sim_wasm.d.ts": "a7d9b12c7b8118fd60f80d6675ff6ed8b37e0ddebbfb1d244c88105a58bac842",
     "sim_wasm_bg.wasm": "f5d479506baad4065fbfa082e985ab2d930018d7bba700b0cc184102b71a636e",
     "sim_wasm.js": "400f027b6e8f2968179d2070c9157fa913bad58aa1d1d54e5db034eb19ea6097",
-    "arduplane.wasm": "d8a838c250b937f8fbc13e41219ac8a412e3bacbcb780da00b738f4fae15c045",
+    "arduplane.wasm": "b6acedf6ed9f9729af8a125c7f5a555d854893f693b2ea38dc6609d747acd167",
     "arduplane.js": "893b28e3cbea410e48736d7f7426928cbe8b56f22c1813914aa290172f1e8565"
   },
   "physics_source": {
@@ -57,5 +57,27 @@
     },
     "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)",
     "wasm_bindgen": "0.2.114"
+  },
+  "working_tree_dirty": true,
+  "controller_source_sha256": {
+    "libraries/AP_CustomControl/AP_CustomControl.cpp": "23a591cd4e56c4ce44efa7a6a7653e4b282fd7e888caed0fd1b18543928de053",
+    "libraries/AP_CustomControl/AP_CustomControl_LQI.cpp": "b95880dbfc6505dad469af78f058bf292a0dbaecfe2a50502ba2a447cb695595",
+    "libraries/AP_CustomControl/AP_CustomControl_LQI.h": "d1ad8da000defafa058b41122dd98fb3244c247ad41ec17ab126f536ef35b8e4",
+    "libraries/AP_CustomControl/AP_CustomControl_LQI_gains.h": "870cbf6b7bf3b03e465217bc29ce66a67a2c5d46578ddebbed4d7a070dd09c72"
+  },
+  "controller_source_patch": {
+    "path": "lqi-filter-tune.patch",
+    "sha256": "5d84fe7e2dffb8dfb3ecc24b39a5993bcd7283a014ac6b2a21b032fd4cd8e1a3",
+    "base_revision": "010ada6a4f0b26910fc18ecca176d2e65c5ed9d7",
+    "description": "AI-assisted reference-filter tuning; apply patch to base_revision. Original observer and sensing retained."
+  },
+  "controller_reference_filter": {
+    "CP3_HRTC": 0.7,
+    "climb_limit_m_s": 0.5,
+    "descent_limit_m_s": 0.5,
+    "canopy_sensor": false,
+    "pitot_sensor": false,
+    "selected": "responsive_softspeed",
+    "validation": "Corrected lateral gust incidence; fresh Monte Carlo commands and AUTO/CRUISE missions, 2026-10-17"
   }
 }
