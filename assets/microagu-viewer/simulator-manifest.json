@@ -17,7 +17,9 @@
     "wasm/RUST-NOTICES.txt",
     "simulator-sw.js",
     "wasm/lqi-filter-tune.patch",
-    "wasm/lqi-filter-design.json"
+    "wasm/lqi-filter-design.json",
+    "wasm/lqi-feasible-turns.patch",
+    "wasm/lqi-feasible-turns-validation.json"
   ],
   "controls": [
     "joystick",
@@ -46,12 +48,14 @@
     "wasm/COPYING.txt": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
     "wasm/RUST-NOTICES.txt": "f5e9c70192d8e79a97ca305a2fbf637f7fb9471f42e10e23e74404edefdebfb7",
     "wasm/arduplane.js": "893b28e3cbea410e48736d7f7426928cbe8b56f22c1813914aa290172f1e8565",
-    "wasm/arduplane.wasm": "b6acedf6ed9f9729af8a125c7f5a555d854893f693b2ea38dc6609d747acd167",
-    "wasm/build.json": "46099d6defe478e8df8d4310472fcaf29ffdfde6dfde7fa0ea59523cf1aac2f4",
-    "wasm/highdof.json": "6bdfab403bb0d56945b93bec196d1e9f3c3abb5073ff120603ba2bf900e3c155",
+    "wasm/arduplane.wasm": "7288fcc2de2da91965ce6ea9eaf66be520859042f9be9a7906ace2a090793238",
+    "wasm/build.json": "53052a298694156a1f8eb26b82b0264745a4d499da474f1c37488a615faf1198",
+    "wasm/highdof.json": "4a8b0c95c02c9aee878a8592c72607234e44e6c4d4eb1097488edf85bf87daa1",
     "wasm/sim_wasm.js": "400f027b6e8f2968179d2070c9157fa913bad58aa1d1d54e5db034eb19ea6097",
     "wasm/sim_wasm_bg.wasm": "f5d479506baad4065fbfa082e985ab2d930018d7bba700b0cc184102b71a636e",
     "wasm/lqi-filter-tune.patch": "5d84fe7e2dffb8dfb3ecc24b39a5993bcd7283a014ac6b2a21b032fd4cd8e1a3",
-    "wasm/lqi-filter-design.json": "88c56e43ad4c0b4aa3a4e444be925c5bae571395169799a10b3da7b4097a7bba"
+    "wasm/lqi-filter-design.json": "88c56e43ad4c0b4aa3a4e444be925c5bae571395169799a10b3da7b4097a7bba",
+    "wasm/lqi-feasible-turns.patch": "2bd94485fd7c18a640a33b0f6d9e5a3b2da4980a5351103ee244cf9994ebd55a",
+    "wasm/lqi-feasible-turns-validation.json": "baa4e9b1c8755fef7af34e5ed8e4a2f58972d03d65508f935f08cfa28ea8207e"
   }
 }
