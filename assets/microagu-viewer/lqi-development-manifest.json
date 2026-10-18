@@ -1,0 +1,23 @@
+{
+  "id": "lqi-development",
+  "title": "LQI: authority and evidence",
+  "page": "lqi-development.html",
+  "html": "apps/applets/lqi-development/index.html",
+  "entry": "apps/applets/lqi-development/applet.ts",
+  "kind": "explanation",
+  "assets": [],
+  "controls": [
+    "common",
+    "differential",
+    "metric"
+  ],
+  "defaultCamera": "orbit",
+  "available": true,
+  "missing": [],
+  "files": {
+    "assets/index-DnMSDhk6.js": "7fa26402b8ff5fc79fc335c030cc9b1c71afe4ad59daba37351d2eabd5d320fc",
+    "assets/index-SxPVPUhV.css": "a6d8e266148421af2d1e762456f8b5f6202eaab48c7199339951b22285edac40",
+    "assets/mount-BvcLTPXR.js": "c30370b88a17dc300fc5141ffdeb1d6c0f005c1d410b47877729a37b129deb8b",
+    "lqi-development.html": "670128139acf073bf36481fa4f3e9dc5f073258ce3b4ffeb4b4bc24aae0e9ad1"
+  }
+}

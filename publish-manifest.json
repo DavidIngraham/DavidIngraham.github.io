@@ -85,9 +85,9 @@
         {
           "id": "controller-state-space",
           "path": "docs/controller-state-space.md",
-          "title": "What State-Space Analysis Added to Micro-AGU\u2019s Controller Design",
-          "nav_title": "Frequency response and state space",
-          "description": "Comparing coupled frequency response, internal modes, observability and full-state feedback, with matched nonlinear gust tests and native autopilot checks."
+          "title": "Developing the LQI controller",
+          "nav_title": "LQI controller development",
+          "description": "From coupled feedback to constrained actuators: tuning, disturbance recovery and the evidence behind the current browser controller."
         },
         {
           "id": "spot-landing",
@@ -153,11 +153,19 @@
           "nav_title": "Next flight test card",
           "description": "A staged plan to validate ordinary throttle, pitch and turn response, then evaluate the new controllers.",
           "stage": "Flight validation"
+        },
+        {
+          "id": "controller-state-space-archive",
+          "path": "docs/controller-state-space-archive.md",
+          "title": "Archived frequency-response and state-space study",
+          "nav_title": "Archived controller study",
+          "description": "Comparing coupled frequency response, internal modes, observability and full-state feedback, with matched nonlinear gust tests and native autopilot checks.",
+          "hidden": true
         }
       ],
       "implementation_links": [
         {
-          "label": "Fly MicroAGU — browser simulator",
+          "label": "Fly MicroAGU \u2014 browser simulator",
           "url": "https://davidingraham.github.io/assets/microagu-viewer/simulator.html"
         },
         {
