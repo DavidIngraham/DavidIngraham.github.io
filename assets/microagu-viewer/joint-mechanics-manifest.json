@@ -1,0 +1,26 @@
+{
+  "id": "joint-mechanics",
+  "title": "Point-joint springs, dampers and yaw geometry",
+  "page": "joint-mechanics.html",
+  "html": "apps/applets/joint-mechanics/index.html",
+  "entry": "apps/applets/joint-mechanics/applet.ts",
+  "kind": "explanation",
+  "assets": [],
+  "controls": [
+    "axis",
+    "playback",
+    "phase",
+    "yaw",
+    "camera"
+  ],
+  "defaultCamera": "orbit",
+  "available": true,
+  "missing": [],
+  "files": {
+    "assets/index-BBA8WK97.js": "834430b3b282f9dd614504e8b24e16fc3c59a11e4a1b5fb7e2aca5906df9a603",
+    "assets/index-smnZ1u14.css": "4e95ff55ebac1dc09d60d6d1c5bb7688027adc64f3a9f6288c17a2492c87129e",
+    "assets/resources-CtLKM46y.js": "c4e4cf541bd1703bd2a1b7eedb51abee6f221a3107766fd52f0fe375cd454b82",
+    "assets/three-ClUpl-uc.js": "043e16995b8ec91bbf5bf457749d8de85d537738a89d4d10032f112d21511051",
+    "joint-mechanics.html": "79102c8d44ffcc8bf8f9143f7612629a006802e97a70974e9b81bebaa4f795ac"
+  }
+}
