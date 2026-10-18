@@ -46,3 +46,11 @@ The `design-explorer` Markdown fence accepts a `src` pointing to the collectionâ
 ### Risk explorer
 
 The `risk-explorer` fence accepts the collection's generated `assets/risk/risks.json`. The trusted reader displays one cube per risk type, with shared type, status and text filters. Selecting an ID shows only that risk's description, assessment and actions. The data is exported through the native SysML report; the browser does not assign ratings. Run `node tests/risk-explorer.cjs /path/to/generated/risks.json` to check the contract and filters.
+
+## Mathematics
+
+All article readers, including legacy /ardupilot-tinkering/ URLs, load the shared assets/article-math.js integration. Author mathematics as $...$ inline and $$ on separate lines for display equations; use LaTeX aligned/cases environments where appropriate. Existing backslash delimiters and math fences are also supported. Do not add per-article loaders or another math renderer.
+
+MathJax is loaded on demand at the pinned version in article-math.js. TeX is preserved before Markdown parsing, sanitized, and then rendered. Code samples and currency remain literal. Display equations scroll within their own block on narrow screens. Loading failure retains readable TeX.
+
+Keep program identifiers, paths and executable examples in code formatting. Mathematical expressions in prose should use math delimiters, not inline code or text fences. Run node tests/article-math.cjs after changing the renderer or reader shells.
