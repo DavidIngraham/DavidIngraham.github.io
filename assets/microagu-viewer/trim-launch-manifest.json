@@ -1,26 +1,37 @@
 {
   "id": "trim-launch",
-  "title": "MicroAGU · Trim Launch",
+  "title": "MicroAGU · Recorded Takeoff",
   "page": "trim-launch.html",
   "html": "apps/applets/trim-launch/index.html",
   "entry": "apps/applets/trim-launch/applet.ts",
-  "kind": "explanation",
+  "kind": "replay",
   "assets": [
-    "models/microagu-payload-tl.glb"
+    "models/microagu-payload-tl.glb",
+    "takeoff/launch.jsonl",
+    "takeoff/provenance.json"
   ],
   "controls": [
     "playback",
     "camera"
   ],
-  "defaultCamera": "orbit",
+  "defaultCamera": "follow",
   "available": true,
   "missing": [],
   "files": {
-    "assets/index-CQ-MM8Mz.js": "9339ed9533808a2a8add5579b86cd157458bac1a162adfd7756f2d41a038a2a1",
-    "assets/models-CUH5rlaZ.js": "69eca696c23fcad6836e76190b617ea23d57e6239f155fd7e7892233d8f3b1a8",
-    "assets/paraglider-CJa0ulyB.js": "f3ef48536c261791f29bca701f286f0b0476f33906c1dfe644b2758032c3c681",
-    "assets/three-CWNO0hZv.js": "0a82a5752ecce5e39e37e65271537d54eef3ef0b9cffb31ab2074c7a563b0a3e",
+    "assets/OrbitControls-B4dY6xS1.js": "e5546386e36839cb9520364c4b53404ec3a3c4e74c307019f5e8cff24f2ea4dd",
+    "assets/flight-view-C5eubH_G.js": "c2a3109f7e2612183cb07141b8ff63227c271bd068ebc17a7493d07c0a84c868",
+    "assets/index-CpGITcs2.js": "7330b2628fda5c57a96b531abcf75f36a2fcc4defe2e95b87866ed7ae77e714f",
+    "assets/math-P8kuyxM6.js": "d100be9f007bc6a51c0c1e5f5103c99ae0db235c409fab011832894d05bd517b",
+    "assets/mechanisms-CTptIDgI.js": "18d2dccfeeebe3a170c70ae84d27ca2c1d6c1a4fb3118eb0bcd25bfe71c43d23",
+    "assets/models-BzsGqJb2.js": "34cad1a1ae745f58a7953f5e2254544b4ce4bf7c73888757644df6a2b2aba328",
+    "assets/paraglider-pg2JfDie.js": "5dcbb8b6c9de0742621755e56a5f3ffc8a25cfdaf25dfce915ec5925d209910f",
+    "assets/playback-AjlpAjXB.js": "7ab889c952aae11de56f562d9e394ef738907535c41d2df4d430f2eee68016f0",
+    "assets/recordings-Be7AWOl4.js": "80c10693e80e0b2d0a3b6c56d980b15de69930bad0dcb916def0ee25b1555d70",
+    "assets/recordings-DzXGklQC.js": "f699abfd38963c856b25bef3a4719123d782d5425c683ecb17ad33a1854c17c1",
+    "assets/three-v_9BgMnl.js": "7c33ee3c9be52829db1549b58813ff45316dfaedadf4f940c5cf224cc6da587a",
     "models/microagu-payload-tl.glb": "10cd498d78de60020ad97f4febc46010a585496b124575c25bc9ec6998596288",
-    "trim-launch.html": "987fbfa45c9d54d1f8c28bea423c32392b4c22eacb4458b397a734a52df582ac"
+    "takeoff/launch.jsonl": "05478553796fa8eecd83b9433319c592860224b4886bc4c3563fb61927ee33fd",
+    "takeoff/provenance.json": "4ca3bc1ced3348960afd94bbe5e91647156d4ad974bb8d09de9ee0b81bc3fcd7",
+    "trim-launch.html": "0bc87d6b355d2015601710c2c33b3b4ed7203fbbd1d2d2b9bdb9cfa2dae1d480"
   }
 }
