@@ -1,0 +1,24 @@
+{
+  "id": "canopy-panels",
+  "title": "How the five-panel canopy produces forces",
+  "page": "canopy-panels.html",
+  "html": "apps/applets/canopy-panels/index.html",
+  "entry": "apps/applets/canopy-panels/applet.ts",
+  "kind": "explanation",
+  "assets": [],
+  "controls": [
+    "case",
+    "panel",
+    "camera"
+  ],
+  "defaultCamera": "orbit",
+  "available": true,
+  "missing": [],
+  "files": {
+    "assets/index-CJZYeehv.js": "db83aedc32433c802a63cedbef92feddda56a590fcd2ecb1065175b14706bf37",
+    "assets/index-OJUuwWe7.css": "7ce0a7014590c1c83ea43dfdee2986ed3d4e7969f084264e69920d4a6ea9dc6d",
+    "assets/resources-CS-PCtl3.js": "32306321c1bf49eff510f2fbf2088c1211199b75f3c6a58384b74f4252909713",
+    "assets/three-BMBb7_5C.js": "9754c0458bbb0713d749d78d3ac9449b92ce84da1ba2343d01c6b5bc4dd2a361",
+    "canopy-panels.html": "4c2f5bc27e2e991f3955e82977f85a573ffe7fc3aaa4ea1b0b2473abea3aeb20"
+  }
+}
