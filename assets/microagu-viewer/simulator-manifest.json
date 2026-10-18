@@ -32,7 +32,7 @@
   "files": {
     "assets/OrbitControls-B4dY6xS1.js": "e5546386e36839cb9520364c4b53404ec3a3c4e74c307019f5e8cff24f2ea4dd",
     "assets/flight-view-C5eubH_G.js": "c2a3109f7e2612183cb07141b8ff63227c271bd068ebc17a7493d07c0a84c868",
-    "assets/index-CJvmQ1Im.js": "1a3885c7e12b5692c5f204824a26acb1dc1aa56100813a2c039ab4f529e4de52",
+    "assets/index-COXGAE2l.js": "499ad5bb0d05f01a8c5d5899e2bae57a85d31d3122ec6c17d4b60b8cd8bbfd78",
     "assets/index-CP7ewW92.css": "88569bbc45e2ebd2706e425e12133feb602409fc20792acda1728a7a6dc505d9",
     "assets/math-P8kuyxM6.js": "d100be9f007bc6a51c0c1e5f5103c99ae0db235c409fab011832894d05bd517b",
     "assets/mechanisms-CTptIDgI.js": "18d2dccfeeebe3a170c70ae84d27ca2c1d6c1a4fb3118eb0bcd25bfe71c43d23",
@@ -43,7 +43,7 @@
     "assets/worker-WNApuFvu.js": "e021cb7d91f339c89987eaebf1b89d22ced91cc46aabce98464e1d4a78d28aee",
     "models/microagu-payload-tl.glb": "10cd498d78de60020ad97f4febc46010a585496b124575c25bc9ec6998596288",
     "simulator-sw.js": "330dad7e7098d68a7ceaed89cb5543e0d8511205b4a160a8e60dcc85e025672a",
-    "simulator.html": "e431bca06ef1e87b474e70bdddb27c40d7ce84b4e9b376492ce1eef14a319c12",
+    "simulator.html": "a1653f6e2e8ea94f13b98f4c398fc8cf56ed5b777d51e0e2f394670762b70e22",
     "wasm/COPYING.txt": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
     "wasm/RUST-NOTICES.txt": "f5e9c70192d8e79a97ca305a2fbf637f7fb9471f42e10e23e74404edefdebfb7",
     "wasm/arduplane.js": "893b28e3cbea410e48736d7f7426928cbe8b56f22c1813914aa290172f1e8565",
