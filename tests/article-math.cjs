@@ -27,7 +27,7 @@ for (const directory of ['research', 'ardupilot-tinkering']) {
     if (!name.endsWith('.html')) continue;
     const html = fs.readFileSync(path.join(__dirname, '..', directory, name), 'utf8');
     if (!html.includes('data-reader=')) continue;
-    assert.equal((html.match(/src="\/assets\/article-math.js"/g) || []).length, 1, name);
+    assert.equal((html.match(/src="\/assets\/article-math.js(?:\?[^"]*)?"/g) || []).length, 1, name);
     assert.ok(html.indexOf('/assets/vendor/marked.js') < html.indexOf('/assets/article-math.js'), name);
     assert.ok(html.indexOf('/assets/article-math.js') < html.indexOf('/assets/publish.js'), name);
   }

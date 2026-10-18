@@ -51,6 +51,14 @@ The `risk-explorer` fence accepts the collection's generated `assets/risk/risks.
 
 All article readers, including legacy /ardupilot-tinkering/ URLs, load the shared assets/article-math.js integration. Author mathematics as $...$ inline and $$ on separate lines for display equations; use LaTeX aligned/cases environments where appropriate. Existing backslash delimiters and math fences are also supported. Do not add per-article loaders or another math renderer.
 
-MathJax is loaded on demand at the pinned version in article-math.js. TeX is preserved before Markdown parsing, sanitized, and then rendered. Code samples and currency remain literal. Display equations scroll within their own block on narrow screens. Loading failure retains readable TeX.
+MathJax 4.0.0 and its SVG font data are hosted under assets/vendor and loaded on demand from this site; equation rendering does not require a CDN. TeX is preserved before Markdown parsing, sanitized, and then rendered. Code samples and currency remain literal. Display equations scroll within their own block on narrow screens. Loading failure retains readable TeX and offers a visible Retry equations button.
 
 Keep program identifiers, paths and executable examples in code formatting. Mathematical expressions in prose should use math delimiters, not inline code or text fences. Run node tests/article-math.cjs after changing the renderer or reader shells.
+
+The renderer uses a same-origin speech-worker bootstrap to avoid MathJax 4.0.0's
+immediate blob-URL revocation stalling WebKit. Speech labels remain enabled.
+Run the browser regression with Playwright installed:
+ENGINE=webkit node tests/article-math-browser.mjs /path/to/micro-agu
+(and repeat with ENGINE=chromium). PLAYWRIGHT_MODULE and WEBKIT_EXECUTABLE
+optionally select an existing test installation. It blocks public CDNs, checks
+iPad-sized math and speech labels, and verifies retry after a failed script load.

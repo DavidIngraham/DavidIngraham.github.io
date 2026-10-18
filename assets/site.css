@@ -77,3 +77,5 @@ body[data-reader] > .wrap{width:min(1520px,calc(100% - 48px))}
 /* Keep Blue Dog prose readable while figures and tables use the article width. */
 [data-collection="sv-blue-dog"] .article :is(p,ul,ol,dl,blockquote){max-width:74ch}
 [data-collection="sv-blue-dog"] .article p:has(>img),[data-collection="sv-blue-dog"] .article p:has(>a>img){max-width:none}
+
+.math-load-error{padding:12px 16px;border:1px solid var(--line);background:var(--card)}.math-load-error button{font:inherit;color:var(--accent);cursor:pointer}
