@@ -1,0 +1,25 @@
+{
+  "id": "lqi-explainer",
+  "title": "Understanding coordinated control",
+  "page": "lqi-explainer.html",
+  "html": "apps/applets/lqi-explainer/index.html",
+  "entry": "apps/applets/lqi-explainer/applet.ts",
+  "kind": "explanation",
+  "assets": [],
+  "controls": [
+    "view",
+    "input",
+    "time",
+    "state",
+    "flow"
+  ],
+  "defaultCamera": "orbit",
+  "available": true,
+  "missing": [],
+  "files": {
+    "assets/index-2qXKIbYy.js": "86afd4639a34197b5b410af43e5624f54a5fa5ff5bfe4a4ec2a956580b9dbd97",
+    "assets/index-BwZ4ANLs.css": "ea63ae6ff95220100505f848cfe0c274bf581b951a048d7de3f6c2ffe5be4175",
+    "assets/mount-BvcLTPXR.js": "c30370b88a17dc300fc5141ffdeb1d6c0f005c1d410b47877729a37b129deb8b",
+    "lqi-explainer.html": "e152196b58b376a8ee4edc99184dc987fe79978b20335b40b4d762991c2b5c78"
+  }
+}

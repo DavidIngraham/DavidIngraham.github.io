@@ -85,9 +85,9 @@
         {
           "id": "controller-state-space",
           "path": "docs/controller-state-space.md",
-          "title": "Developing the LQI controller",
+          "title": "Coordinated control: from separate loops to LQI",
           "nav_title": "LQI controller development",
-          "description": "From coupled feedback to constrained actuators: tuning, disturbance recovery and the evidence behind the current browser controller."
+          "description": "An introduction to coupled motion, state feedback, the canopy observer, and the design and validation of the current controller."
         },
         {
           "id": "spot-landing",
