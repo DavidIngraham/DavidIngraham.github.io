@@ -8,7 +8,7 @@
     />
     <meta name="theme-color" content="#101c22" />
     <title>MicroAGU · Flight simulator</title>
-    <script type="module" crossorigin src="./assets/index-BzI_iFAi.js"></script>
+    <script type="module" crossorigin src="./assets/index-nPdGFXLj.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/mount-BvcLTPXR.js">
     <link rel="modulepreload" crossorigin href="./assets/math-P8kuyxM6.js">
     <link rel="modulepreload" crossorigin href="./assets/recordings-DzXGklQC.js">
@@ -48,7 +48,6 @@
           <option>CRUISE</option>
           <option>AUTO</option>
           <option>LOITER</option>
-          <option value="LAND">LAND · ahead</option>
           <option>TAKEOFF</option>
         </select>
       </div>
@@ -155,7 +154,8 @@
             id="mission-file"
             type="file"
             accept=".plan,.waypoints,.txt" /></label
-        ><button id="example">Example circuit</button>
+        ><button id="example">Example circuit</button
+        ><button id="landing-example">Landing mission</button>
       </div>
       <p id="mission-info" class="hint">
         QGC .plan or .waypoints · relative or absolute altitude
