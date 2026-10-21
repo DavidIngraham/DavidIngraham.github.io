@@ -8,7 +8,7 @@
     />
     <meta name="theme-color" content="#101c22" />
     <title>MicroAGU · Flight simulator</title>
-    <script type="module" crossorigin src="./assets/index-Bof4SNlP.js"></script>
+    <script type="module" crossorigin src="./assets/index-DODto2Af.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/mount-BvcLTPXR.js">
     <link rel="modulepreload" crossorigin href="./assets/math-P8kuyxM6.js">
     <link rel="modulepreload" crossorigin href="./assets/recordings-DzXGklQC.js">
@@ -133,6 +133,17 @@
         </select>
         <span id="controller-status" role="status">Baseline</span>
       </label>
+      <label for="sim-speed">Simulation speed</label>
+      <select id="sim-speed" disabled aria-describedby="sim-speed-help">
+        <option value="1">1× · real time</option>
+        <option value="2">2×</option>
+        <option value="4">4×</option>
+        <option value="8">8×</option>
+      </select>
+      <p id="sim-speed-help" class="hint">
+        Speed up the flight after launch. Actual speed depends on your device.
+        Reset restores 1×.
+      </p>
       <div class="eyebrow">
         MISSION &amp; WEATHER <span id="armed">DISARMED</span>
       </div>
