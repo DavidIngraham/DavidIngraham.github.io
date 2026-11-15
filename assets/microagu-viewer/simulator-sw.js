@@ -12,6 +12,9 @@ self.addEventListener('fetch',event=>{
     headers.set('Cross-Origin-Opener-Policy','same-origin');
     headers.set('Cross-Origin-Embedder-Policy','require-corp');
     headers.set('Cross-Origin-Resource-Policy','same-origin');
-    return new Response(response.body,{status:response.status,statusText:response.statusText,headers});
+    // WebKit can expose conditional worker responses as 304. Fetch forbids
+    // bodies on these statuses, including an empty native ReadableStream.
+    const body=[204,205,304].includes(response.status)?null:response.body;
+    return new Response(body,{status:response.status,statusText:response.statusText,headers});
   }));
 });

@@ -5954,14 +5954,18 @@ var doPollAsync = (fds, nfds, timeout) => new Promise(resolve => {
 });
 
 function ___syscall_poll(fds, nfds, timeout) {
-  if (ENVIRONMENT_IS_PTHREAD) return proxyToMainThread(21, 0, 2, fds, nfds, timeout);
+  // microagu: synchronously probe ready descriptors before async proxying.
+  // The local JSON peer queues sensor data before sendto returns. Ready data
+  // needs no asynchronous completion/notification round trip between pthreads.
+  if (ENVIRONMENT_IS_PTHREAD) {
+    var ready = proxyToMainThread(21, 0, 1, fds, nfds, 0);
+    if (ready || timeout === 0) return ready;
+    return proxyToMainThread(21, 0, 2, fds, nfds, timeout);
+  }
   try {
-    const isAsyncContext = PThread.currentProxiedOperationCallerThread;
-    // When proxied from a worker (PTHREADS) or able to suspend (ASYNCIFY/JSPI),
-    // block on the wait-queue. This must run for every timeout (including zero):
-    // a proxied syscall's return is awaited by the caller thread, so it has to
-    // be a Promise even for a probe.
-    if (isAsyncContext) {
+    // Proxy mode 1 must return a number; mode 2 must return a Promise.
+    if (timeout === 0) return doPollSync(fds, nfds);
+    if (PThread.currentProxiedOperationCallerThread) {
       return doPollAsync(fds, nfds, timeout);
     }
     var count = doPollSync(fds, nfds);
